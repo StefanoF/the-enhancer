@@ -11,8 +11,10 @@ GameObject:
   - component: {fileID: 199565526436380125}
   - component: {fileID: 199565526436380124}
   - component: {fileID: 199565526436380127}
+  - component: {fileID: 3890692213789867197}
   - component: {fileID: 199565526436380126}
   - component: {fileID: 6370447622047563006}
+  - component: {fileID: 625986984}
   m_Layer: 0
   m_Name: Activity
   m_TagString: Untagged
@@ -80,6 +82,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!54 &3890692213789867197
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 199565526436380097}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &199565526436380126
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -88,7 +106,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 199565526436380097}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -110,3 +128,25 @@ MonoBehaviour:
   maxHours: 6
   moveRange: 0.5
   moveSpeed: 3
+--- !u!114 &625986984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 199565526436380097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc2b372f84aab435bb64080aa6fc0c66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 0
+  height: 8
+  durationTime: 2
+  startPos: {fileID: 2786419073888523819, guid: 47d4fde2389b447ae810024a9663cbb4,
+    type: 3}
+  notReady: 0
+  lastSphere: 0
+  nSpheres: 10
+  hourSphere: {fileID: 7827260179165313961, guid: 55d67cb27c84d4302bc967da76e0da0c,
+    type: 3}

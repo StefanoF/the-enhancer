@@ -11,6 +11,12 @@ public class Activity : MonoBehaviour
     private Vector3 moveVector;
     public float moveRange;
     public float moveSpeed;
+    private ParabolaController pbController;
+
+    void Awake()
+    {
+        pbController = gameObject.GetComponent<ParabolaController>();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -22,13 +28,19 @@ public class Activity : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // animated block
         transform.position = startPosition + moveVector * (moveRange * Mathf.Sin(Time.timeSinceLevelLoad * moveSpeed));
+    }
+
+    void LaunchSphere(Transform endPos) {
+        
     }
 
     void OnMouseOver(){
         if (Input.GetMouseButtonDown(0)) {
             if (hourIn < maxHours) {
                 hourIn++;
+                pbController.StartAnim();
             }
         }
         else if (Input.GetMouseButtonDown(1)) {
