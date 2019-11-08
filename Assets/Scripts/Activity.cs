@@ -53,16 +53,16 @@ public class Activity : MonoBehaviour
         transform.position = startPosition + moveVector * (moveRange * Mathf.Sin(timeMovement * moveSpeed));
 
         if (Input.GetMouseButtonDown(0)) {
-            if (hourIn < maxHours) {
+            if (hourIn < maxHours && gameData.remainingHours > 0) {
                 hourIn++;
                 gameData.AddActivity(activity.ToString(), 1);
                 pbController.StartAnim();
-
             }
         }
         else if (Input.GetMouseButtonDown(1)) {
             if (hourIn > minHours) {
                 hourIn--;
+                gameData.remainingHours++;
             }
         }
     }

@@ -1,8 +1,9 @@
 + visualizzare quante ore ci sono in ogni attivita
 + visualizzare icona per attività
-- visualizzare orario che scorre (24 ore) 24 secondi di tempo reale?
-- visualizzare quanti lanci hai disponibili (le ore passate fino a quel momento)
++ visualizzare orario che scorre (24 ore) 24 secondi di tempo reale?
++ visualizzare quanti lanci hai disponibili (le ore passate fino a quel momento)
 - consumare le ore nelle attività (le ore passate da quando sono state assegnate)
 - ogni volta che viene consumata un ora si aggiornano le statistiche globali
+  (attualmente ogni volta che viene assegnata un ora)
 
 - mostrare le attività dinamicamente in base all'orario
