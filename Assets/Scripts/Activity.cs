@@ -1,17 +1,30 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Activity : MonoBehaviour
 {
+    private Vector3 startPosition;
+    private Vector3 moveVector;
+    private ParabolaController pbController;
+
+    [Header("Activity Movement")]
+    public float moveRange;
+    public float moveSpeed;
+
+    [Header("Stats data")]
+    public GameScriptable.ActivityType activity;
+    public GameScriptable gameData;
+
+    [Header("Hours")]
     public int hourIn; 
     public int minHours;
     public int maxHours;
-    private Vector3 startPosition;
-    private Vector3 moveVector;
-    public float moveRange;
-    public float moveSpeed;
-    private ParabolaController pbController;
+
+    [Header("Hour Bar")]
+    public Image hourBar;
+    public float hourBarSpeed;
 
     void Awake()
     {
@@ -23,30 +36,55 @@ public class Activity : MonoBehaviour
     {
         startPosition = transform.position;
         moveVector = Vector3.up;
+        hourBar.fillAmount = 0f;
     }
 
+    
     // Update is called once per frame
     void Update()
     {
+        UpdateHourBar();
+    }
+
+    private float timeMovement;
+    void OnMouseOver() {
         // animated block
-        transform.position = startPosition + moveVector * (moveRange * Mathf.Sin(Time.timeSinceLevelLoad * moveSpeed));
-    }
+        timeMovement += Time.deltaTime;
+        transform.position = startPosition + moveVector * (moveRange * Mathf.Sin(timeMovement * moveSpeed));
 
-    void LaunchSphere(Transform endPos) {
-        
-    }
-
-    void OnMouseOver(){
         if (Input.GetMouseButtonDown(0)) {
             if (hourIn < maxHours) {
                 hourIn++;
+                gameData.AddActivity(activity.ToString(), 1);
                 pbController.StartAnim();
+
             }
         }
         else if (Input.GetMouseButtonDown(1)) {
             if (hourIn > minHours) {
                 hourIn--;
             }
+        }
+    }
+
+    void OnMouseExit() {
+        transform.position = startPosition;
+    }
+
+    public float calculated = 0f;
+    public float lastAmount;
+    private float t;
+    void UpdateHourBar() {
+        calculated = (float) hourIn / maxHours;
+
+        if (calculated != lastAmount) {
+            hourBar.fillAmount = Mathf.Lerp(lastAmount, calculated, t);
+            t += Time.deltaTime * hourBarSpeed;
+        }
+
+        if (hourBar.fillAmount == calculated) {
+            t = 0f;
+            lastAmount = calculated;
         }
     }
 }

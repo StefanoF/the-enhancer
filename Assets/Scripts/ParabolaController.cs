@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class ParabolaController : MonoBehaviour
 {
-    public float time;
     public float height;
     public float durationTime;
 
     public Transform startPos;
+    public float offsetEndPos;
 
     public bool notReady;
 
@@ -18,7 +18,7 @@ public class ParabolaController : MonoBehaviour
     private GameObject[] hourSpheres;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         hourSpheres = new GameObject[nSpheres];
         for (int i = 0; i < hourSpheres.Length; i++) {
@@ -32,42 +32,33 @@ public class ParabolaController : MonoBehaviour
         
     }
 
-    private Coroutine AnimCo;
-
     public void StartAnim() {
-        print(hourSpheres[lastSphere].name);
-        if (startPos && hourSpheres[lastSphere]) {
-            if (lastSphere < nSpheres) {
-                StartCoroutine(AnimCoroutine(hourSpheres[lastSphere]));
-                lastSphere++;
-            }
-            else {
-                lastSphere = 0;
-            }
+        if (!startPos) {
+            return;
+        }
+        if (lastSphere < nSpheres - 1) {
+            lastSphere++;
+        }
+        else {
+            lastSphere = 0;
+        }
+        if (hourSpheres[lastSphere]) {
+            StartCoroutine(AnimCoroutine(hourSpheres[lastSphere]));
         }
     }
 
     private IEnumerator AnimCoroutine(GameObject sphere) {
-        time = Time.deltaTime;
+        float time = Time.deltaTime;
         while (time < durationTime)
         {
             time += Time.deltaTime;
             // time = time % durationTime;
-            sphere.transform.position = Parabola(startPos.position, transform.position, height, time/durationTime);
+            Vector3 endPos = transform.position;
+            endPos.y = endPos.y + offsetEndPos;
+            sphere.transform.position = Parabola(startPos.position, endPos, height, time/durationTime);
             yield return null;
         }
-        
-    }
-
-    void OnTriggerExit(Collider collider)
-    {
-        if (collider.gameObject.tag == "Sphere") {
-            print("end animation!");
-            if (AnimCo != null)
-            {
-                // StopCoroutine(AnimCo);
-            }
-        }
+        sphere.transform.position = startPos.position;
     }
 
     public Vector3 Parabola(Vector3 start, Vector3 end, float height, float t)
@@ -79,6 +70,20 @@ public class ParabolaController : MonoBehaviour
     private float f (float x) { 
         return -(5-1) * height * x * x + (5-1) * height * x;
     }
+    
+    // private Coroutine AnimCo;
+    // void OnTriggerExit(Collider collider)
+    // {
+    //     if (collider.gameObject.tag == "Sphere") {
+    //         print("end animation!");
+    //         if (AnimCo != null)
+    //         {
+    //             StopCoroutine(AnimCo);
+    //         }
+    //     }
+    // }
+
+    
 
     // void OnDrawGizmos () {
     //     //Draw the parabola by sample a few times
