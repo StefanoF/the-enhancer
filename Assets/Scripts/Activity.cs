@@ -20,7 +20,8 @@ public class Activity : MonoBehaviour
     [Header("Hours")]
     public int hourIn; 
     public int minHours;
-    public int maxHours;
+    public int maxHours;    
+    private Text hoverHoursText;
 
     [Header("Hour Bar")]
     public Image hourBar;
@@ -29,6 +30,7 @@ public class Activity : MonoBehaviour
     void Awake()
     {
         pbController = gameObject.GetComponent<ParabolaController>();
+        hoverHoursText = GameObject.Find("/UI/HoverHours").GetComponent<Text>();
     }
 
     // Start is called before the first frame update
@@ -65,10 +67,13 @@ public class Activity : MonoBehaviour
                 gameData.remainingHours++;
             }
         }
+
+        hoverHoursText.text = hourIn.ToString() + activity.ToString();
     }
 
     void OnMouseExit() {
         transform.position = startPosition;
+        hoverHoursText.text = "";
     }
 
     public float calculated = 0f;

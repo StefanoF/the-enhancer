@@ -10,11 +10,10 @@ public class HourManager : MonoBehaviour
     public Text dayHoursText;
     public Text remainingHoursText;
 
-
     // Start is called before the first frame update
     void Start()
     {
-        gameData.currentHour = gameData.dayHours;
+        gameData.currentHour = 0;
         gameData.remainingHours = 0;
         StartCoroutine("Decrease");
     }
@@ -31,9 +30,9 @@ public class HourManager : MonoBehaviour
     }
 
     IEnumerator Decrease() {
-        while (gameData.currentHour > 0)
+        while (gameData.currentHour < gameData.dayHours)
         {
-            gameData.currentHour -= 1;
+            gameData.currentHour += 1;
             gameData.remainingHours++;
             yield return new WaitForSeconds(1);
         }
