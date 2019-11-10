@@ -23,6 +23,8 @@ public class ParabolaController : MonoBehaviour
         hourSpheres = new GameObject[nSpheres];
         for (int i = 0; i < hourSpheres.Length; i++) {
             hourSpheres[i] = Instantiate(hourSphere, startPos.position, Quaternion.identity) as GameObject;
+            hourSpheres[i].transform.parent = gameObject.transform;
+            hourSpheres[i].SetActive(false);
         }
     }
 
@@ -43,6 +45,7 @@ public class ParabolaController : MonoBehaviour
             lastSphere = 0;
         }
         if (hourSpheres[lastSphere]) {
+            hourSpheres[lastSphere].SetActive(true);
             StartCoroutine(AnimCoroutine(hourSpheres[lastSphere]));
         }
     }
@@ -58,6 +61,7 @@ public class ParabolaController : MonoBehaviour
             sphere.transform.position = Parabola(startPos.position, endPos, height, time/durationTime);
             yield return null;
         }
+        sphere.SetActive(false);
         sphere.transform.position = startPos.position;
     }
 

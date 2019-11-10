@@ -125,15 +125,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2024bfe8cb0d84d57a6c7441f878a238, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveRange: 0.2
+  moveRange: 0.02
   moveSpeed: 5
+  xMoveSpeed: 2
+  xMoveLimit: 20
+  xMoving: 0
+  activitiesManager: {fileID: 0}
   activity: 0
   gameData: {fileID: 11400000, guid: eb41279cb0afd4df996eac628c69e53f, type: 2}
   hourIn: 0
   minHours: 0
   maxHours: 6
-  hoverHoursText: {fileID: 4625166223361929136, guid: a98e444f0d7324095ae8c6eff74de5e5,
-    type: 3}
   hourBar: {fileID: 6562607916172983851}
   hourBarSpeed: 0.8
   calculated: 0

@@ -9,9 +9,16 @@ public class Activity : MonoBehaviour
     private Vector3 moveVector;
     private ParabolaController pbController;
 
-    [Header("Activity Movement")]
+    [Header("UpDown Movement")]
     public float moveRange;
     public float moveSpeed;
+    private float timeMovement;
+
+    [Header("Right Movement")]
+    public float xMoveSpeed;
+    public float xMoveLimit;
+    public bool xMoving;
+    public ActivitiesManager activitiesManager;
 
     [Header("Stats data")]
     public GameScriptable.ActivityType activity;
@@ -26,6 +33,9 @@ public class Activity : MonoBehaviour
     [Header("Hour Bar")]
     public Image hourBar;
     public float hourBarSpeed;
+    public float calculated = 0f;
+    public float lastAmount;
+    private float t;
 
     void Awake()
     {
@@ -36,6 +46,7 @@ public class Activity : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        activitiesManager = gameObject.GetComponentInParent<ActivitiesManager>();
         startPosition = transform.position;
         moveVector = Vector3.up;
         hourBar.fillAmount = 0f;
@@ -46,13 +57,26 @@ public class Activity : MonoBehaviour
     void Update()
     {
         UpdateHourBar();
+        UpdatePosition();
+    }
+    
+    void UpdatePosition() {
+        if (xMoving) {
+            if (transform.position.x < xMoveLimit) {
+                transform.Translate(Vector3.right * Time.deltaTime * xMoveSpeed);
+            }
+            else {
+                xMoving = false;
+                transform.position = startPosition;
+                activitiesManager.currentsInGame--;
+            }
+        }
     }
 
-    private float timeMovement;
     void OnMouseOver() {
         // animated block
         timeMovement += Time.deltaTime;
-        transform.position = startPosition + moveVector * (moveRange * Mathf.Sin(timeMovement * moveSpeed));
+        transform.position = transform.position + moveVector * (moveRange * Mathf.Sin(timeMovement * moveSpeed));
 
         if (Input.GetMouseButtonDown(0)) {
             if (hourIn < maxHours && gameData.remainingHours > 0) {
@@ -72,13 +96,12 @@ public class Activity : MonoBehaviour
     }
 
     void OnMouseExit() {
-        transform.position = startPosition;
+        Vector3 exitPos = transform.position;
+        exitPos.y = startPosition.y;
+        transform.position = exitPos;
         hoverHoursText.text = "";
     }
 
-    public float calculated = 0f;
-    public float lastAmount;
-    private float t;
     void UpdateHourBar() {
         calculated = (float) hourIn / maxHours;
 
