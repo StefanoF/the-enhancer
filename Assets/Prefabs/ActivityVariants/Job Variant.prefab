@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &114717782556148847
+--- !u!1001 &2002482412612382656
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 199565526436380097, guid: 2ba71d55b4bd1474d9e37c7eda91b122,
         type: 3}
       propertyPath: m_Name
-      value: Eat
+      value: Job
       objectReference: {fileID: 0}
     - target: {fileID: 199565526436380125, guid: 2ba71d55b4bd1474d9e37c7eda91b122,
         type: 3}
@@ -30,31 +30,6 @@ PrefabInstance:
     - target: {fileID: 199565526436380125, guid: 2ba71d55b4bd1474d9e37c7eda91b122,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6370447622047563006, guid: 2ba71d55b4bd1474d9e37c7eda91b122,
-        type: 3}
-      propertyPath: maxHours
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6370447622047563006, guid: 2ba71d55b4bd1474d9e37c7eda91b122,
-        type: 3}
-      propertyPath: hoverHoursText
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6655251511912582591, guid: 2ba71d55b4bd1474d9e37c7eda91b122,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7088657466606613352, guid: 2ba71d55b4bd1474d9e37c7eda91b122,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3557132522864117819, guid: 2ba71d55b4bd1474d9e37c7eda91b122,
-        type: 3}
-      propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

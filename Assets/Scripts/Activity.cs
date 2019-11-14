@@ -5,20 +5,7 @@ using UnityEngine.UI;
 
 public class Activity : MonoBehaviour
 {
-    private Vector3 startPosition;
-    private Vector3 moveVector;
-    private ParabolaController pbController;
-
-    [Header("UpDown Movement")]
-    public float moveRange;
-    public float moveSpeed;
-    private float timeMovement;
-
-    [Header("Right Movement")]
-    public float xMoveSpeed;
-    public float xMoveLimit;
-    public bool xMoving;
-    public ActivitiesManager activitiesManager;
+    // private ParabolaController pbController;
 
     [Header("Stats data")]
     public GameScriptable.ActivityType activity;
@@ -30,8 +17,27 @@ public class Activity : MonoBehaviour
     public int minHours;
     public int maxHours;
     private Text hoverHoursText;
+
+    [Header("Consume Hours")]
     public float consumeRateTime;
     public float consumeHoursTimer;
+
+    [Header("Evolution")]
+    public GameObject evolutionObj;
+
+    [Header("Costs")]
+    public int cCulture;
+    public int cConnections;
+    public int cSustainability;
+    public int cHumanity;
+    public int cActions;
+
+    [Header("Benefits")]
+    public int bCulture;
+    public int bConnections;
+    public int bSustainability;
+    public int bHumanity;
+    public int bActions;
 
     [Header("Hour Bar")]
     public Image hourBar;
@@ -42,16 +48,13 @@ public class Activity : MonoBehaviour
 
     void Awake()
     {
-        pbController = gameObject.GetComponent<ParabolaController>();
+        // pbController = gameObject.GetComponent<ParabolaController>();
         hoverHoursText = GameObject.Find("/UI/HoverHours").GetComponent<Text>();
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        activitiesManager = gameObject.GetComponentInParent<ActivitiesManager>();
-        startPosition = transform.position;
-        moveVector = Vector3.up;
         hourBar.fillAmount = 0f;
     }
 
@@ -60,34 +63,16 @@ public class Activity : MonoBehaviour
     void Update()
     {
         UpdateHourBar();
-        UpdatePosition();
         ConsumeHours();
-    }
-    
-    void UpdatePosition() {
-        if (xMoving) {
-            if (transform.position.x < xMoveLimit) {
-                transform.Translate(Vector3.right * Time.deltaTime * xMoveSpeed);
-            }
-            else {
-                xMoving = false;
-                transform.position = startPosition;
-                activitiesManager.currentsInGame--;
-            }
-        }
     }
 
     void OnMouseOver() {
-        // animated block
-        timeMovement += Time.deltaTime;
-        transform.position = transform.position + moveVector * (moveRange * Mathf.Sin(timeMovement * moveSpeed));
-
         if (Input.GetMouseButtonDown(0)) {
             if (hourIn < maxHours && gameData.remainingHours > 0) {
                 hourIn++;
                 totalHourIn++;
                 gameData.remainingHours--;
-                pbController.StartAnim();
+                // pbController.StartAnim();
             }
         }
         else if (Input.GetMouseButtonDown(1)) {
@@ -102,9 +87,6 @@ public class Activity : MonoBehaviour
     }
 
     void OnMouseExit() {
-        Vector3 exitPos = transform.position;
-        exitPos.y = startPosition.y;
-        transform.position = exitPos;
         hoverHoursText.text = "";
     }
 
@@ -115,7 +97,8 @@ public class Activity : MonoBehaviour
                 print(activity.ToString() + "consumed!");
                 consumeHoursTimer = 0;
                 hourIn--;
-                gameData.AddActivity(activity.ToString(), 1);
+
+                // gameData.AddActivity(activity.ToString(), 1);
             }
         }
     }
@@ -124,12 +107,13 @@ public class Activity : MonoBehaviour
         calculated = (float) hourIn / maxHours;
 
         if (calculated != lastAmount) {
-            hourBar.fillAmount = Mathf.Lerp(lastAmount, calculated, t);
-            t += Time.deltaTime * hourBarSpeed;
+            // hourBar.fillAmount = Mathf.Lerp(lastAmount, calculated, t);
+            hourBar.fillAmount = calculated;
+            // t += Time.deltaTime * hourBarSpeed;
         }
 
         if (hourBar.fillAmount == calculated) {
-            t = 0f;
+            // t = 0f;
             lastAmount = calculated;
         }
     }
