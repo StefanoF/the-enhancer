@@ -14,9 +14,6 @@ public class GameScriptable : ScriptableObject {
     public Dictionary <string, int> activityDict = new Dictionary<string, int>();
 
     public void AddActivity(string name, int value) {
-        if (remainingHours > 0) {
-            remainingHours--;
-        }
         if (activityDict.ContainsKey(name)) {
             activityDict[name] = activityDict[name] + value;  
         }

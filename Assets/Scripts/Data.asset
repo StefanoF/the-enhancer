@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67ab265a14a544584bcc28320dc73feb, type: 3}
   m_Name: Data
   m_EditorClassIdentifier: 
-  life: 0
-  intelligence: 0
+  life: 1
+  intelligence: 1
   social: 0
-  body: 0
+  body: 2
   currentHour: 24
   dayHours: 24
-  remainingHours: 24
+  remainingHours: 17

@@ -136,6 +136,8 @@ MonoBehaviour:
   hourIn: 0
   minHours: 0
   maxHours: 6
+  consumeRateTime: 3
+  consumeHoursTimer: 0
   hourBar: {fileID: 6562607916172983851}
   hourBarSpeed: 0.8
   calculated: 0

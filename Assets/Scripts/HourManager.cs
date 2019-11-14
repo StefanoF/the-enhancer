@@ -14,7 +14,7 @@ public class HourManager : MonoBehaviour
     void Start()
     {
         gameData.currentHour = 0;
-        gameData.remainingHours = 0;
+        gameData.remainingHours = gameData.dayHours;
         StartCoroutine("Decrease");
     }
 
@@ -33,8 +33,11 @@ public class HourManager : MonoBehaviour
         while (gameData.currentHour < gameData.dayHours)
         {
             gameData.currentHour += 1;
-            gameData.remainingHours++;
+            // gameData.remainingHours++;
             yield return new WaitForSeconds(1);
         }
+
+        // next level
+        yield return null;
     }
 }

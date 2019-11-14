@@ -25,10 +25,13 @@ public class Activity : MonoBehaviour
     public GameScriptable gameData;
 
     [Header("Hours")]
-    public int hourIn; 
+    public int hourIn;
+    public int totalHourIn;
     public int minHours;
-    public int maxHours;    
+    public int maxHours;
     private Text hoverHoursText;
+    public float consumeRateTime;
+    public float consumeHoursTimer;
 
     [Header("Hour Bar")]
     public Image hourBar;
@@ -58,6 +61,7 @@ public class Activity : MonoBehaviour
     {
         UpdateHourBar();
         UpdatePosition();
+        ConsumeHours();
     }
     
     void UpdatePosition() {
@@ -81,13 +85,15 @@ public class Activity : MonoBehaviour
         if (Input.GetMouseButtonDown(0)) {
             if (hourIn < maxHours && gameData.remainingHours > 0) {
                 hourIn++;
-                gameData.AddActivity(activity.ToString(), 1);
+                totalHourIn++;
+                gameData.remainingHours--;
                 pbController.StartAnim();
             }
         }
         else if (Input.GetMouseButtonDown(1)) {
             if (hourIn > minHours) {
                 hourIn--;
+                totalHourIn--;
                 gameData.remainingHours++;
             }
         }
@@ -100,6 +106,18 @@ public class Activity : MonoBehaviour
         exitPos.y = startPosition.y;
         transform.position = exitPos;
         hoverHoursText.text = "";
+    }
+
+    void ConsumeHours() {
+        if (hourIn > 0) {
+            consumeHoursTimer += Time.deltaTime;
+            if (consumeHoursTimer > consumeRateTime) {
+                print(activity.ToString() + "consumed!");
+                consumeHoursTimer = 0;
+                hourIn--;
+                gameData.AddActivity(activity.ToString(), 1);
+            }
+        }
     }
 
     void UpdateHourBar() {
