@@ -13,9 +13,8 @@ GameObject:
   - component: {fileID: 199565526436380127}
   - component: {fileID: 3890692213789867197}
   - component: {fileID: 199565526436380126}
-  - component: {fileID: 6370447622047563006}
   - component: {fileID: 625986984}
-  - component: {fileID: 8471507380873532865}
+  - component: {fileID: 7401197782342203949}
   m_Layer: 0
   m_Name: Activity
   m_TagString: Untagged
@@ -114,41 +113,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6370447622047563006
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 199565526436380097}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2024bfe8cb0d84d57a6c7441f878a238, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activity: 4
-  gameData: {fileID: 11400000, guid: eb41279cb0afd4df996eac628c69e53f, type: 2}
-  hourIn: 0
-  totalHourIn: 0
-  minHours: 0
-  maxHours: 6
-  consumeRateTime: 3
-  consumeHoursTimer: 0
-  evolutionObj: {fileID: 0}
-  cCulture: 0
-  cConnections: 0
-  cSustainability: 0
-  cHumanity: 0
-  cActions: 1
-  bCulture: 0
-  bConnections: 0
-  bSustainability: 0
-  bHumanity: 0
-  bActions: 0
-  hourBar: {fileID: 6562607916172983851}
-  hourBarSpeed: 0.8
-  calculated: 0
-  lastAmount: 0
 --- !u!114 &625986984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,7 +120,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 199565526436380097}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bc2b372f84aab435bb64080aa6fc0c66, type: 3}
   m_Name: 
@@ -171,7 +135,7 @@ MonoBehaviour:
   nSpheres: 10
   hourSphere: {fileID: 7827260179165313961, guid: 55d67cb27c84d4302bc967da76e0da0c,
     type: 3}
---- !u!114 &8471507380873532865
+--- !u!114 &7401197782342203949
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -180,10 +144,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 199565526436380097}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c409021da81d64fbf88d518f11f3b682, type: 3}
+  m_Script: {fileID: 11500000, guid: 417c0b195de0647908bdab1d3b266328, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveRange: 0.03
+  moveRange: 0.05
   moveSpeed: 8
 --- !u!1 &997602442336585003
 GameObject:

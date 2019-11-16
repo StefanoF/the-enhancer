@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class HourManager : MonoBehaviour
 {
-    public GameScriptable gameData;
+    public SharedData gameData;
     public Text dayHoursText;
     public Text remainingHoursText;
 
@@ -14,7 +14,6 @@ public class HourManager : MonoBehaviour
     void Start()
     {
         gameData.currentHour = 0;
-        gameData.remainingHours = gameData.dayHours;
         StartCoroutine("Decrease");
     }
 
@@ -26,7 +25,7 @@ public class HourManager : MonoBehaviour
         // Color zm = healthtext.color;  //  makes a new color zm
         // zm.a = 0.0f; // makes the color zm transparent
         dayHoursText.text = gameData.currentHour.ToString() + 's';
-        remainingHoursText.text = gameData.remainingHours.ToString();
+        // remainingHoursText.text = gameData.remainingHours.ToString();
     }
 
     IEnumerator Decrease() {

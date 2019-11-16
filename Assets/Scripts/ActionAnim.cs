@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ActivityAnim : MonoBehaviour
+public class ActionAnim : MonoBehaviour
 {
     public float moveRange;
     public float moveSpeed;
