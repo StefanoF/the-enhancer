@@ -26,11 +26,19 @@ public class SharedData : ScriptableObject {
     public bool[] investments;
     public int investCounter;
 
+    public int[] productions;
+    public int productCounter;
+
     public int stars;
     public int actions;
     
     public int currentHour;
     public int dayHours;
+
+    public string helpText;
+    public string hoverDescription;
+
+    public bool actionInProgress;
 
     public void ResetStats() {
         culture = 0; 
@@ -44,7 +52,15 @@ public class SharedData : ScriptableObject {
         investments = new bool[4];
         investCounter = 0;
 
+        productions = new int[4];
+        productCounter = 0;
+
         lastActionType = ActionType.None;
+
+        helpText = "";
+        hoverDescription = "";
+
+        actionInProgress = false;
     }
 
     public bool HasResources(Dictionary<string, int> costDict) {
@@ -92,13 +108,13 @@ public class SharedData : ScriptableObject {
         }
     }
 
+    // invest
     public bool InvestResource(ResourceType resourceType, int n) {
         if (investCounter >= n) {
             return false;
         }
 
         int nResType = (int) resourceType;
-        Debug.Log(nResType);
 
         if (!investments[nResType]) {
             investments[nResType] = true;
@@ -123,5 +139,57 @@ public class SharedData : ScriptableObject {
         }
         
         return true;
+    }
+
+    // production
+    public bool ProductResource(ResourceType resourceType, int n) {
+        if (productCounter >= n) {
+            return false;
+        }
+
+        int nResType = (int) resourceType;
+
+        if (!investments[nResType]) {
+            return false;
+        }
+
+        productions[nResType] += 1;
+        productCounter++;
+        
+        return true;
+    }
+
+    public bool DeProductResource(ResourceType resourceType, int n) {
+        int nResType = (int) resourceType;
+
+        if (!investments[nResType]) {
+            return false;
+        }
+
+        if (productions[nResType] == 0) {
+            return false;
+        }
+        
+        productions[nResType] -= 1;
+        productCounter--;
+        return true;
+    }
+
+    public void AddProductResources() {
+        if (productions[0] > 0) {
+            culture += productions[0];
+        }
+        if (productions[1] > 0) {
+            connections += productions[1];
+        }
+        if (productions[2] > 0) {
+            sustainability += productions[2];
+        }
+        if (productions[3] > 0) {
+            humanity += productions[3];
+        }
+
+        productions = new int[4];
+        productCounter = 0;
     }
 }

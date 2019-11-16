@@ -18,9 +18,11 @@ MonoBehaviour:
   sustainability: 0
   humanity: 0
   wealth: 0
-  investments: 00000001
-  investCounter: 1
+  investments: 00010100
+  investCounter: 2
   stars: 0
-  actions: 7
-  currentHour: 24
+  actions: 1
+  currentHour: 12
   dayHours: 24
+  helpText: Same action executed!
+  hoverDescription: 

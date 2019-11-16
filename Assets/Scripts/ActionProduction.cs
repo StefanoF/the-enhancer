@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ActionInvest : MonoBehaviour
+public class ActionProduction : MonoBehaviour
 {
     [Header("Stats data")]
     public SharedData gameData;
     public SharedData.ActionType actionType;
     
     [Header("Costs")]
-    public int culture;
-    public int connections;
+    public int humanity;
+    public int sustainability;
     private Dictionary<string, int> costDict;
     
     // [Header("Cost Texts")]
@@ -24,15 +24,20 @@ public class ActionInvest : MonoBehaviour
 
     [Header("Resources")]
     public GameObject resources;
+    private Resources resourcesScript;
+
+    void Awake() {
+        resourcesScript = resources.GetComponent<Resources>();
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        actionType = SharedData.ActionType.Job;
+        actionType = SharedData.ActionType.Goods;
 
         costDict = new Dictionary<string, int>();
-        costDict.Add("culture", culture);
-        costDict.Add("connections", connections);
+        costDict.Add("humanity", humanity);
+        costDict.Add("sustainability", sustainability);
     }
 
     // Update is called once per frame
@@ -56,11 +61,11 @@ public class ActionInvest : MonoBehaviour
 
     void LeftMouseClick() {
         if (resources.activeSelf) {
-            if (gameData.investCounter == nBenefit) {
+            if (gameData.productCounter == nBenefit) {
                 CommitAction();
                 resources.SetActive(false);
             }
-            else if (gameData.investCounter < nBenefit) {
+            else if (gameData.productCounter < nBenefit) {
                 gameData.helpText = "Use all the benefit prior to conclude the action!";
             }
             return;
@@ -71,13 +76,13 @@ public class ActionInvest : MonoBehaviour
             return;
         }
         
-        print("actionInvest click");
-        if (gameData.lastActionType == actionType && gameData.investCounter >= nBenefit) {
+        print("actionProduct click");
+        if (gameData.lastActionType == actionType && gameData.productCounter >= nBenefit) {
             gameData.helpText = "Same action executed!";
             return;
         }
 
-        if (!gameData.HasResources(costDict)) {
+        if (!gameData.HasResources(costDict) || gameData.investCounter == 0) {
             gameData.helpText = "No sufficently resources!";
             return;
         }
@@ -89,7 +94,8 @@ public class ActionInvest : MonoBehaviour
         gameData.actions++;
         gameData.lastActionType = actionType;
         gameData.SpendResources(costDict);
+        gameData.AddProductResources();
         gameData.actionInProgress = false;
-        gameData.helpText = "Resources spended: invest complete!";
+        gameData.helpText = "Resources spended: production complete!";
     }
 }

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ResourceSel : MonoBehaviour
 {
     public ActionInvest actionInvest;
-    // public ActionProduction actionProduction;
+    public ActionProduction actionProduction;
     // public ActionChoose actionChoose;
 
     public SharedData gameData;
@@ -62,9 +62,9 @@ public class ResourceSel : MonoBehaviour
             Invest();
             HighlightResource();
         }
-        // else if (actionProduction) {
-        //     Production();
-        // }
+        else if (actionProduction) {
+            Production();
+        }
         // else if (actionChoose) {
         //     Choose();
         // }
@@ -75,11 +75,18 @@ public class ResourceSel : MonoBehaviour
 
     void Invest() {
         if (gameData.InvestResource(resourceType, actionInvest.nBenefit)) {
-            print("resource actionInvest");
-            actionInvest.CommitAction();
         }
         else {
             gameData.DisinvestResource(resourceType, actionInvest.nBenefit);
+        }
+    }
+
+    void Production() {
+        if (gameData.ProductResource(resourceType, actionProduction.nBenefit)) {
+            gameData.helpText = "+1 "+ resourceType.ToString() + "(" + gameData.productions[(int) resourceType] + ")";
+        }
+        else if (gameData.DeProductResource(resourceType, actionProduction.nBenefit)) {
+            gameData.helpText = "-1 "+ resourceType.ToString() + "(" + gameData.productions[(int) resourceType] + ")";
         }
     }
 }

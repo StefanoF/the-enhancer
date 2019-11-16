@@ -8,7 +8,6 @@ public class HourManager : MonoBehaviour
 {
     public SharedData gameData;
     public Text dayHoursText;
-    public Text remainingHoursText;
 
     // Start is called before the first frame update
     void Start()

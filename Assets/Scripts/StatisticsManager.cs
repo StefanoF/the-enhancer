@@ -5,12 +5,19 @@ using UnityEngine.UI;
 
 public class StatisticsManager : MonoBehaviour
 {
+    [Header("ResourcesText")]
     public Text cultureText;
     public Text connectionsText;
     public Text sustainabilityText;
     public Text humanityText;
 
     // wealth
+    public Text actionsCounterText;
+
+    [Header("UI")]
+    public Text hoverDescriptorText;
+    public Text helpText;
+    
 
     public SharedData gameData;
     
@@ -35,6 +42,15 @@ public class StatisticsManager : MonoBehaviour
         }
         if (humanityText) {
             humanityText.text = gameData.humanity.ToString();
+        }
+        if (actionsCounterText) {
+            actionsCounterText.text = gameData.actions.ToString();
+        }
+        if (hoverDescriptorText) {
+            hoverDescriptorText.text = gameData.hoverDescription.ToString();
+        }
+        if (helpText) {
+            helpText.text = gameData.helpText.ToString();
         }
     }
 }
