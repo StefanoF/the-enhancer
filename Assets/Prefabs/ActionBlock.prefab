@@ -304,7 +304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e63da5e00e6f24b3b9c9b153274b4ea8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actionInvest: {fileID: 189246152903724638}
+  actionBase: {fileID: 6599369355978958729}
   gameData: {fileID: 11400000, guid: 6536e1c4c68274465943ea28fddf9549, type: 2}
   resourceType: 2
   activeMaterial: {fileID: 2100000, guid: 3681ab050caf74c0ea8617133aabc88b, type: 2}
@@ -563,6 +563,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8484320863028247485}
+  - component: {fileID: 6024373889319169073}
   m_Layer: 0
   m_Name: Resources
   m_TagString: Untagged
@@ -588,6 +589,18 @@ Transform:
   m_Father: {fileID: 9075541032326522506}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6024373889319169073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4226425397951035863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 334191e81cbd241c89f6a75c849732ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4515986007315187041
 GameObject:
   m_ObjectHideFlags: 0
@@ -866,7 +879,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e63da5e00e6f24b3b9c9b153274b4ea8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actionInvest: {fileID: 189246152903724638}
+  actionBase: {fileID: 6599369355978958729}
   gameData: {fileID: 11400000, guid: 6536e1c4c68274465943ea28fddf9549, type: 2}
   resourceType: 1
   activeMaterial: {fileID: 2100000, guid: 3681ab050caf74c0ea8617133aabc88b, type: 2}
@@ -931,7 +944,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3681ab050caf74c0ea8617133aabc88b, type: 2}
+  - {fileID: 2100000, guid: 094f8b0039e8d4b558cf5d594e116f9b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -977,7 +990,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e63da5e00e6f24b3b9c9b153274b4ea8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actionInvest: {fileID: 189246152903724638}
+  actionBase: {fileID: 6599369355978958729}
   gameData: {fileID: 11400000, guid: 6536e1c4c68274465943ea28fddf9549, type: 2}
   resourceType: 0
   activeMaterial: {fileID: 2100000, guid: 3681ab050caf74c0ea8617133aabc88b, type: 2}
@@ -1406,7 +1419,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e63da5e00e6f24b3b9c9b153274b4ea8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actionInvest: {fileID: 189246152903724638}
+  actionBase: {fileID: 6599369355978958729}
   gameData: {fileID: 11400000, guid: 6536e1c4c68274465943ea28fddf9549, type: 2}
   resourceType: 3
   activeMaterial: {fileID: 2100000, guid: 3681ab050caf74c0ea8617133aabc88b, type: 2}
@@ -1498,11 +1511,10 @@ GameObject:
   - component: {fileID: 8847817759127811324}
   - component: {fileID: 5617043589361137054}
   - component: {fileID: 8847817759127811325}
-  - component: {fileID: 8650637074591646859}
   - component: {fileID: 2214481003013583630}
-  - component: {fileID: 189246152903724638}
+  - component: {fileID: 6599369355978958729}
   m_Layer: 0
-  m_Name: Job
+  m_Name: Action
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1599,28 +1611,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8650637074591646859
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8847817759127811298}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc2b372f84aab435bb64080aa6fc0c66, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  height: 8
-  durationTime: 2
-  startPos: {fileID: 2786419073888523819, guid: 47d4fde2389b447ae810024a9663cbb4,
-    type: 3}
-  offsetEndPos: -2
-  notReady: 0
-  lastSphere: 0
-  nSpheres: 10
-  hourSphere: {fileID: 7827260179165313961, guid: 55d67cb27c84d4302bc967da76e0da0c,
-    type: 3}
 --- !u!114 &2214481003013583630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1635,7 +1625,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveRange: 0.05
   moveSpeed: 8
---- !u!114 &189246152903724638
+--- !u!114 &6599369355978958729
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1644,15 +1634,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 8847817759127811298}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad46c4c21846149bbb1569e9241f6d31, type: 3}
+  m_Script: {fileID: 11500000, guid: ce34dc6b150894350b6b06457b721e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gameData: {fileID: 11400000, guid: 6536e1c4c68274465943ea28fddf9549, type: 2}
-  actionType: 2
+  actionType: 0
   culture: 0
   connections: 0
-  nBenefit: 1
+  humanity: 0
+  sustainability: 0
+  nBenefit: 0
   resources: {fileID: 4226425397951035863}
+  hoverDesc: 
+  needInvestment: 0
 --- !u!1 &8858972014170374785
 GameObject:
   m_ObjectHideFlags: 0
@@ -1762,7 +1756,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9075541032326522506}
   m_Layer: 0
-  m_Name: JobBlock
+  m_Name: ActionBlock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

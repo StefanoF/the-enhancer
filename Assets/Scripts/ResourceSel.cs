@@ -5,9 +5,7 @@ using UnityEngine.UI;
 
 public class ResourceSel : MonoBehaviour
 {
-    public ActionInvest actionInvest;
-    public ActionProduction actionProduction;
-    // public ActionChoose actionChoose;
+    public ActionBase actionBase;
 
     public SharedData gameData;
     public SharedData.ResourceType resourceType;
@@ -58,34 +56,31 @@ public class ResourceSel : MonoBehaviour
 
     void LeftMouseClick() {
         print("resource click");
-        if (actionInvest) {
+        if (actionBase.actionType == SharedData.ActionType.Job) {
             Invest();
             HighlightResource();
         }
-        else if (actionProduction) {
+        else if (actionBase.actionType == SharedData.ActionType.Goods) {
             Production();
         }
-        // else if (actionChoose) {
-        //     Choose();
-        // }
         else {
             return;
         }    
     }
 
     void Invest() {
-        if (gameData.InvestResource(resourceType, actionInvest.nBenefit)) {
+        if (gameData.InvestResource(resourceType, actionBase.nBenefit)) {
         }
         else {
-            gameData.DisinvestResource(resourceType, actionInvest.nBenefit);
+            gameData.DisinvestResource(resourceType, actionBase.nBenefit);
         }
     }
 
     void Production() {
-        if (gameData.ProductResource(resourceType, actionProduction.nBenefit)) {
+        if (gameData.ProductResource(resourceType, actionBase.nBenefit)) {
             gameData.helpText = "+1 "+ resourceType.ToString() + "(" + gameData.productions[(int) resourceType] + ")";
         }
-        else if (gameData.DeProductResource(resourceType, actionProduction.nBenefit)) {
+        else if (gameData.DeProductResource(resourceType, actionBase.nBenefit)) {
             gameData.helpText = "-1 "+ resourceType.ToString() + "(" + gameData.productions[(int) resourceType] + ")";
         }
     }
