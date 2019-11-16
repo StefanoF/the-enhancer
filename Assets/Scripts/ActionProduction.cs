@@ -24,11 +24,6 @@ public class ActionProduction : MonoBehaviour
 
     [Header("Resources")]
     public GameObject resources;
-    private Resources resourcesScript;
-
-    void Awake() {
-        resourcesScript = resources.GetComponent<Resources>();
-    }
 
     // Start is called before the first frame update
     void Start()
@@ -51,7 +46,7 @@ public class ActionProduction : MonoBehaviour
     }
 
     void OnMouseOver() {
-        gameData.hoverDescription = actionType.ToString();
+        gameData.hoverDescription = actionType.ToString() + "\nHumanity: " + humanity + "\nSustainability: " + sustainability + "\nNeed active investments";
 
         if (Input.GetMouseButtonDown(0)) {
             // left mouse button click
@@ -77,7 +72,7 @@ public class ActionProduction : MonoBehaviour
         }
         
         print("actionProduct click");
-        if (gameData.lastActionType == actionType && gameData.productCounter >= nBenefit) {
+        if (gameData.lastActionType == actionType) {
             gameData.helpText = "Same action executed!";
             return;
         }

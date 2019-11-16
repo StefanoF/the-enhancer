@@ -46,7 +46,7 @@ public class ActionInvest : MonoBehaviour
     }
 
     void OnMouseOver() {
-        gameData.hoverDescription = actionType.ToString();
+        gameData.hoverDescription = actionType.ToString() + "\nCulture: " + culture + "\nConnections: " + connections;
 
         if (Input.GetMouseButtonDown(0)) {
             // left mouse button click
@@ -72,7 +72,7 @@ public class ActionInvest : MonoBehaviour
         }
         
         print("actionInvest click");
-        if (gameData.lastActionType == actionType && gameData.investCounter >= nBenefit) {
+        if (gameData.lastActionType == actionType) {
             gameData.helpText = "Same action executed!";
             return;
         }
