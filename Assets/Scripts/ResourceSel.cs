@@ -34,6 +34,16 @@ public class ResourceSel : MonoBehaviour
     }
 
     public void HighlightResource() {
+        if (actionBase.actionType == SharedData.ActionType.Conciliation) {
+            meshRenderer.material = activeMaterial;
+            return;
+        }
+
+        if (actionBase.actionType == SharedData.ActionType.Sensibilization) {
+            meshRenderer.material = activeMaterial;
+            return;
+        }
+
         if (gameData.investments[(int) resourceType]) {
             meshRenderer.material = activeMaterial;
         }
@@ -61,7 +71,13 @@ public class ResourceSel : MonoBehaviour
             HighlightResource();
         }
         else if (actionBase.actionType == SharedData.ActionType.Goods) {
-            Production();
+            Production(true);
+        }
+        else if (actionBase.actionType == SharedData.ActionType.Sensibilization) {
+            Production(false);
+        }
+        else if (actionBase.actionType == SharedData.ActionType.Conciliation) {
+            Production(false);
         }
         else {
             return;
@@ -76,11 +92,11 @@ public class ResourceSel : MonoBehaviour
         }
     }
 
-    void Production() {
-        if (gameData.ProductResource(resourceType, actionBase.nBenefit)) {
+    void Production(bool withInvestments) {
+        if (gameData.ProductResource(resourceType, actionBase.nBenefit, withInvestments)) {
             gameData.helpText = "+1 "+ resourceType.ToString() + "(" + gameData.productions[(int) resourceType] + ")";
         }
-        else if (gameData.DeProductResource(resourceType, actionBase.nBenefit)) {
+        else if (gameData.DeProductResource(resourceType, actionBase.nBenefit, withInvestments)) {
             gameData.helpText = "-1 "+ resourceType.ToString() + "(" + gameData.productions[(int) resourceType] + ")";
         }
     }

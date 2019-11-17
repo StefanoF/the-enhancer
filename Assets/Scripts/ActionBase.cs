@@ -14,21 +14,23 @@ public class ActionBase : MonoBehaviour
     public int connections;
     public int humanity;
     public int sustainability;
+    public int wealth;
     private Dictionary<string, int> costDict;
-    
-    // [Header("Cost Texts")]
-    // private Text cultureText;
-    // private Text connectionsText;
 
     [Header("Benefits")]
     public int nBenefit;
-    // private Text benefitText;
 
     [Header("Resources")]
     public GameObject resources;
 
     public string hoverDesc;
     public bool needInvestment;
+
+    private CameraFollow cameraFollow;
+
+    void Awake() {
+        cameraFollow = Camera.main.gameObject.GetComponent<CameraFollow>();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -38,21 +40,27 @@ public class ActionBase : MonoBehaviour
         costDict.Add("connections", connections);
         costDict.Add("humanity", humanity);
         costDict.Add("sustainability", sustainability);
+        costDict.Add("wealth", wealth);
 
         hoverDesc = actionType.ToString();
-        hoverDesc += "\nCulture: " + culture;
-        hoverDesc += "\nConnections: " + connections;
-        hoverDesc += "\nSustainability: " + sustainability;
-        hoverDesc += "\nHumanity: " + humanity;
+        if (culture > 0) {
+            hoverDesc += "\nCulture: " + culture;
+        }
+        if (connections > 0) {
+            hoverDesc += "\nConnections: " + connections;
+        }
+        if (sustainability > 0) {
+            hoverDesc += "\nSustainability: " + sustainability;
+        }
+        if (humanity > 0) {
+            hoverDesc += "\nHumanity: " + humanity;
+        }
+        if (wealth > 0) {
+            hoverDesc += "\nWealth: " + wealth;
+        }
         if (needInvestment) {
           hoverDesc += "\nNeed active investments";
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     void OnMouseExit() {
@@ -83,6 +91,7 @@ public class ActionBase : MonoBehaviour
     }
 
     public void Activate() {
+        cameraFollow.SetTarget(transform.position);
         gameData.actionInProgress = true;
         resources.SetActive(true);
     }
@@ -93,5 +102,6 @@ public class ActionBase : MonoBehaviour
         gameData.SpendResources(costDict);
         gameData.actionInProgress = false;
         resources.SetActive(false);
+        cameraFollow.ResetTarget();
     }
 }

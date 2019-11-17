@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class StatisticsManager : MonoBehaviour
 {
     [Header("ResourcesText")]
+    public Text wealthText;
     public Text cultureText;
     public Text connectionsText;
     public Text sustainabilityText;
@@ -31,6 +32,9 @@ public class StatisticsManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (wealthText) {
+            wealthText.text = gameData.wealth.ToString();
+        }
         if (cultureText) {
             cultureText.text = gameData.culture.ToString();
         }

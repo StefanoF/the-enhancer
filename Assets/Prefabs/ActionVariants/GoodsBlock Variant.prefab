@@ -92,7 +92,7 @@ PrefabInstance:
     - target: {fileID: 6599369355978958729, guid: 91106ea2ee39441e5aee8b259b04a171,
         type: 3}
       propertyPath: nBenefit
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6599369355978958729, guid: 91106ea2ee39441e5aee8b259b04a171,
         type: 3}

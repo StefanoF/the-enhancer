@@ -30,12 +30,12 @@ public class ActionProduction : MonoBehaviour
 
     void LeftMouseClick() {
         if (actionBase.resources.activeSelf) {
-            if (actionBase.gameData.investCounter == actionBase.nBenefit) {
+            if (actionBase.gameData.productCounter == actionBase.nBenefit) {
                 actionBase.ConcludeAction();
                 actionBase.gameData.AddProductResources();
                 actionBase.gameData.helpText = "Resources spended: production complete!";
             }
-            else if (actionBase.gameData.investCounter < actionBase.nBenefit) {
+            else if (actionBase.gameData.productCounter < actionBase.nBenefit) {
                 actionBase.gameData.helpText = "Use all the benefit prior to conclude the action!";
             }
             return;
@@ -45,9 +45,11 @@ public class ActionProduction : MonoBehaviour
             return;
         }
 
-        if (actionBase.gameData.investCounter == 0) {
-            actionBase.gameData.helpText = "No sufficently resources!";
-            return;
+        if (actionBase.actionType == SharedData.ActionType.Goods) {
+            if (actionBase.gameData.investCounter == 0) {
+                actionBase.gameData.helpText = "No sufficently resources!";
+                return;
+            }
         }
 
         actionBase.Activate();

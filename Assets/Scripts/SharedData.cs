@@ -7,11 +7,11 @@ using System.Linq;
 [CreateAssetMenu(fileName = "Data", menuName = "SharedData", order = 1)]
 public class SharedData : ScriptableObject {
     public enum ActionType {
-        None, Goods, Job, Spread, Conciliaton
+        None, Goods, Job, Sensibilization, Conciliation
     };
 
     public enum ResourceType {
-        Culture, Connections, Sustainability, Humanity
+        Culture, Connections, Sustainability, Humanity, Wealth
     };
 
     public ActionType lastActionType;
@@ -52,7 +52,7 @@ public class SharedData : ScriptableObject {
         investments = new bool[4];
         investCounter = 0;
 
-        productions = new int[4];
+        productions = new int[5];
         productCounter = 0;
 
         lastActionType = ActionType.None;
@@ -142,15 +142,17 @@ public class SharedData : ScriptableObject {
     }
 
     // production
-    public bool ProductResource(ResourceType resourceType, int n) {
+    public bool ProductResource(ResourceType resourceType, int n, bool withInvestment) {
         if (productCounter >= n) {
             return false;
         }
 
         int nResType = (int) resourceType;
 
-        if (!investments[nResType]) {
-            return false;
+        if (withInvestment) {
+            if (!investments[nResType]) {
+                return false;
+            }
         }
 
         productions[nResType] += 1;
@@ -159,11 +161,13 @@ public class SharedData : ScriptableObject {
         return true;
     }
 
-    public bool DeProductResource(ResourceType resourceType, int n) {
+    public bool DeProductResource(ResourceType resourceType, int n, bool withInvestment) {
         int nResType = (int) resourceType;
 
-        if (!investments[nResType]) {
-            return false;
+        if (withInvestment) {
+            if (!investments[nResType]) {
+                return false;
+            }
         }
 
         if (productions[nResType] == 0) {
@@ -188,8 +192,11 @@ public class SharedData : ScriptableObject {
         if (productions[3] > 0) {
             humanity += productions[3];
         }
+        if (productions[4] > 0) {
+            wealth += productions[4];
+        }
 
-        productions = new int[4];
+        productions = new int[5];
         productCounter = 0;
     }
 }
