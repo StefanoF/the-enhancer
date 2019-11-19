@@ -92,5 +92,11 @@ PrefabInstance:
       propertyPath: nBenefit
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5900650368495828881, guid: 5485d390b8df447f58dd4e4d1c318617,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: abdf056837b9041af9028e76afac3c51,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5485d390b8df447f58dd4e4d1c318617, type: 3}

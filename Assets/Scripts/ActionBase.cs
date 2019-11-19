@@ -8,6 +8,7 @@ public class ActionBase : MonoBehaviour
     [Header("Stats data")]
     public SharedData gameData;
     public SharedData.ActionType actionType;
+    public bool doTwice;
     
     [Header("Costs")]
     public int culture;
@@ -23,13 +24,19 @@ public class ActionBase : MonoBehaviour
     [Header("Resources")]
     public GameObject resources;
 
+    [Header("UI Descriptor")]
     public string hoverDesc;
+    public string hoverInvestDesc;
+
     public bool needInvestment;
+    public int localInvestCounter;
 
     private CameraFollow cameraFollow;
+    private ActionProduction actionProduction;
 
     void Awake() {
         cameraFollow = Camera.main.gameObject.GetComponent<CameraFollow>();
+        actionProduction = gameObject.GetComponent<ActionProduction>();
     }
 
     // Start is called before the first frame update
@@ -59,16 +66,20 @@ public class ActionBase : MonoBehaviour
             hoverDesc += "\nWealth: " + wealth;
         }
         if (needInvestment) {
-          hoverDesc += "\nNeed active investments";
+            hoverInvestDesc += "\nNeed one investment in:";
+            hoverInvestDesc += actionProduction.GetHoverDesc();
         }
+        
     }
 
     void OnMouseExit() {
         gameData.hoverDescription = "";
+        gameData.hoverInvestment = "";
     }
 
     void OnMouseOver() {
         gameData.hoverDescription = hoverDesc;
+        gameData.hoverInvestment = hoverInvestDesc;
     }
 
     public bool Validate() {
@@ -77,13 +88,13 @@ public class ActionBase : MonoBehaviour
             return false;
         }
 
-        if (gameData.lastActionType == actionType) {
-            gameData.helpText = "Same action executed!";
+        if (gameData.lastActionType == actionType && !doTwice) {
+            gameData.helpText = "Don't do same action twice!";
             return false;
         }
 
         if (!gameData.HasResources(costDict)) {
-            gameData.helpText = "No sufficently resources!";
+            gameData.helpText = "Not have enough resources!";
             return false;
         }
 
@@ -103,5 +114,8 @@ public class ActionBase : MonoBehaviour
         gameData.actionInProgress = false;
         resources.SetActive(false);
         cameraFollow.ResetTarget();
+        if (actionType == SharedData.ActionType.Star) {
+            gameObject.SetActive(false);
+        }
     }
 }

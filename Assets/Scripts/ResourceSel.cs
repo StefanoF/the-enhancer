@@ -24,7 +24,6 @@ public class ResourceSel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        print("resourceSel start");
     }
 
     // Update is called once per frame
@@ -34,12 +33,9 @@ public class ResourceSel : MonoBehaviour
     }
 
     public void HighlightResource() {
-        if (actionBase.actionType == SharedData.ActionType.Conciliation) {
-            meshRenderer.material = activeMaterial;
-            return;
-        }
-
-        if (actionBase.actionType == SharedData.ActionType.Sensibilization) {
+        if (actionBase.actionType == SharedData.ActionType.Conciliation ||
+            actionBase.actionType == SharedData.ActionType.Sensibilization ||
+            actionBase.actionType == SharedData.ActionType.Star) {
             meshRenderer.material = activeMaterial;
             return;
         }
@@ -53,51 +49,77 @@ public class ResourceSel : MonoBehaviour
     }
 
     void OnMouseOver() {
-        print("resource OnMouseOver");
         if (Input.GetMouseButtonDown(0)) {
             // left mouse button click
             LeftMouseClick();
         }
         else if (Input.GetMouseButtonDown(1)) {
             // right mouse button click
-            // RightMouseClick();
+            RightMouseClick();
         }
     }
 
     void LeftMouseClick() {
-        print("resource click");
         if (actionBase.actionType == SharedData.ActionType.Job) {
             Invest();
             HighlightResource();
         }
-        else if (actionBase.actionType == SharedData.ActionType.Goods) {
-            Production(true);
-        }
-        else if (actionBase.actionType == SharedData.ActionType.Sensibilization) {
-            Production(false);
-        }
-        else if (actionBase.actionType == SharedData.ActionType.Conciliation) {
-            Production(false);
+        else if (actionBase.actionType == SharedData.ActionType.Goods ||
+            actionBase.actionType == SharedData.ActionType.Sensibilization ||
+            actionBase.actionType == SharedData.ActionType.Conciliation ||
+            actionBase.actionType == SharedData.ActionType.Star) 
+        {
+            Production(actionBase.needInvestment);
         }
         else {
             return;
-        }    
+        }
+    }
+
+    void RightMouseClick() {
+        if (actionBase.actionType == SharedData.ActionType.Job) {
+            DeInvest();
+            HighlightResource();
+        }
+        else if (actionBase.actionType == SharedData.ActionType.Goods ||
+            actionBase.actionType == SharedData.ActionType.Sensibilization ||
+            actionBase.actionType == SharedData.ActionType.Conciliation ||
+            actionBase.actionType == SharedData.ActionType.Star) 
+        {
+            DeProduction(actionBase.needInvestment);
+        }
+        else {
+            return;
+        }
     }
 
     void Invest() {
-        if (gameData.InvestResource(resourceType, actionBase.nBenefit)) {
+        if (gameData.InvestResource(resourceType, actionBase.nBenefit, actionBase.localInvestCounter)) {
+            actionBase.localInvestCounter++;
+            gameData.helpText = "Invested in " + resourceType.ToString();
+            gameData.helpText += "\nWhen ended confirm by clicking on the action block.";
         }
-        else {
-            gameData.DisinvestResource(resourceType, actionBase.nBenefit);
+    }
+
+    void DeInvest() {
+        if (gameData.DisinvestResource(resourceType, actionBase.nBenefit)) {
+            actionBase.localInvestCounter--;
+            gameData.helpText = "Disinvested in " + resourceType.ToString();
+            gameData.helpText += "\nWhen ended confirm by clicking on the action block.";
         }
     }
 
     void Production(bool withInvestments) {
         if (gameData.ProductResource(resourceType, actionBase.nBenefit, withInvestments)) {
             gameData.helpText = "+1 "+ resourceType.ToString() + "(" + gameData.productions[(int) resourceType] + ")";
+            gameData.helpText += "\nWhen ended confirm by clicking on the action block.";
         }
-        else if (gameData.DeProductResource(resourceType, actionBase.nBenefit, withInvestments)) {
+    }
+
+    void DeProduction(bool withInvestments) {
+        if (gameData.DeProductResource(resourceType, actionBase.nBenefit, withInvestments)) {
             gameData.helpText = "-1 "+ resourceType.ToString() + "(" + gameData.productions[(int) resourceType] + ")";
+            gameData.helpText += "\nWhen ended confirm by clicking on the action block.";
         }
     }
 }

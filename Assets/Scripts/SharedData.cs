@@ -7,11 +7,11 @@ using System.Linq;
 [CreateAssetMenu(fileName = "Data", menuName = "SharedData", order = 1)]
 public class SharedData : ScriptableObject {
     public enum ActionType {
-        None, Goods, Job, Sensibilization, Conciliation
+        None, Goods, Job, Sensibilization, Conciliation, Star
     };
 
     public enum ResourceType {
-        Culture, Connections, Sustainability, Humanity, Wealth
+        Culture, Connections, Sustainability, Humanity, Wealth, Stars
     };
 
     public ActionType lastActionType;
@@ -22,6 +22,7 @@ public class SharedData : ScriptableObject {
     public int sustainability; 
     public int humanity;
     public int wealth;
+    public int wealthGoal; // to be setted
 
     public bool[] investments;
     public int investCounter;
@@ -30,15 +31,16 @@ public class SharedData : ScriptableObject {
     public int productCounter;
 
     public int stars;
+    public int totalStars;
     public int actions;
-    
-    public int currentHour;
-    public int dayHours;
+
 
     public string helpText;
     public string hoverDescription;
+    public string hoverInvestment;
 
     public bool actionInProgress;
+    public float score;
 
     public void ResetStats() {
         culture = 0; 
@@ -52,15 +54,17 @@ public class SharedData : ScriptableObject {
         investments = new bool[4];
         investCounter = 0;
 
-        productions = new int[5];
+        productions = new int[6];
         productCounter = 0;
 
         lastActionType = ActionType.None;
 
-        helpText = "";
+        helpText = "Click on a action box";
         hoverDescription = "";
+        hoverInvestment = "";
 
         actionInProgress = false;
+        score = 0f;
     }
 
     public bool HasResources(Dictionary<string, int> costDict) {
@@ -109,8 +113,8 @@ public class SharedData : ScriptableObject {
     }
 
     // invest
-    public bool InvestResource(ResourceType resourceType, int n) {
-        if (investCounter >= n) {
+    public bool InvestResource(ResourceType resourceType, int n, int localInvestCounter) {
+        if (localInvestCounter >= n) {
             return false;
         }
 
@@ -195,8 +199,19 @@ public class SharedData : ScriptableObject {
         if (productions[4] > 0) {
             wealth += productions[4];
         }
+        if (productions[5] > 0) {
+            stars += productions[5];
+        }
 
-        productions = new int[5];
+        productions = new int[6];
         productCounter = 0;
+    }
+
+    public void CalculateScore() {
+        if (actions == 0) {
+            return;
+        }
+        float relativeScore = (100 * wealth) / actions;
+        score = relativeScore + ((stars / totalStars) * relativeScore);
     }
 }

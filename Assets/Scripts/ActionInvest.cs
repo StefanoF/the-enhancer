@@ -29,12 +29,12 @@ public class ActionInvest : MonoBehaviour
 
     void LeftMouseClick() {
         if (actionBase.resources.activeSelf) {
-            if (actionBase.gameData.investCounter == actionBase.nBenefit) {
+            if (actionBase.localInvestCounter == actionBase.nBenefit) {
                 actionBase.ConcludeAction();
                 actionBase.gameData.helpText = "Resources spended: invest complete!";
             }
-            else if (actionBase.gameData.investCounter < actionBase.nBenefit) {
-                actionBase.gameData.helpText = "Use all the benefit prior to conclude the action!";
+            else if (actionBase.localInvestCounter < actionBase.nBenefit) {
+                actionBase.gameData.helpText = "Use all the benefit prior to confirm the action!";
             }
             return;
         }
@@ -43,6 +43,7 @@ public class ActionInvest : MonoBehaviour
             return;
         }
 
+        actionBase.gameData.helpText = "What do you want to invest in?\nLeft click to invest\nRight click to disinvest";
         actionBase.Activate();
     }
 }
