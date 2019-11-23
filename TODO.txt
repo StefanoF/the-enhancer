@@ -1,15 +1,1 @@
-+ visualizzare quante ore ci sono in ogni attivita
-+ visualizzare icona per attività
-+ visualizzare orario che scorre (24 ore) 24 secondi di tempo reale?
-+ visualizzare quanti lanci hai disponibili (le ore passate fino a quel momento)
-+ istanziare le attività scegliendole casualmente
-+ attivita scorrono o sull'asse Z o sulla X su 3 corsie predeterminate
-  se su X: - 1 7, - 1 2, - 1 -3 || se su Z: -5 1 -, 0 1 -, 5 1 -
-- mostrare le attività dinamicamente in base all'orario
-
-- il livello finisce allo scadere dei 24 secondi
-? - nuovo livello con attività e ore caricate dal giorno prima
-  - le ore nuove sono solo quelle che eccedono le ore già usate (tot non più di 24)
-
-NO - consumare le ore nelle attività (le ore passate da quando sono state assegnate)
-NO - ogni volta che viene consumata un ora si aggiornano le statistiche globali
++ visualizzare nuovo box quando si utilizza uno in una colonna

@@ -20,6 +20,7 @@ public class ActionBase : MonoBehaviour
 
     [Header("Benefits")]
     public int nBenefit;
+    public GameObject nextAction;
 
     [Header("Resources")]
     public GameObject resources;
@@ -114,8 +115,15 @@ public class ActionBase : MonoBehaviour
         gameData.actionInProgress = false;
         resources.SetActive(false);
         cameraFollow.ResetTarget();
+
         if (actionType == SharedData.ActionType.Star) {
             gameObject.SetActive(false);
+        }
+
+        if (nextAction) {
+            if (!nextAction.activeSelf) {
+                nextAction.SetActive(true);
+            }
         }
     }
 }

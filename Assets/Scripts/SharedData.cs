@@ -47,6 +47,7 @@ public class SharedData : ScriptableObject {
         connections = 0; 
         sustainability = 0; 
         humanity = 0;
+
         wealth = 0;
         stars = 0;
         actions = 0;

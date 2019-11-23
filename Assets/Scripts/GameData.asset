@@ -17,16 +17,16 @@ MonoBehaviour:
   connections: 0
   sustainability: 0
   humanity: 0
-  wealth: 3
+  wealth: 0
   wealthGoal: 15
   investments: 00000000
   investCounter: 0
   productions: 000000000000000000000000000000000000000000000000
   productCounter: 0
-  stars: 3
+  stars: 0
   totalStars: 4
-  actions: 48
-  helpText: Click on a action box
+  actions: 0
+  helpText: Not have enough resources!
   hoverDescription: 
   hoverInvestment: 
   actionInProgress: 0

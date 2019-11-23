@@ -13,7 +13,7 @@ public class ResourceSel : MonoBehaviour
     public Material activeMaterial;
     public Material passiveMaterial;
 
-    private MeshRenderer meshRenderer;
+    public MeshRenderer meshRenderer;
 
     void Awake()
     {
@@ -33,6 +33,10 @@ public class ResourceSel : MonoBehaviour
     }
 
     public void HighlightResource() {
+        if (!meshRenderer) {
+            return;
+        }
+
         if (actionBase.actionType == SharedData.ActionType.Conciliation ||
             actionBase.actionType == SharedData.ActionType.Sensibilization ||
             actionBase.actionType == SharedData.ActionType.Star) {

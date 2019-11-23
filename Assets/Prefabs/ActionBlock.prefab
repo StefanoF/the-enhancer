@@ -3412,6 +3412,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameData: {fileID: 11400000, guid: 6536e1c4c68274465943ea28fddf9549, type: 2}
   actionType: 0
+  doTwice: 0
   culture: 0
   connections: 0
   humanity: 0
@@ -3420,6 +3421,7 @@ MonoBehaviour:
   nBenefit: 0
   resources: {fileID: 4226425397951035863}
   hoverDesc: 
+  hoverInvestDesc: 
   needInvestment: 0
   localInvestCounter: 0
 --- !u!1 &8858972014170374785

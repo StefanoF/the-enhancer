@@ -30,60 +30,123 @@ public class StatisticsManager : MonoBehaviour
     public GameObject endGame;
     public SharedData gameData;
 
-    // public float blinkingTime;
-    // public Color redColor;
-    // public Color greenColor;
-    // private Color originalColor;
+    public int[] lastResource;
+    public bool[] isBlinkingResource;
+    public int blinkingTimes;
+    public float blinkingRatio;
+    public Color redColor;
+    public Color greenColor;
+    private Color originalColor;
     
 
     // Start is called before the first frame update
     void Start()
     {
+        lastResource = new int[6];
+        isBlinkingResource = new bool[6];
         gameData.ResetStats();
     }
 
-    // public void BlinkStat(int last, int actual, Text textObj) {
-    //     originalColor = textObj.color;
-    //     if (last > actual) {
-    //         StartCoroutine(Blink(textObj, redColor));
-    //     } else if (actual > last) {
-    //         StartCoroutine(Blink(textObj, greenColor));
-    //     }
-    // }
+    public void BlinkStat(int last, int actual, Text textObj, SharedData.ResourceType resourceType) {
+        if (!isBlinkingResource[(int) resourceType]){
+            originalColor = textObj.color;
+            if (last > actual) {
+                StartCoroutine(Blink(textObj, redColor, resourceType));
+                isBlinkingResource[(int) resourceType] = true;
+            } else if (last < actual) {
+                StartCoroutine(Blink(textObj, greenColor, resourceType));
+                isBlinkingResource[(int) resourceType] = true;
+            }
+        }
+    }
 
-    // IEnumerator Blink(Text obj, Color color) {
-    //     obj.enabled = false;
-    //     obj.color = color;
-    //     yield return new WaitForSeconds(0.2f);
-    //     obj.enabled = true;
+    void BlinkStatUpdate(SharedData.ResourceType resourceType, bool isExecuted) {
+        isBlinkingResource[(int) resourceType] = isExecuted;
+        switch (resourceType) {
+            case SharedData.ResourceType.Culture:
+                lastResource[(int) resourceType] = gameData.culture;
+                break;
 
-    //     yield return new WaitForSeconds(0.2f);
-    //     obj.color = originalColor;
+            case SharedData.ResourceType.Connections:
+                lastResource[(int) resourceType] = gameData.connections;
+                break;
 
-    //     yield return null;
-    // }
+            case SharedData.ResourceType.Sustainability:
+                lastResource[(int) resourceType] = gameData.sustainability;
+                break;
+
+            case SharedData.ResourceType.Humanity:
+                lastResource[(int) resourceType] = gameData.humanity;
+                break;
+
+            case SharedData.ResourceType.Stars:
+                lastResource[(int) resourceType] = gameData.stars;
+                break;
+
+            case SharedData.ResourceType.Wealth:
+                lastResource[(int) resourceType] = gameData.wealth;
+                break;
+
+            default:
+                return;
+        }
+        return;
+    }
+
+    IEnumerator Blink(Text obj, Color color, SharedData.ResourceType resourceType) {
+        float countTimes = 0;
+        while (countTimes < blinkingTimes) {
+            obj.enabled = false;
+
+            yield return new WaitForSeconds(blinkingRatio);
+            obj.enabled = true;
+            obj.color = color;
+
+            yield return new WaitForSeconds(blinkingRatio);
+            obj.enabled = false;
+
+            yield return new WaitForSeconds(blinkingRatio);
+            obj.enabled = true;
+            obj.color = originalColor;
+
+            countTimes++;
+        }
+        yield return null;
+        BlinkStatUpdate(resourceType, false);
+    }
 
     // Update is called once per frame
     void Update()
     {
         if (wealthText) {
-            wealthText.text = gameData.wealth.ToString();
-            // BlinkStat(0, gameData.wealth, wealthText);
+            wealthText.text = gameData.wealth.ToString() + "/" + gameData.wealthGoal;
+            SharedData.ResourceType rWealth = SharedData.ResourceType.Wealth;
+            BlinkStat(lastResource[(int) rWealth], gameData.wealth, wealthText, rWealth);
         }
         if (cultureText) {
             cultureText.text = gameData.culture.ToString();
+            SharedData.ResourceType rCulture = SharedData.ResourceType.Culture;
+            BlinkStat(lastResource[(int) rCulture], gameData.culture, cultureText, rCulture);
         }
         if (connectionsText) {
             connectionsText.text = gameData.connections.ToString();
+            SharedData.ResourceType rConnections = SharedData.ResourceType.Connections;
+            BlinkStat(lastResource[(int) rConnections], gameData.connections, connectionsText, rConnections);
         }
         if (sustainabilityText) {
             sustainabilityText.text = gameData.sustainability.ToString();
+            SharedData.ResourceType rSustainability = SharedData.ResourceType.Sustainability;
+            BlinkStat(lastResource[(int) rSustainability], gameData.sustainability, sustainabilityText, rSustainability);
         }
         if (humanityText) {
             humanityText.text = gameData.humanity.ToString();
+            SharedData.ResourceType rHumanity = SharedData.ResourceType.Humanity;
+            BlinkStat(lastResource[(int) rHumanity], gameData.humanity, humanityText, rHumanity);
         }
         if (starsText) {
             starsText.text = gameData.stars.ToString();
+            SharedData.ResourceType rStars = SharedData.ResourceType.Stars;
+            BlinkStat(lastResource[(int) rStars], gameData.stars, starsText, rStars);
         }
         if (actionsCounterText) {
             actionsCounterText.text = gameData.actions.ToString();
