@@ -1,1 +1,0 @@
-+ visualizzare nuovo box quando si utilizza uno in una colonna

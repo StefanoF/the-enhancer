@@ -9,10 +9,11 @@ public class ActionAnim : MonoBehaviour
     private float timeMovement;
     private Vector3 startPosition;
     private Vector3 moveVector;
+    private ActionBase actionBase;
 
     void Awake()
     {
-
+        actionBase = gameObject.GetComponent<ActionBase>();
     }
 
     // Start is called before the first frame update
@@ -30,8 +31,10 @@ public class ActionAnim : MonoBehaviour
     }
 
     void OnMouseOver() {
-        timeMovement += Time.deltaTime;
-        transform.position = transform.position + moveVector * (moveRange * Mathf.Sin(timeMovement * moveSpeed));
+        if (!actionBase.gameData.actionInProgress) {
+            timeMovement += Time.deltaTime;
+            transform.position = transform.position + moveVector * (moveRange * Mathf.Sin(timeMovement * moveSpeed));
+        }
     }
 
     void OnMouseExit() {

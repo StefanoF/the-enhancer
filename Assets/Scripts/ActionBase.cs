@@ -4,7 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class ActionBase : MonoBehaviour
-{
+{   
+    public bool inProgress;
+
     [Header("Stats data")]
     public SharedData gameData;
     public SharedData.ActionType actionType;
@@ -76,11 +78,17 @@ public class ActionBase : MonoBehaviour
     void OnMouseExit() {
         gameData.hoverDescription = "";
         gameData.hoverInvestment = "";
+        if (!inProgress) {
+            resources.SetActive(false);
+        }
     }
 
     void OnMouseOver() {
-        gameData.hoverDescription = hoverDesc;
-        gameData.hoverInvestment = hoverInvestDesc;
+        if (!gameData.actionInProgress) {
+            gameData.hoverDescription = hoverDesc;
+            gameData.hoverInvestment = hoverInvestDesc;
+            resources.SetActive(true);
+        }
     }
 
     public bool Validate() {
@@ -105,6 +113,7 @@ public class ActionBase : MonoBehaviour
     public void Activate() {
         cameraFollow.SetTarget(transform.position);
         gameData.actionInProgress = true;
+        inProgress = true;
         resources.SetActive(true);
     }
 
@@ -113,6 +122,7 @@ public class ActionBase : MonoBehaviour
         gameData.lastActionType = actionType;
         gameData.SpendResources(costDict);
         gameData.actionInProgress = false;
+        inProgress = false;
         resources.SetActive(false);
         cameraFollow.ResetTarget();
 

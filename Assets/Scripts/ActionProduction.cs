@@ -32,7 +32,7 @@ public class ActionProduction : MonoBehaviour
     }
 
     void LeftMouseClick() {
-        if (actionBase.resources.activeSelf) {
+        if (actionBase.inProgress) {
             if (actionBase.gameData.productCounter == actionBase.nBenefit) {
                 actionBase.ConcludeAction();
                 actionBase.gameData.AddProductResources();

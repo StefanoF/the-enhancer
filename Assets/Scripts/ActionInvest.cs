@@ -28,7 +28,7 @@ public class ActionInvest : MonoBehaviour
     }
 
     void LeftMouseClick() {
-        if (actionBase.resources.activeSelf) {
+        if (actionBase.inProgress) {
             if (actionBase.localInvestCounter == actionBase.nBenefit) {
                 actionBase.ConcludeAction();
                 actionBase.gameData.helpText = "Resources spended: invest complete!";
