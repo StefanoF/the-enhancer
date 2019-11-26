@@ -143,7 +143,10 @@ public class ActionBase : MonoBehaviour
     }
 
     void OnMouseExit() {
-        HideCostsAndNeeds();
+        if (!gameData.actionInProgress) {
+            HideCostsAndNeeds();
+        }
+        
         if (!inProgress) {
             resources.SetActive(false);
         }
