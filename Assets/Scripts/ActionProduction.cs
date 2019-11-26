@@ -71,30 +71,30 @@ public class ActionProduction : MonoBehaviour
         actionBase.Activate();
     }
 
-    public string GetHoverDesc() {
-        string desc = "";
-        int investments = 0;
-        for (int i = 0; i < investmentNeeded.Length; i++) {
-            if (investmentNeeded[i]) {
-                investments++;
-            }
-        }
-        if (investments == investmentNeeded.Length) {
-            desc = "\nAny resource";
-            return desc;
-        }
-        if (investmentNeeded[0]) {
-            desc += "\nCulture";
-        }
-        if (investmentNeeded[1]) {
-            desc += "\nConnections";
-        }
-        if (investmentNeeded[2]) {
-            desc += "\nSustainability";
-        }
-        if (investmentNeeded[3]) {
-            desc += "\nHumanity";
-        }
-        return desc;
-    } 
+    // public string GetHoverDesc() {
+    //     string desc = "";
+    //     int investments = 0;
+    //     for (int i = 0; i < investmentNeeded.Length; i++) {
+    //         if (investmentNeeded[i]) {
+    //             investments++;
+    //         }
+    //     }
+    //     if (investments == investmentNeeded.Length) {
+    //         desc = "\nAny resource";
+    //         return desc;
+    //     }
+    //     if (investmentNeeded[0]) {
+    //         desc += "\nCulture";
+    //     }
+    //     if (investmentNeeded[1]) {
+    //         desc += "\nConnections";
+    //     }
+    //     if (investmentNeeded[2]) {
+    //         desc += "\nSustainability";
+    //     }
+    //     if (investmentNeeded[3]) {
+    //         desc += "\nHumanity";
+    //     }
+    //     return desc;
+    // } 
 }

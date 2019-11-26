@@ -23,8 +23,6 @@ public class StatisticsManager : MonoBehaviour
 
     [Header("UI Text")]
     public Text actionsCounterText;
-    public Text hoverDescriptorText;
-    public Text hoverInvestmentText;
     public Text helpText;
 
     public GameObject endGame;
@@ -150,12 +148,6 @@ public class StatisticsManager : MonoBehaviour
         }
         if (actionsCounterText) {
             actionsCounterText.text = gameData.actions.ToString();
-        }
-        if (hoverDescriptorText) {
-            hoverDescriptorText.text = gameData.hoverDescription.ToString();
-        }
-        if (hoverInvestmentText) {
-            hoverInvestmentText.text = gameData.hoverInvestment.ToString();
         }
         if (helpText) {
             helpText.text = gameData.helpText.ToString();

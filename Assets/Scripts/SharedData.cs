@@ -36,8 +36,6 @@ public class SharedData : ScriptableObject {
 
 
     public string helpText;
-    public string hoverDescription;
-    public string hoverInvestment;
 
     public bool actionInProgress;
     public float score;
@@ -61,8 +59,6 @@ public class SharedData : ScriptableObject {
         lastActionType = ActionType.None;
 
         helpText = "Click on a action box";
-        hoverDescription = "";
-        hoverInvestment = "";
 
         actionInProgress = false;
         score = 0f;

@@ -27,9 +27,31 @@ public class ActionBase : MonoBehaviour
     [Header("Resources")]
     public GameObject resources;
 
-    [Header("UI Descriptor")]
-    public string hoverDesc;
-    public string hoverInvestDesc;
+    [Header("UI Title")]
+    public Text actionTitleText;
+
+    [Header("UI Need")]
+    public GameObject hoverCountersNeed;
+
+    public GameObject needTextObj;
+    public GameObject needCultureObj;
+    public GameObject needConnectionsObj;
+    public GameObject needHumanityObj;
+    public GameObject needSustainabilityObj;
+
+    [Header("UI Costs")]
+    public GameObject costsTextObj;
+    public GameObject costCultureObj;
+    public Text costCultureText;
+    public GameObject costConnectionsObj;
+    public Text costConnectionsText;
+    public GameObject costHumanityObj;
+    public Text costHumanityText;
+    public GameObject costSustainabilityObj;
+    public Text costSustainabilityText;
+    public GameObject costWealthObj;
+    public Text costWealthText;
+    public bool uiUpdated;
 
     public bool needInvestment;
     public int localInvestCounter;
@@ -51,33 +73,77 @@ public class ActionBase : MonoBehaviour
         costDict.Add("humanity", humanity);
         costDict.Add("sustainability", sustainability);
         costDict.Add("wealth", wealth);
+    }
 
-        hoverDesc = actionType.ToString();
+    void ShowCostsAndNeeds() {
+        if (uiUpdated) {
+            return;
+        }
+        actionTitleText.enabled = true;
+        actionTitleText.text = actionType.ToString();
         if (culture > 0) {
-            hoverDesc += "\nCulture: " + culture;
+            costsTextObj.SetActive(true);
+            costCultureObj.SetActive(true);
+            costCultureText.text = culture.ToString();
         }
         if (connections > 0) {
-            hoverDesc += "\nConnections: " + connections;
+            costsTextObj.SetActive(true);
+            costConnectionsObj.SetActive(true);
+            costConnectionsText.text = connections.ToString();
         }
         if (sustainability > 0) {
-            hoverDesc += "\nSustainability: " + sustainability;
+            costsTextObj.SetActive(true);
+            costSustainabilityObj.SetActive(true);
+            costSustainabilityText.text = sustainability.ToString();
         }
         if (humanity > 0) {
-            hoverDesc += "\nHumanity: " + humanity;
+            costsTextObj.SetActive(true);
+            costHumanityObj.SetActive(true);
+            costHumanityText.text = humanity.ToString();
         }
         if (wealth > 0) {
-            hoverDesc += "\nWealth: " + wealth;
+            costsTextObj.SetActive(true);
+            costWealthObj.SetActive(true);
+            costWealthText.text = wealth.ToString();
         }
         if (needInvestment) {
-            hoverInvestDesc += "\nNeed one investment in:";
-            hoverInvestDesc += actionProduction.GetHoverDesc();
+            needTextObj.SetActive(true);
+            if (actionProduction.investmentNeeded[0]) {
+                needCultureObj.SetActive(true);
+            }
+            if (actionProduction.investmentNeeded[1]) {
+                needConnectionsObj.SetActive(true);
+            }
+            if (actionProduction.investmentNeeded[2]) {
+                needHumanityObj.SetActive(true);
+            }
+            if (actionProduction.investmentNeeded[3]) {
+                needSustainabilityObj.SetActive(true);
+            }
         }
-        
+        hoverCountersNeed.SetActive(true);
+        uiUpdated = true;
+    }
+
+    void HideCostsAndNeeds() {
+        needTextObj.SetActive(false);
+        needCultureObj.SetActive(false);
+        needConnectionsObj.SetActive(false);
+        needHumanityObj.SetActive(false);
+        needSustainabilityObj.SetActive(false);
+        costsTextObj.SetActive(false);
+        costCultureObj.SetActive(false);
+        costConnectionsObj.SetActive(false);
+        costHumanityObj.SetActive(false);
+        costSustainabilityObj.SetActive(false);
+        costWealthObj.SetActive(false);
+        actionTitleText.enabled = false;
+        hoverCountersNeed.SetActive(false);
+        uiUpdated = false;
     }
 
     void OnMouseExit() {
-        gameData.hoverDescription = "";
-        gameData.hoverInvestment = "";
+        HideCostsAndNeeds();
         if (!inProgress) {
             resources.SetActive(false);
         }
@@ -85,8 +151,7 @@ public class ActionBase : MonoBehaviour
 
     void OnMouseOver() {
         if (!gameData.actionInProgress) {
-            gameData.hoverDescription = hoverDesc;
-            gameData.hoverInvestment = hoverInvestDesc;
+            ShowCostsAndNeeds();
             resources.SetActive(true);
         }
     }
@@ -111,6 +176,7 @@ public class ActionBase : MonoBehaviour
     }
 
     public void Activate() {
+        actionTitleText.enabled = true;
         cameraFollow.SetTarget(transform.position);
         gameData.actionInProgress = true;
         inProgress = true;
@@ -118,6 +184,7 @@ public class ActionBase : MonoBehaviour
     }
 
     public void ConcludeAction() {
+        actionTitleText.enabled = false;
         gameData.actions++;
         gameData.lastActionType = actionType;
         gameData.SpendResources(costDict);
