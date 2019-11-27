@@ -115,10 +115,10 @@ public class ActionBase : MonoBehaviour
                 needConnectionsObj.SetActive(true);
             }
             if (actionProduction.investmentNeeded[2]) {
-                needHumanityObj.SetActive(true);
+                needSustainabilityObj.SetActive(true);
             }
             if (actionProduction.investmentNeeded[3]) {
-                needSustainabilityObj.SetActive(true);
+                needHumanityObj.SetActive(true);
             }
         }
         hoverCountersNeed.SetActive(true);
@@ -184,6 +184,8 @@ public class ActionBase : MonoBehaviour
         gameData.actionInProgress = true;
         inProgress = true;
         resources.SetActive(true);
+
+        localInvestCounter = gameData.investCounter;
     }
 
     public void ConcludeAction() {
