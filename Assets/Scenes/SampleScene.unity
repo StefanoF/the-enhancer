@@ -3557,7 +3557,7 @@ PrefabInstance:
     - target: {fileID: 594535674475006096, guid: b0bcbdf8002c34a3d9b7d583ab662317,
         type: 3}
       propertyPath: m_Name
-      value: JobBlock2
+      value: InvestBlock2
       objectReference: {fileID: 0}
     - target: {fileID: 594535674475006096, guid: b0bcbdf8002c34a3d9b7d583ab662317,
         type: 3}
@@ -5843,7 +5843,7 @@ PrefabInstance:
     - target: {fileID: 594535674475006096, guid: b0bcbdf8002c34a3d9b7d583ab662317,
         type: 3}
       propertyPath: m_Name
-      value: JobBlock3
+      value: InvestBlock3
       objectReference: {fileID: 0}
     - target: {fileID: 594535674475006096, guid: b0bcbdf8002c34a3d9b7d583ab662317,
         type: 3}
@@ -10596,7 +10596,7 @@ PrefabInstance:
     - target: {fileID: 594535674475006096, guid: b0bcbdf8002c34a3d9b7d583ab662317,
         type: 3}
       propertyPath: m_Name
-      value: JobBlock
+      value: InvestBlock
       objectReference: {fileID: 0}
     - target: {fileID: 1011869091598991384, guid: b0bcbdf8002c34a3d9b7d583ab662317,
         type: 3}

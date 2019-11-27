@@ -64,7 +64,7 @@ public class ResourceSel : MonoBehaviour
     }
 
     void LeftMouseClick() {
-        if (actionBase.actionType == SharedData.ActionType.Job) {
+        if (actionBase.actionType == SharedData.ActionType.Invest) {
             Invest();
             HighlightResource();
         }
@@ -81,7 +81,7 @@ public class ResourceSel : MonoBehaviour
     }
 
     void RightMouseClick() {
-        if (actionBase.actionType == SharedData.ActionType.Job) {
+        if (actionBase.actionType == SharedData.ActionType.Invest) {
             DeInvest();
             HighlightResource();
         }

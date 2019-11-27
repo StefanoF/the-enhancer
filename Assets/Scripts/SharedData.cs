@@ -7,7 +7,7 @@ using System.Linq;
 [CreateAssetMenu(fileName = "Data", menuName = "SharedData", order = 1)]
 public class SharedData : ScriptableObject {
     public enum ActionType {
-        None, Goods, Job, Sensibilization, Conciliation, Star
+        None, Goods, Invest, Sensibilization, Conciliation, Star
     };
 
     public enum ResourceType {
