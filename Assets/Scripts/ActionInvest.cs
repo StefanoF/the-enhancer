@@ -43,6 +43,12 @@ public class ActionInvest : MonoBehaviour
             return;
         }
 
+        if (actionBase.nBenefit < actionBase.gameData.investCounter) {
+            actionBase.gameData.investCounter = 0;
+            actionBase.gameData.investments = new bool[4];
+            actionBase.resources.GetComponent<Resources>().UpdateHighlight();
+        }
+
         actionBase.gameData.helpText = "What do you want to invest in?\nLeft click to invest\nRight click to disinvest";
         actionBase.Activate();
     }

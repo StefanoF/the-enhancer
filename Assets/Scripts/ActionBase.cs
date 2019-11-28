@@ -58,10 +58,12 @@ public class ActionBase : MonoBehaviour
 
     private CameraFollow cameraFollow;
     private ActionProduction actionProduction;
+    private ActionCounter actionCounter;
 
     void Awake() {
         cameraFollow = Camera.main.gameObject.GetComponent<CameraFollow>();
         actionProduction = gameObject.GetComponent<ActionProduction>();
+        actionCounter = gameObject.GetComponent<ActionCounter>();
     }
 
     // Start is called before the first frame update
@@ -184,8 +186,8 @@ public class ActionBase : MonoBehaviour
         gameData.actionInProgress = true;
         inProgress = true;
         resources.SetActive(true);
-
         localInvestCounter = gameData.investCounter;
+        actionCounter.ActivateBenefits();
     }
 
     public void ConcludeAction() {

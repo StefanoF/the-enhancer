@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class ResourceSel : MonoBehaviour
 {
     public ActionBase actionBase;
+    public ActionCounter actionCounter;
 
     public SharedData gameData;
     public SharedData.ResourceType resourceType;
@@ -100,6 +101,7 @@ public class ResourceSel : MonoBehaviour
     void Invest() {
         if (gameData.InvestResource(resourceType, actionBase.nBenefit, actionBase.localInvestCounter)) {
             actionBase.localInvestCounter++;
+            actionCounter.RemoveBenefit();
             gameData.helpText = "Invested in " + resourceType.ToString();
             gameData.helpText += "\nWhen ended confirm by clicking on the action block.";
         }
@@ -108,6 +110,7 @@ public class ResourceSel : MonoBehaviour
     void DeInvest() {
         if (gameData.DisinvestResource(resourceType, actionBase.nBenefit)) {
             actionBase.localInvestCounter--;
+            actionCounter.AddBenefit();
             gameData.helpText = "Disinvested in " + resourceType.ToString();
             gameData.helpText += "\nWhen ended confirm by clicking on the action block.";
         }
@@ -115,6 +118,7 @@ public class ResourceSel : MonoBehaviour
 
     void Production(bool withInvestments) {
         if (gameData.ProductResource(resourceType, actionBase.nBenefit, withInvestments)) {
+            actionCounter.RemoveBenefit();
             gameData.helpText = "+1 "+ resourceType.ToString() + "(" + gameData.productions[(int) resourceType] + ")";
             gameData.helpText += "\nWhen ended confirm by clicking on the action block.";
         }
@@ -122,6 +126,7 @@ public class ResourceSel : MonoBehaviour
 
     void DeProduction(bool withInvestments) {
         if (gameData.DeProductResource(resourceType, actionBase.nBenefit, withInvestments)) {
+            actionCounter.AddBenefit();
             gameData.helpText = "-1 "+ resourceType.ToString() + "(" + gameData.productions[(int) resourceType] + ")";
             gameData.helpText += "\nWhen ended confirm by clicking on the action block.";
         }
