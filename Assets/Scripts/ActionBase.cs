@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class ActionBase : MonoBehaviour
 {   
     public bool inProgress;
+    public string actionDescription;
 
     [Header("Stats data")]
     public SharedData gameData;
@@ -26,9 +27,6 @@ public class ActionBase : MonoBehaviour
 
     [Header("Resources")]
     public GameObject resources;
-
-    [Header("UI Title")]
-    public Text actionTitleText;
 
     [Header("UI Need")]
     public GameObject hoverCountersNeed;
@@ -59,11 +57,20 @@ public class ActionBase : MonoBehaviour
     private CameraFollow cameraFollow;
     private ActionProduction actionProduction;
     private ActionCounter actionCounter;
+    private UndoController undoController;
+    private Image actionTitlePanel;
+    private Text actionTitleText;
+    private Text actionSubTitleText;
 
     void Awake() {
         cameraFollow = Camera.main.gameObject.GetComponent<CameraFollow>();
         actionProduction = gameObject.GetComponent<ActionProduction>();
         actionCounter = gameObject.GetComponent<ActionCounter>();
+        undoController = GameObject.Find("/Activities").GetComponent<UndoController>();
+        actionTitlePanel = GameObject.Find("/UI/ActionTitle/Panel").GetComponent<Image>();
+        actionTitleText = GameObject.Find("/UI/ActionTitle/Text").GetComponent<Text>();
+        actionSubTitleText = GameObject.Find("/UI/ActionTitle/SubText").GetComponent<Text>();
+        ToogleTitle(false);
     }
 
     // Start is called before the first frame update
@@ -75,14 +82,24 @@ public class ActionBase : MonoBehaviour
         costDict.Add("humanity", humanity);
         costDict.Add("sustainability", sustainability);
         costDict.Add("wealth", wealth);
+
+        actionTitleText.text = "";
+        actionSubTitleText.text = "";
+    }
+
+    void ToogleTitle(bool active) {
+        actionTitlePanel.enabled = active;
+        actionTitleText.enabled = active;
+        actionSubTitleText.enabled = active;
     }
 
     void ShowCostsAndNeeds() {
         if (uiUpdated) {
             return;
         }
-        actionTitleText.enabled = true;
         actionTitleText.text = actionType.ToString();
+        actionSubTitleText.text = actionDescription.ToString();
+        ToogleTitle(true);
         if (culture > 0) {
             costsTextObj.SetActive(true);
             costCultureObj.SetActive(true);
@@ -125,6 +142,7 @@ public class ActionBase : MonoBehaviour
         }
         hoverCountersNeed.SetActive(true);
         uiUpdated = true;
+        actionCounter.ActivateBenefits();
     }
 
     void HideCostsAndNeeds() {
@@ -139,9 +157,10 @@ public class ActionBase : MonoBehaviour
         costHumanityObj.SetActive(false);
         costSustainabilityObj.SetActive(false);
         costWealthObj.SetActive(false);
-        actionTitleText.enabled = false;
+        ToogleTitle(false);
         hoverCountersNeed.SetActive(false);
         uiUpdated = false;
+        actionCounter.DeActivateBenefits();
     }
 
     void OnMouseExit() {
@@ -167,13 +186,13 @@ public class ActionBase : MonoBehaviour
             return false;
         }
 
-        if (gameData.lastActionType == actionType && !doTwice) {
+        if (gameData.lastActionName == gameObject.transform.parent.gameObject.name && !doTwice) {
             gameData.helpText = "Don't do same action twice!";
             return false;
         }
 
         if (!gameData.HasResources(costDict)) {
-            gameData.helpText = "Not have enough resources!";
+            gameData.helpText = "Not have enough resources!\nYou need to produce resources according to the costs on the left!";
             return false;
         }
 
@@ -181,7 +200,7 @@ public class ActionBase : MonoBehaviour
     }
 
     public void Activate() {
-        actionTitleText.enabled = true;
+        ToogleTitle(true);
         cameraFollow.SetTarget(transform.position);
         gameData.actionInProgress = true;
         inProgress = true;
@@ -190,15 +209,21 @@ public class ActionBase : MonoBehaviour
         actionCounter.ActivateBenefits();
     }
 
-    public void ConcludeAction() {
-        actionTitleText.enabled = false;
-        gameData.actions++;
-        gameData.lastActionType = actionType;
-        gameData.SpendResources(costDict);
+    public void DeActivate() {
+        ToogleTitle(false);
+        cameraFollow.ResetTarget();
         gameData.actionInProgress = false;
         inProgress = false;
         resources.SetActive(false);
-        cameraFollow.ResetTarget();
+        actionCounter.DeActivateBenefits();
+    }
+
+    public void ConcludeAction() {
+        undoController.Reset();
+        DeActivate();
+        gameData.actions++;
+        gameData.lastActionName = gameObject.transform.parent.gameObject.name;
+        gameData.SpendResources(costDict);
 
         if (actionType == SharedData.ActionType.Star) {
             gameObject.SetActive(false);
@@ -209,5 +234,29 @@ public class ActionBase : MonoBehaviour
                 nextAction.SetActive(true);
             }
         }
+    }
+
+    public void SaveStateToUndo() {
+        Dictionary<string, object> state = new Dictionary<string, object>();
+        state.Add("actionBase.localInvestCounter", localInvestCounter); 
+        state.Add("gameData.investments", (bool[]) gameData.investments.Clone());
+        state.Add("gameData.investCounter", gameData.investCounter);
+        state.Add("gameData.productions", (int[]) gameData.productions.Clone());
+        state.Add("gameData.productCounter", gameData.productCounter);
+
+        undoController.SaveState(this, state);
+    }
+
+    public void RestoreState() {
+        Dictionary<string, object> undoState = undoController.GetUndoState();
+        localInvestCounter = (int) undoState["actionBase.localInvestCounter"];
+        gameData.investments = (bool[]) undoState["gameData.investments"];
+        gameData.investCounter = (int) undoState["gameData.investCounter"];
+        gameData.productions = (int[]) undoState["gameData.productions"];
+        gameData.productCounter = (int) undoState["gameData.productCounter"];
+
+        gameData.helpText = "Action canceled successfully!";
+        undoController.Reset();
+        DeActivate();
     }
 }

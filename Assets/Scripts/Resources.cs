@@ -24,12 +24,6 @@ public class Resources : MonoBehaviour
         UpdateHighlight();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void UpdateHighlight() {
         foreach (ResourceSel resourceSel in resourceChilds) {
             resourceSel.HighlightResource();

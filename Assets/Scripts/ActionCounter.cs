@@ -35,6 +35,14 @@ public class ActionCounter : MonoBehaviour
         }
     }
 
+    public void DeActivateBenefits() {
+        for(int i = 0; i < actionBase.nBenefit; i++) {
+            if (benefitObjs[i].activeSelf) {
+                benefitObjs[i].SetActive(false);
+            }
+        }
+    }
+
     public void AddBenefit() {
         for(int i = 0; i < actionBase.nBenefit; i++) {
             if (!benefitObjs[i].activeSelf) {

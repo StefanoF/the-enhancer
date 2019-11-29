@@ -100,6 +100,11 @@ PrefabInstance:
       propertyPath: doTwice
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6599369355978958729, guid: 91106ea2ee39441e5aee8b259b04a171,
+        type: 3}
+      propertyPath: actionDescription
+      value: get a bonus on the final score
+      objectReference: {fileID: 0}
     - target: {fileID: 6022956859981138326, guid: 91106ea2ee39441e5aee8b259b04a171,
         type: 3}
       propertyPath: m_IsActive

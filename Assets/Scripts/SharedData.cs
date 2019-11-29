@@ -14,7 +14,7 @@ public class SharedData : ScriptableObject {
         Culture, Connections, Sustainability, Humanity, Wealth, Stars
     };
 
-    public ActionType lastActionType;
+    public string lastActionName;
 
     // general stats
     public int culture; 
@@ -56,9 +56,9 @@ public class SharedData : ScriptableObject {
         productions = new int[6];
         productCounter = 0;
 
-        lastActionType = ActionType.None;
+        lastActionName = "";
 
-        helpText = "Click on a action box";
+        helpText = "The goal is to reach " + wealthGoal.ToString() + " of wealth (see the stats upward).\nClick on a action box to start!";
 
         actionInProgress = false;
         score = 0f;

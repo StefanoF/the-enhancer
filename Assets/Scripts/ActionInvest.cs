@@ -11,16 +11,6 @@ public class ActionInvest : MonoBehaviour
         actionBase = gameObject.GetComponent<ActionBase>();
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {   
-    }
-
     void OnMouseOver() {
         if (Input.GetMouseButtonDown(0)) {
             LeftMouseClick();
@@ -42,6 +32,8 @@ public class ActionInvest : MonoBehaviour
         if (!actionBase.Validate()) {
             return;
         }
+
+        actionBase.SaveStateToUndo();
 
         if (actionBase.nBenefit < actionBase.gameData.investCounter) {
             actionBase.gameData.investCounter = 0;

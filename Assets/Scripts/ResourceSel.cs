@@ -21,18 +21,6 @@ public class ResourceSel : MonoBehaviour
         meshRenderer = gameObject.GetComponent<MeshRenderer>();
     }
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void HighlightResource() {
         if (!meshRenderer) {
             return;
@@ -119,7 +107,7 @@ public class ResourceSel : MonoBehaviour
     void Production(bool withInvestments) {
         if (gameData.ProductResource(resourceType, actionBase.nBenefit, withInvestments)) {
             actionCounter.RemoveBenefit();
-            gameData.helpText = "+1 "+ resourceType.ToString() + "(" + gameData.productions[(int) resourceType] + ")";
+            gameData.helpText = resourceType.ToString() + "(" + gameData.productions[(int) resourceType] + ")";
             gameData.helpText += "\nWhen ended confirm by clicking on the action block.";
         }
     }
@@ -127,7 +115,7 @@ public class ResourceSel : MonoBehaviour
     void DeProduction(bool withInvestments) {
         if (gameData.DeProductResource(resourceType, actionBase.nBenefit, withInvestments)) {
             actionCounter.AddBenefit();
-            gameData.helpText = "-1 "+ resourceType.ToString() + "(" + gameData.productions[(int) resourceType] + ")";
+            gameData.helpText = resourceType.ToString() + "(" + gameData.productions[(int) resourceType] + ")";
             gameData.helpText += "\nWhen ended confirm by clicking on the action block.";
         }
     }

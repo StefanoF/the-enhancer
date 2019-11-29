@@ -23,13 +23,6 @@ public class ActionAnim : MonoBehaviour
         moveVector = Vector3.up;
     }
 
-    
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     void OnMouseOver() {
         if (!actionBase.gameData.actionInProgress) {
             timeMovement += Time.deltaTime;

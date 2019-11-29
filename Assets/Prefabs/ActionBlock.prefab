@@ -2296,7 +2296,7 @@ GameObject:
   - component: {fileID: 3856525748130594753}
   m_Layer: 0
   m_Name: Action
-  m_TagString: Untagged
+  m_TagString: Actionable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2387,7 +2387,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8847817759127811298}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -2463,12 +2463,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f028f3fc84cf84065b94f4305caf2f78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  benefitObjs: []
   benefitObj: {fileID: 8860468433673720709}
-  startPos: {fileID: 8085188582682478137}
-  spacingX: 0
-  spacingY: 0
-  spacingZ: -0.35
   spacing: {x: 0, y: 0, z: -0.35}
 --- !u!1 &8858972014170374785
 GameObject:

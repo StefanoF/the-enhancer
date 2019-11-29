@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fbbe834896144104b7f7df7813119f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  investmentNeeded: 
 --- !u!1001 &1951538160200538171
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -98,6 +99,11 @@ PrefabInstance:
         type: 3}
       propertyPath: needInvestment
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599369355978958729, guid: 91106ea2ee39441e5aee8b259b04a171,
+        type: 3}
+      propertyPath: actionDescription
+      value: produce some resources
       objectReference: {fileID: 0}
     - target: {fileID: 5401526392563689386, guid: 91106ea2ee39441e5aee8b259b04a171,
         type: 3}

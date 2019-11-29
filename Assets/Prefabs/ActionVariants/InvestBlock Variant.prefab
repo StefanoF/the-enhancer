@@ -22,7 +22,7 @@ PrefabInstance:
     - target: {fileID: 8914905029754236418, guid: 91106ea2ee39441e5aee8b259b04a171,
         type: 3}
       propertyPath: m_Name
-      value: JobBlock Variant
+      value: InvestBlock Variant
       objectReference: {fileID: 0}
     - target: {fileID: 9075541032326522506, guid: 91106ea2ee39441e5aee8b259b04a171,
         type: 3}
@@ -88,6 +88,11 @@ PrefabInstance:
         type: 3}
       propertyPath: nBenefit
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599369355978958729, guid: 91106ea2ee39441e5aee8b259b04a171,
+        type: 3}
+      propertyPath: actionDescription
+      value: invest in some resources
       objectReference: {fileID: 0}
     - target: {fileID: 5401526392563689386, guid: 91106ea2ee39441e5aee8b259b04a171,
         type: 3}

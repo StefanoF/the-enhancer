@@ -14,16 +14,6 @@ public class ActionProduction : MonoBehaviour
         actionBase = gameObject.GetComponent<ActionBase>();
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
     void OnMouseOver() {
         if (Input.GetMouseButtonDown(0)) {
             // left mouse button click
@@ -50,7 +40,7 @@ public class ActionProduction : MonoBehaviour
 
         if (actionBase.needInvestment) {
             if (actionBase.gameData.investCounter == 0) {
-                actionBase.gameData.helpText = "No investments!";
+                actionBase.gameData.helpText = "Not have investments!\nYou need to invest prior to produce!";
                 return;
             }
 
@@ -62,39 +52,14 @@ public class ActionProduction : MonoBehaviour
             }
 
             if (investmentsFinded == 0) {
-                actionBase.gameData.helpText = "No correct investments!";
+                actionBase.gameData.helpText = "No correct investments!\nYou need to invest according to the required resources on the left!";
                 return;
             } 
         }
 
+        actionBase.SaveStateToUndo();
+
         actionBase.gameData.helpText = "Want you want to produce?\nLeft click to increase\nRight click to decrease";
         actionBase.Activate();
     }
-
-    // public string GetHoverDesc() {
-    //     string desc = "";
-    //     int investments = 0;
-    //     for (int i = 0; i < investmentNeeded.Length; i++) {
-    //         if (investmentNeeded[i]) {
-    //             investments++;
-    //         }
-    //     }
-    //     if (investments == investmentNeeded.Length) {
-    //         desc = "\nAny resource";
-    //         return desc;
-    //     }
-    //     if (investmentNeeded[0]) {
-    //         desc += "\nCulture";
-    //     }
-    //     if (investmentNeeded[1]) {
-    //         desc += "\nConnections";
-    //     }
-    //     if (investmentNeeded[2]) {
-    //         desc += "\nSustainability";
-    //     }
-    //     if (investmentNeeded[3]) {
-    //         desc += "\nHumanity";
-    //     }
-    //     return desc;
-    // } 
 }

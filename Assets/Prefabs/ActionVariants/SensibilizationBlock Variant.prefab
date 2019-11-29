@@ -67,11 +67,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7051654887337880775, guid: 5485d390b8df447f58dd4e4d1c318617,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 73a0d3358c0574fb7b1b68be810f7174, type: 2}
     - target: {fileID: 4647973111170744242, guid: 5485d390b8df447f58dd4e4d1c318617,
         type: 3}
       propertyPath: actionType
@@ -92,6 +87,16 @@ PrefabInstance:
       propertyPath: nBenefit
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4647973111170744242, guid: 5485d390b8df447f58dd4e4d1c318617,
+        type: 3}
+      propertyPath: actionDescription
+      value: 'reduce wealth by recovering resources '
+      objectReference: {fileID: 0}
+    - target: {fileID: 7051654887337880775, guid: 5485d390b8df447f58dd4e4d1c318617,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 73a0d3358c0574fb7b1b68be810f7174, type: 2}
     - target: {fileID: 5900650368495828881, guid: 5485d390b8df447f58dd4e4d1c318617,
         type: 3}
       propertyPath: m_Sprite

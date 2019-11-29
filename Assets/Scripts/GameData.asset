@@ -12,20 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65f0f279f17c94e6c98f01376732bfd1, type: 3}
   m_Name: GameData
   m_EditorClassIdentifier: Assembly-CSharp::GameScriptable
-  lastActionType: 5
-  culture: 12
-  connections: 5
-  sustainability: 0
+  lastActionName: InvestBlock2
+  culture: 8
+  connections: 2
+  sustainability: 6
   humanity: 0
-  wealth: 4
+  wealth: 6
   wealthGoal: 15
   investments: 01010100
   investCounter: 3
   productions: 000000000000000000000000000000000000000000000000
   productCounter: 0
-  stars: 1
+  stars: 0
   totalStars: 4
-  actions: 11
-  helpText: 'Resources spended: production complete!'
-  actionInProgress: 0
+  actions: 8
+  helpText: 'Want you want to produce?
+
+    Left click to increase
+
+    Right click to decrease'
+  actionInProgress: 1
   score: 0
