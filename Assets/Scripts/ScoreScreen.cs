@@ -25,10 +25,8 @@ public class ScoreScreen : MonoBehaviour
 
     public GameObject EndLine;
 
-    public GameObject footerTitle;
-    public GameObject footerImage;
-
     public GameObject tryAgainButton;
+    public GameObject returnToMenuButton;
 
     // Start is called before the first frame update
     void Start()
@@ -57,12 +55,12 @@ public class ScoreScreen : MonoBehaviour
         wealthTextObj.SetActive(true);
 
         yield return new WaitForSeconds(0.8f);
-        actionsIcon.SetActive(true);
-        actionsTextObj.SetActive(true);
-
-        yield return new WaitForSeconds(0.8f);
         starsIcon.SetActive(true);
         starsTextObj.SetActive(true);
+
+        yield return new WaitForSeconds(0.8f);
+        actionsIcon.SetActive(true);
+        actionsTextObj.SetActive(true);
 
         yield return new WaitForSeconds(0.8f);
         EndLine.SetActive(true);
@@ -71,19 +69,16 @@ public class ScoreScreen : MonoBehaviour
         scoreIcon.SetActive(true);
         scoreTextObj.SetActive(true);
 
-        yield return new WaitForSeconds(1);
-        footerTitle.SetActive(true);
-
-        yield return new WaitForSeconds(0.8f);
-        footerImage.SetActive(true);
-
-        yield return new WaitForSeconds(3);
-        footerTitle.SetActive(false);
-        footerImage.SetActive(false);
+        yield return new WaitForSeconds(2);
         tryAgainButton.SetActive(true);
+        returnToMenuButton.SetActive(true);
     }
 
     public void RestartLevel() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void ReturnToMenu() {
+        SceneManager.LoadScene(0);
     }
 }

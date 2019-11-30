@@ -7,17 +7,9 @@ public class UndoController : MonoBehaviour
     private Dictionary<string, object> undoState;
     private ActionBase obj;
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetMouseButtonDown(0)) {
-            RaycastHit hit = new RaycastHit();        
-            Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
-            if (Physics.Raycast(ray, out hit)) {
-                if (hit.collider.gameObject.tag == "BackPlane" && obj != null) {
-                    obj.RestoreState();
-                }
-            }
+    void OnMouseDown() {
+        if (obj != null) {
+            obj.RestoreState();
         }
     }
 

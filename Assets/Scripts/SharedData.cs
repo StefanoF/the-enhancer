@@ -206,9 +206,9 @@ public class SharedData : ScriptableObject {
 
     public void CalculateScore() {
         if (actions == 0) {
+            score = 0f;
             return;
         }
-        float relativeScore = (100 * wealth) / actions;
-        score = relativeScore + ((stars / totalStars) * relativeScore);
+        score = ((wealth * 100) + (stars * 100)) / actions;
     }
 }

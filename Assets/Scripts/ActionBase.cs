@@ -66,7 +66,7 @@ public class ActionBase : MonoBehaviour
         cameraFollow = Camera.main.gameObject.GetComponent<CameraFollow>();
         actionProduction = gameObject.GetComponent<ActionProduction>();
         actionCounter = gameObject.GetComponent<ActionCounter>();
-        undoController = GameObject.Find("/Activities").GetComponent<UndoController>();
+        undoController = GameObject.Find("/BottomPlane").GetComponent<UndoController>();
         actionTitlePanel = GameObject.Find("/UI/ActionTitle/Panel").GetComponent<Image>();
         actionTitleText = GameObject.Find("/UI/ActionTitle/Text").GetComponent<Text>();
         actionSubTitleText = GameObject.Find("/UI/ActionTitle/SubText").GetComponent<Text>();
