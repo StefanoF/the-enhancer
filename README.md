@@ -1,6 +1,4 @@
 # The Enhancer
-A game about time allocation strategies, made in Unity.
-
 A management game where you take the control of **surprising resources** with the aim of **increasing wealth** and reduce poverty.
 
 I partecipate at the Github's Game Off 2019 Jam with this project and the  theme was **LEAPS AND BOUNDS**:I interpret it like "*giant steps forward*" or "*strides*" and in this game you need to find a strategy to progress toward the main goal.
