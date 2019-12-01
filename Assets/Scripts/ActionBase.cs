@@ -62,6 +62,11 @@ public class ActionBase : MonoBehaviour
     private Text actionTitleText;
     private Text actionSubTitleText;
 
+    [Header("Audio Effects")]
+    public AudioSource mmm;
+    public AudioSource mmMM;
+    public AudioSource mM;
+
     void Awake() {
         cameraFollow = Camera.main.gameObject.GetComponent<CameraFollow>();
         actionProduction = gameObject.GetComponent<ActionProduction>();
@@ -192,7 +197,7 @@ public class ActionBase : MonoBehaviour
         }
 
         if (!gameData.HasResources(costDict)) {
-            gameData.helpText = "Not have enough resources!\nYou need to produce resources according to the costs on the left!";
+            gameData.helpText = "Not have enough resources!\nYou need resources, see the costs on the left!";
             return false;
         }
 
@@ -200,6 +205,7 @@ public class ActionBase : MonoBehaviour
     }
 
     public void Activate() {
+        mM.Play();
         ToogleTitle(true);
         cameraFollow.SetTarget(transform.position);
         gameData.actionInProgress = true;
@@ -219,6 +225,7 @@ public class ActionBase : MonoBehaviour
     }
 
     public void ConcludeAction() {
+        mmMM.Play();
         undoController.Reset();
         DeActivate();
         gameData.actions++;
@@ -248,6 +255,7 @@ public class ActionBase : MonoBehaviour
     }
 
     public void RestoreState() {
+        mmm.Play();
         Dictionary<string, object> undoState = undoController.GetUndoState();
         localInvestCounter = (int) undoState["actionBase.localInvestCounter"];
         gameData.investments = (bool[]) undoState["gameData.investments"];

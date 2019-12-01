@@ -52,7 +52,7 @@ public class ActionProduction : MonoBehaviour
             }
 
             if (investmentsFinded == 0) {
-                actionBase.gameData.helpText = "No correct investments!\nYou need to invest according to the required resources on the left!";
+                actionBase.gameData.helpText = "No correct investments!\nYou need to invest the required resources!";
                 return;
             } 
         }

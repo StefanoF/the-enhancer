@@ -35,7 +35,8 @@ public class StatisticsManager : MonoBehaviour
     public Color redColor;
     public Color greenColor;
     private Color originalColor;
-    
+
+    public AudioMan audioMan;
 
     // Start is called before the first frame update
     void Start()
@@ -154,6 +155,7 @@ public class StatisticsManager : MonoBehaviour
         }
 
         if (gameData.wealth >= gameData.wealthGoal) {
+            audioMan.Victory();
             gameData.CalculateScore();
             endGame.SetActive(true);
             gameObject.SetActive(false);

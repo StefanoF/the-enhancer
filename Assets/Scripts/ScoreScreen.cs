@@ -39,11 +39,6 @@ public class ScoreScreen : MonoBehaviour
         StartCoroutine("TextAppearing");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
     IEnumerator TextAppearing() {
         title.SetActive(true);
 
