@@ -12,20 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65f0f279f17c94e6c98f01376732bfd1, type: 3}
   m_Name: GameData
   m_EditorClassIdentifier: Assembly-CSharp::GameScriptable
-  lastActionName: GoodsBlock
-  culture: 3
-  connections: 1
-  sustainability: 1
-  humanity: 1
+  lastActionName: 
+  culture: 0
+  connections: 0
+  sustainability: 0
+  humanity: 0
   wealth: 0
   wealthGoal: 15
-  investments: 01000100
-  investCounter: 2
+  investments: 00000000
+  investCounter: 0
   productions: 000000000000000000000000000000000000000000000000
   productCounter: 0
   stars: 0
   totalStars: 4
-  actions: 6
-  helpText: Action canceled successfully!
+  actions: 0
+  helpText: 'The goal is to reach 15 of wealth (see the stats upward).
+
+    Click on a action box to start!'
   actionInProgress: 0
   score: 0
+  inPlane: 0

@@ -27,6 +27,7 @@ public class ActionBase : MonoBehaviour
 
     [Header("Resources")]
     public GameObject resources;
+    private Resources resourcesScript;
 
     [Header("UI Need")]
     public GameObject hoverCountersNeed;
@@ -68,6 +69,7 @@ public class ActionBase : MonoBehaviour
     public AudioSource mM;
 
     void Awake() {
+        resourcesScript = resources.GetComponent<Resources>();
         cameraFollow = Camera.main.gameObject.GetComponent<CameraFollow>();
         actionProduction = gameObject.GetComponent<ActionProduction>();
         actionCounter = gameObject.GetComponent<ActionCounter>();
@@ -130,7 +132,8 @@ public class ActionBase : MonoBehaviour
             costWealthObj.SetActive(true);
             costWealthText.text = wealth.ToString();
         }
-        if (needInvestment) {
+
+        if (needInvestment && actionProduction.investmentNeededCounter < 4) {
             needTextObj.SetActive(true);
             if (actionProduction.investmentNeeded[0]) {
                 needCultureObj.SetActive(true);
@@ -168,19 +171,22 @@ public class ActionBase : MonoBehaviour
         actionCounter.DeActivateBenefits();
     }
 
+    void Update() {
+        if (!inProgress && gameData.inPlane) {
+            resources.SetActive(false);
+        }
+    }
+
     void OnMouseExit() {
         if (!gameData.actionInProgress) {
             HideCostsAndNeeds();
-        }
-        
-        if (!inProgress) {
-            resources.SetActive(false);
         }
     }
 
     void OnMouseOver() {
         if (!gameData.actionInProgress) {
             ShowCostsAndNeeds();
+            resourcesScript.DisableColliders();
             resources.SetActive(true);
         }
     }
@@ -210,6 +216,7 @@ public class ActionBase : MonoBehaviour
         cameraFollow.SetTarget(transform.position);
         gameData.actionInProgress = true;
         inProgress = true;
+        resourcesScript.EnableColliders();
         resources.SetActive(true);
         localInvestCounter = gameData.investCounter;
         actionCounter.ActivateBenefits();

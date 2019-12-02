@@ -8,10 +8,20 @@ public class ActionProduction : MonoBehaviour
     private ActionBase actionBase;
 
     public bool[] investmentNeeded;
-
+    public int investmentNeededCounter;
 
     void Awake() {
         actionBase = gameObject.GetComponent<ActionBase>();
+    }
+
+    void Start() {
+        int count = 0;
+        foreach(bool i in investmentNeeded) {
+            if (i) {
+                count++;
+            }
+        }
+        investmentNeededCounter = count;
     }
 
     void OnMouseOver() {

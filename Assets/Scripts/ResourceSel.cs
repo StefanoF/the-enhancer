@@ -15,10 +15,12 @@ public class ResourceSel : MonoBehaviour
     public Material passiveMaterial;
 
     public MeshRenderer meshRenderer;
+    private BoxCollider boxCollider;
 
     void Awake()
     {
         meshRenderer = gameObject.GetComponent<MeshRenderer>();
+        boxCollider = gameObject.GetComponent<BoxCollider>();
     }
 
     public void HighlightResource() {
@@ -118,5 +120,15 @@ public class ResourceSel : MonoBehaviour
             gameData.helpText = resourceType.ToString() + "(" + gameData.productions[(int) resourceType] + ")";
             gameData.helpText += "\nWhen ended confirm by clicking on the action block.";
         }
+    }
+
+    public void EnableCollider() {
+        if (boxCollider != null)
+            boxCollider.enabled = true;
+    }
+
+    public void DisableCollider() {
+        if (boxCollider != null)
+            boxCollider.enabled = false;
     }
 }

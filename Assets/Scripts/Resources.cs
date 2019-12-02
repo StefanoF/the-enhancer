@@ -29,4 +29,16 @@ public class Resources : MonoBehaviour
             resourceSel.HighlightResource();
         }
     }
+
+    public void EnableColliders() {
+        foreach (ResourceSel resourceSel in resourceChilds) {
+            resourceSel.EnableCollider();
+        }
+    }
+
+    public void DisableColliders() {
+        foreach (ResourceSel resourceSel in resourceChilds) {
+            resourceSel.DisableCollider();
+        }
+    }
 }

@@ -40,7 +40,10 @@ public class SharedData : ScriptableObject {
     public bool actionInProgress;
     public float score;
 
+    public bool inPlane;
+
     public void ResetStats() {
+        inPlane = false;
         culture = 0; 
         connections = 0; 
         sustainability = 0; 

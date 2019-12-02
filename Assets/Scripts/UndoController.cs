@@ -7,6 +7,16 @@ public class UndoController : MonoBehaviour
     private Dictionary<string, object> undoState;
     private ActionBase obj;
 
+    public SharedData gameData;
+
+    void OnMouseOver() {
+        gameData.inPlane = true;
+    }
+
+    void OnMouseExit() {
+        gameData.inPlane = false;
+    }
+
     void OnMouseDown() {
         if (obj != null) {
             obj.RestoreState();
