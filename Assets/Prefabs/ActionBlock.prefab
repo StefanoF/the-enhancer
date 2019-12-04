@@ -2474,6 +2474,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   benefitObj: {fileID: 8860468433673720709}
   spacing: {x: 0, y: 0, z: -0.35}
+  spacingLeft: {x: 2.5, y: 0, z: 0}
 --- !u!1 &8858972014170374785
 GameObject:
   m_ObjectHideFlags: 0

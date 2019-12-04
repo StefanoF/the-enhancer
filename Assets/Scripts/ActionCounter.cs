@@ -6,6 +6,7 @@ public class ActionCounter : MonoBehaviour
 {
     public GameObject benefitObj;
     public Vector3 spacing;
+    public Vector3 spacingLeft;
     private Transform startPos;
     private GameObject[] benefitObjs;
     private ActionBase actionBase;
@@ -16,7 +17,13 @@ public class ActionCounter : MonoBehaviour
 
         benefitObjs = new GameObject[actionBase.nBenefit];
         for(int i = 0; i < actionBase.nBenefit; i++) {
-            Vector3 pos = startPos.position + (i * spacing);
+            Vector3 pos = startPos.position;
+            if (i >= 4) {
+                pos = pos + spacingLeft + ((i%4) * spacing);
+            }
+            else {
+                pos = pos + (i * spacing);
+            }
             benefitObjs[i] = Instantiate(benefitObj, pos, Quaternion.identity) as GameObject;
             benefitObjs[i].transform.parent = gameObject.transform;
             benefitObjs[i].SetActive(false);

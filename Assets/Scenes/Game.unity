@@ -5426,6 +5426,21 @@ PrefabInstance:
       propertyPath: m_Text
       value: "2\x03"
       objectReference: {fileID: 0}
+    - target: {fileID: 4352298175966039679, guid: 6add6ae9adb844849a7734e36e8bd931,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8292794348737585723, guid: 6add6ae9adb844849a7734e36e8bd931,
+        type: 3}
+      propertyPath: spacingRight.z
+      value: -0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 8292794348737585723, guid: 6add6ae9adb844849a7734e36e8bd931,
+        type: 3}
+      propertyPath: spacingRight.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6add6ae9adb844849a7734e36e8bd931, type: 3}
 --- !u!4 &1118879727 stripped
