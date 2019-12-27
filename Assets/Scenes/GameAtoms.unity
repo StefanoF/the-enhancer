@@ -3342,10 +3342,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 682711139}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b26ea773f78d4433b7ee9273caa1376, type: 3}
+  m_Script: {fileID: 11500000, guid: cd9119e5af0a34ada85f196ab0604a1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 58767903}
+  StatsHover: {fileID: 11400000, guid: 0d3c1356287f74bb9bc9acf645d2d86a, type: 2}
+  StatsExitHover: {fileID: 11400000, guid: dea642871dbe04fe29b2664f2cf8f124, type: 2}
 --- !u!1 &704975836
 GameObject:
   m_ObjectHideFlags: 0
@@ -5745,10 +5746,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1258920993}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 599b93a3122e2408194cdf9ce2b671b4, type: 3}
+  m_Script: {fileID: 11500000, guid: 4ae1aa905ac5140f2b3357cde9dc3cff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameData: {fileID: 11400000, guid: 6536e1c4c68274465943ea28fddf9549, type: 2}
+  BackgroundHover: {fileID: 11400000, guid: 70d62dd2bc0db4599bfcb9633c4c4d05, type: 2}
+  BackgroundExitHover: {fileID: 11400000, guid: caf87bc7d93974beb87a642e060dfb8b,
+    type: 2}
+  BackgroundClicked: {fileID: 11400000, guid: 8d5295010339544449e048c2c1d919f0, type: 2}
+  ActionCanceled: {fileID: 11400000, guid: 8f90dbd7eca984214b294c3e9f1a0fc1, type: 2}
+  gameData: {fileID: 11400000, guid: 980aa64c9a2604456b9145e90cb6d190, type: 2}
 --- !u!1001 &1259239732
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -6,4 +6,6 @@ public class ActionData : ScriptableObject {
     public int benefits;
     public int benefitsUsed;
     public string uniqueName;
+    public bool isToProduct;
+    public bool isToInvest;
 }

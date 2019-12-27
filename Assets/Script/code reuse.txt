@@ -49,7 +49,9 @@ eventi:
   - IdleNoAction
     - illumina in sequenza azioni disponibili (in base al costo)
   - StatsHover
+  - StatsExitHover
   - BackgroundHover
+  - BackgroundExitHover
   - BackgroundClicked
   - ActionHover
   - ActionExitHover
@@ -58,6 +60,7 @@ eventi:
   - ActionCanceled
   - ActionCompleted
   - ActionResourceHover
+  - ActionResourceExitHover
   - ActionResourceClicked
   - DuplicatedAction
   - NotEnoughResources
