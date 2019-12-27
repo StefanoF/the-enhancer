@@ -1,0 +1,137 @@
+funzionalità:
+  - icona ultima azione compiuta
+  - tooltip su hover statistiche
+  - hover azione mostra: (azione non in corso)
+    - titolo
+    - sottotitolo
+    - costi
+    - anima su e giu
+    - benefits
+    - risorse (disattivate)
+  - click azione: (azione non in corso)
+    - se azione duplicata:
+      - scuoti icona ultima azione compiuta (con tooltip se non basta)
+    - se non hai abb. risorse:
+      - scuoti statistiche risorse in base al costo
+    - altrimenti
+      - salva situazione per annullamento
+      - suono specifico per azione
+      - sposta camera su azione
+      - risorse (cliccabili)
+      - mostra i benefit
+  - click azione: (azione in corso)
+    - se presenti azioni temporanee e se azione attuale e se speso tutti i benefit
+      - concludi azione
+        - suono azione compiuta
+        - spendi le risorse di costo (+ risorsa azione)
+        - segnala le variazioni in statistiche risorse
+      - se raggiungi il wealth goal
+        - finisci il gioco
+    - altrimenti
+      - illumina in sequenza azioni disponibili (in base al costo)
+  - click sfondo: (azione in corso)
+    - annulla azione attuale
+    - ripristina le modifiche dall'inizio dell'azione attuale
+  - click risorsa: (azione in corso)
+    - se azione consentita
+      - salva azione temporanea (senza effettuarla davvero)
+    - feedback risorsa cliccata (solo tasto destro)
+      - risorsa (accesa / spenta)
+      - risorsa di produzione (numerello)
+  - hover su risorsa: (azione in corso)
+    - se risorsa di produzione e numerello > 0
+      - visualizza bottone meno (-) sotto a risorsa per togliere
+
+eventi:
+  - GameStart
+    - suono di sottofondo
+  - GameOver
+  - IdleNoAction
+    - illumina in sequenza azioni disponibili (in base al costo)
+  - StatsHover
+  - BackgroundHover
+  - BackgroundClicked
+  - ActionHover
+  - ActionExitHover
+  - ActionClicked
+  - ActionStarted
+  - ActionCanceled
+  - ActionCompleted
+  - ActionResourceHover
+  - ActionResourceClicked
+  - DuplicatedAction
+  - NotEnoughResources
+  - NotAllBenefitsUsed
+
+
+Actions: Invest, Goods, Conciliation, Sensibilization, Star
+Resources: Culture, Connections, Sustainability, Humanity, Wealth, Stars, Actions
+
+ScriptableObjects:
+  StatsData
+    culture
+    connections
+    sustainability
+    humanity
+    wealth
+    stars
+    actions
+
+  ActionData (one per action)
+    actionType (Invest, Goods, Conciliation, Sensibilization, Star)
+    actionState (available, validated, canceled, executed)
+    benefits
+    inProgress
+    needInvestment
+
+  GameData
+    score
+    wealthGoal
+    actionInProgress
+    investments
+    productions
+
+  UIGameData
+    helpText
+    tutorialText
+    actionTitleText
+    actionDescText
+
+Scripts:
+  ActionAnimator
+  ActionSound
+  ActionUI
+  ActionValidator:
+    only if actionState is available
+    only if inProgress is false
+    only if actionInProgress is false
+  ActionCanceler
+    only if actionState is validated
+    only if inProgress is true
+    only if actionInProgress is true
+  ActionExecutor
+    only if actionState is validated
+    only if inProgress is true
+    only if actionInProgress is true
+    ActionCompletedEvent Raised
+  ActionEventRaiser:
+    OnMouseClick
+      ValidateEvent Raised
+
+Scripts managers:
+  TutorialManager
+
+  CostManager
+    + listener OnHover
+      show costs
+    + listener OnActionCompleted
+      spend resources
+
+  GameProgressManager
+    actionTree
+
+  GameEventListener: 
+    + ValidateEvent:
+      ActionValidator.Validate(SharedParams typeOfValidation)
+
+
