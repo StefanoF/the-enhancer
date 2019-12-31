@@ -21,10 +21,10 @@ public class ActionInvest : MonoBehaviour
         if (actionBase.inProgress) {
             if (actionBase.localInvestCounter == actionBase.nBenefit) {
                 actionBase.ConcludeAction();
-                actionBase.gameData.helpText = "Resources spended: invest complete!";
+                ActionEvents.Instance.investComplete.Raise();
             }
             else if (actionBase.localInvestCounter < actionBase.nBenefit) {
-                actionBase.gameData.helpText = "Use all the benefit prior to confirm the action!";
+                ActionEvents.Instance.useAllBenefits.Raise();
             }
             return;
         }
@@ -41,7 +41,7 @@ public class ActionInvest : MonoBehaviour
             actionBase.resources.GetComponent<Resources>().UpdateHighlight();
         }
 
-        actionBase.gameData.helpText = "What do you want to invest in?\nLeft click to invest\nRight click to disinvest";
+        ActionEvents.Instance.investStarted.Raise();
         actionBase.Activate();
     }
 }

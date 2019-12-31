@@ -36,10 +36,10 @@ public class ActionProduction : MonoBehaviour
             if (actionBase.gameData.productCounter == actionBase.nBenefit) {
                 actionBase.ConcludeAction();
                 actionBase.gameData.AddProductResources();
-                actionBase.gameData.helpText = "Resources spended: production complete!";
+                ActionEvents.Instance.productionComplete.Raise();
             }
             else if (actionBase.gameData.productCounter < actionBase.nBenefit) {
-                actionBase.gameData.helpText = "Use all the benefit prior to confirm the action!";
+                ActionEvents.Instance.useAllBenefits.Raise();
             }
             return;
         }
@@ -50,7 +50,7 @@ public class ActionProduction : MonoBehaviour
 
         if (actionBase.needInvestment) {
             if (actionBase.gameData.investCounter == 0) {
-                actionBase.gameData.helpText = "Not have investments!\nYou need to invest prior to produce!";
+                ActionEvents.Instance.needToInvest.Raise();
                 return;
             }
 
@@ -62,14 +62,14 @@ public class ActionProduction : MonoBehaviour
             }
 
             if (investmentsFinded == 0) {
-                actionBase.gameData.helpText = "No correct investments!\nYou need to invest the required resources!";
+                ActionEvents.Instance.needCorrectInvest.Raise();
                 return;
             } 
         }
 
         actionBase.SaveStateToUndo();
 
-        actionBase.gameData.helpText = "Want you want to produce?\nLeft click to increase\nRight click to decrease";
+        ActionEvents.Instance.productionStarted.Raise();
         actionBase.Activate();
     }
 }

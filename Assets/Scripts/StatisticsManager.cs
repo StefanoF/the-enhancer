@@ -151,7 +151,7 @@ public class StatisticsManager : MonoBehaviour
             actionsCounterText.text = gameData.actions.ToString();
         }
         if (helpText) {
-            helpText.text = gameData.helpText.ToString();
+            // helpText.text = gameData.helpText.ToString();
         }
 
         if (gameData.wealth >= gameData.wealthGoal) {

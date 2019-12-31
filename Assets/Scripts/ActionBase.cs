@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class ActionBase : MonoBehaviour
-{   
+{
     public bool inProgress;
     public string actionDescription;
 
@@ -193,17 +193,17 @@ public class ActionBase : MonoBehaviour
 
     public bool Validate() {
         if (gameData.actionInProgress) {
-            gameData.helpText = "One action at time!";
+            ActionEvents.Instance.oneActionAtTime.Raise();
             return false;
         }
 
         if (gameData.lastActionName == gameObject.transform.parent.gameObject.name && !doTwice) {
-            gameData.helpText = "Don't do same action twice!";
+            ActionEvents.Instance.sameActionTwice.Raise();
             return false;
         }
 
         if (!gameData.HasResources(costDict)) {
-            gameData.helpText = "Not have enough resources!\nYou need resources, see the costs on the left!";
+            ActionEvents.Instance.notEnoughResources.Raise();
             return false;
         }
 
@@ -270,7 +270,7 @@ public class ActionBase : MonoBehaviour
         gameData.productions = (int[]) undoState["gameData.productions"];
         gameData.productCounter = (int) undoState["gameData.productCounter"];
 
-        gameData.helpText = "Action canceled successfully!";
+        ActionEvents.Instance.actionCanceled.Raise();
         undoController.Reset();
         DeActivate();
     }

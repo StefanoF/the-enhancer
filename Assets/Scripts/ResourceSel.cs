@@ -94,6 +94,9 @@ public class ResourceSel : MonoBehaviour
             actionCounter.RemoveBenefit();
             gameData.helpText = "Invested in " + resourceType.ToString();
             gameData.helpText += "\nWhen ended confirm by clicking on the action block.";
+
+            ResourceEvents.Instance.actualResourceType = resourceType;
+            ResourceEvents.Instance.invest.Raise();
         }
     }
 
@@ -103,6 +106,9 @@ public class ResourceSel : MonoBehaviour
             actionCounter.AddBenefit();
             gameData.helpText = "Disinvested in " + resourceType.ToString();
             gameData.helpText += "\nWhen ended confirm by clicking on the action block.";
+
+            ResourceEvents.Instance.actualResourceType = resourceType;
+            ResourceEvents.Instance.deInvest.Raise();
         }
     }
 
@@ -111,6 +117,9 @@ public class ResourceSel : MonoBehaviour
             actionCounter.RemoveBenefit();
             gameData.helpText = resourceType.ToString() + "(" + gameData.productions[(int) resourceType] + ")";
             gameData.helpText += "\nWhen ended confirm by clicking on the action block.";
+
+            ResourceEvents.Instance.actualResourceType = resourceType;
+            ResourceEvents.Instance.product.Raise();
         }
     }
 
@@ -119,6 +128,9 @@ public class ResourceSel : MonoBehaviour
             actionCounter.AddBenefit();
             gameData.helpText = resourceType.ToString() + "(" + gameData.productions[(int) resourceType] + ")";
             gameData.helpText += "\nWhen ended confirm by clicking on the action block.";
+
+            ResourceEvents.Instance.actualResourceType = resourceType;
+            ResourceEvents.Instance.deProduct.Raise();
         }
     }
 
