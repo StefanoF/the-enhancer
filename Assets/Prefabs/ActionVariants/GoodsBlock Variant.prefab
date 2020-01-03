@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   investmentNeeded: 
+  investmentNeededCounter: 0
 --- !u!1001 &1951538160200538171
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -104,6 +105,21 @@ PrefabInstance:
         type: 3}
       propertyPath: actionDescription
       value: produce some resources
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599369355978958729, guid: 91106ea2ee39441e5aee8b259b04a171,
+        type: 3}
+      propertyPath: actionColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599369355978958729, guid: 91106ea2ee39441e5aee8b259b04a171,
+        type: 3}
+      propertyPath: actionColor.g
+      value: 0.47058827
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599369355978958729, guid: 91106ea2ee39441e5aee8b259b04a171,
+        type: 3}
+      propertyPath: actionColor.b
+      value: 0.227451
       objectReference: {fileID: 0}
     - target: {fileID: 5401526392563689386, guid: 91106ea2ee39441e5aee8b259b04a171,
         type: 3}

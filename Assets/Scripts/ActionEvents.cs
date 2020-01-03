@@ -24,4 +24,5 @@ public class ActionEvents : MonoBehaviour {
     public GameEvent useAllBenefits;
     public GameEvent needToInvest;
     public GameEvent needCorrectInvest;
+    public GameEvent changeLastAction;
 }

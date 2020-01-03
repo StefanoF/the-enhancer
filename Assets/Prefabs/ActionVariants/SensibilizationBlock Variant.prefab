@@ -92,6 +92,21 @@ PrefabInstance:
       propertyPath: actionDescription
       value: 'reduce wealth by recovering resources '
       objectReference: {fileID: 0}
+    - target: {fileID: 4647973111170744242, guid: 5485d390b8df447f58dd4e4d1c318617,
+        type: 3}
+      propertyPath: actionColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4647973111170744242, guid: 5485d390b8df447f58dd4e4d1c318617,
+        type: 3}
+      propertyPath: actionColor.g
+      value: 0.7411765
+      objectReference: {fileID: 0}
+    - target: {fileID: 4647973111170744242, guid: 5485d390b8df447f58dd4e4d1c318617,
+        type: 3}
+      propertyPath: actionColor.b
+      value: 0.9843138
+      objectReference: {fileID: 0}
     - target: {fileID: 7051654887337880775, guid: 5485d390b8df447f58dd4e4d1c318617,
         type: 3}
       propertyPath: m_Materials.Array.data[0]

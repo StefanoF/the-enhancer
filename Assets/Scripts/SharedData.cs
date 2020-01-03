@@ -15,6 +15,9 @@ public class SharedData : ScriptableObject {
     };
 
     public string lastActionName;
+    public string lastActionLvl;
+    public Sprite lastActionIcon;
+    public Color lastActionColor;
 
     // general stats
     public int culture; 

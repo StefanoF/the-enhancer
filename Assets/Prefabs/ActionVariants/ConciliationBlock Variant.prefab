@@ -107,6 +107,21 @@ PrefabInstance:
       propertyPath: actionDescription
       value: increase wealth by saving on war
       objectReference: {fileID: 0}
+    - target: {fileID: 2091190091725617779, guid: 6add6ae9adb844849a7734e36e8bd931,
+        type: 3}
+      propertyPath: actionColor.r
+      value: 0.93725497
+      objectReference: {fileID: 0}
+    - target: {fileID: 2091190091725617779, guid: 6add6ae9adb844849a7734e36e8bd931,
+        type: 3}
+      propertyPath: actionColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2091190091725617779, guid: 6add6ae9adb844849a7734e36e8bd931,
+        type: 3}
+      propertyPath: actionColor.b
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6887664300719826704, guid: 6add6ae9adb844849a7734e36e8bd931,
         type: 3}
       propertyPath: m_LocalPosition.x

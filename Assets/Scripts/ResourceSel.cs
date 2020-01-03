@@ -92,8 +92,6 @@ public class ResourceSel : MonoBehaviour
         if (gameData.InvestResource(resourceType, actionBase.nBenefit, actionBase.localInvestCounter)) {
             actionBase.localInvestCounter++;
             actionCounter.RemoveBenefit();
-            gameData.helpText = "Invested in " + resourceType.ToString();
-            gameData.helpText += "\nWhen ended confirm by clicking on the action block.";
 
             ResourceEvents.Instance.actualResourceType = resourceType;
             ResourceEvents.Instance.invest.Raise();
@@ -104,8 +102,6 @@ public class ResourceSel : MonoBehaviour
         if (gameData.DisinvestResource(resourceType, actionBase.nBenefit)) {
             actionBase.localInvestCounter--;
             actionCounter.AddBenefit();
-            gameData.helpText = "Disinvested in " + resourceType.ToString();
-            gameData.helpText += "\nWhen ended confirm by clicking on the action block.";
 
             ResourceEvents.Instance.actualResourceType = resourceType;
             ResourceEvents.Instance.deInvest.Raise();
@@ -115,8 +111,6 @@ public class ResourceSel : MonoBehaviour
     void Production(bool withInvestments) {
         if (gameData.ProductResource(resourceType, actionBase.nBenefit, withInvestments)) {
             actionCounter.RemoveBenefit();
-            gameData.helpText = resourceType.ToString() + "(" + gameData.productions[(int) resourceType] + ")";
-            gameData.helpText += "\nWhen ended confirm by clicking on the action block.";
 
             ResourceEvents.Instance.actualResourceType = resourceType;
             ResourceEvents.Instance.product.Raise();
@@ -126,8 +120,6 @@ public class ResourceSel : MonoBehaviour
     void DeProduction(bool withInvestments) {
         if (gameData.DeProductResource(resourceType, actionBase.nBenefit, withInvestments)) {
             actionCounter.AddBenefit();
-            gameData.helpText = resourceType.ToString() + "(" + gameData.productions[(int) resourceType] + ")";
-            gameData.helpText += "\nWhen ended confirm by clicking on the action block.";
 
             ResourceEvents.Instance.actualResourceType = resourceType;
             ResourceEvents.Instance.deProduct.Raise();

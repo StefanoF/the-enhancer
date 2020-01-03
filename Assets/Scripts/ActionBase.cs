@@ -7,6 +7,9 @@ public class ActionBase : MonoBehaviour
 {
     public bool inProgress;
     public string actionDescription;
+    public Text actionLvl;
+    public Image actionIcon;
+    public Color actionColor;
 
     [Header("Stats data")]
     public SharedData gameData;
@@ -31,12 +34,6 @@ public class ActionBase : MonoBehaviour
 
     [Header("UI Need")]
     public GameObject hoverCountersNeed;
-
-    public GameObject needTextObj;
-    public GameObject needCultureObj;
-    public GameObject needConnectionsObj;
-    public GameObject needHumanityObj;
-    public GameObject needSustainabilityObj;
 
     [Header("UI Costs")]
     public GameObject costsTextObj;
@@ -133,32 +130,12 @@ public class ActionBase : MonoBehaviour
             costWealthText.text = wealth.ToString();
         }
 
-        if (needInvestment && actionProduction.investmentNeededCounter < 4) {
-            needTextObj.SetActive(true);
-            if (actionProduction.investmentNeeded[0]) {
-                needCultureObj.SetActive(true);
-            }
-            if (actionProduction.investmentNeeded[1]) {
-                needConnectionsObj.SetActive(true);
-            }
-            if (actionProduction.investmentNeeded[2]) {
-                needSustainabilityObj.SetActive(true);
-            }
-            if (actionProduction.investmentNeeded[3]) {
-                needHumanityObj.SetActive(true);
-            }
-        }
         hoverCountersNeed.SetActive(true);
         uiUpdated = true;
         actionCounter.ActivateBenefits();
     }
 
     void HideCostsAndNeeds() {
-        needTextObj.SetActive(false);
-        needCultureObj.SetActive(false);
-        needConnectionsObj.SetActive(false);
-        needHumanityObj.SetActive(false);
-        needSustainabilityObj.SetActive(false);
         costsTextObj.SetActive(false);
         costCultureObj.SetActive(false);
         costConnectionsObj.SetActive(false);
@@ -234,9 +211,9 @@ public class ActionBase : MonoBehaviour
     public void ConcludeAction() {
         mmMM.Play();
         undoController.Reset();
+        ChangeLastAction();
         DeActivate();
         gameData.actions++;
-        gameData.lastActionName = gameObject.transform.parent.gameObject.name;
         gameData.SpendResources(costDict);
 
         if (actionType == SharedData.ActionType.Star) {
@@ -248,6 +225,14 @@ public class ActionBase : MonoBehaviour
                 nextAction.SetActive(true);
             }
         }
+    }
+
+    private void ChangeLastAction() {
+        gameData.lastActionName = gameObject.transform.parent.gameObject.name;
+        gameData.lastActionLvl = actionLvl.text;
+        gameData.lastActionIcon = actionIcon.sprite;
+        gameData.lastActionColor = actionColor;
+        ActionEvents.Instance.changeLastAction.Raise();
     }
 
     public void SaveStateToUndo() {

@@ -6,15 +6,10 @@ public class ActionAnim : MonoBehaviour
 {
     public float moveRange;
     public float moveSpeed;
+    public SharedData gameData;
     private float timeMovement;
     private Vector3 startPosition;
     private Vector3 moveVector;
-    private ActionBase actionBase;
-
-    void Awake()
-    {
-        actionBase = gameObject.GetComponent<ActionBase>();
-    }
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +19,7 @@ public class ActionAnim : MonoBehaviour
     }
 
     void OnMouseOver() {
-        if (!actionBase.gameData.actionInProgress) {
+        if (!gameData.actionInProgress) {
             timeMovement += Time.deltaTime;
             transform.position = transform.position + moveVector * (moveRange * Mathf.Sin(timeMovement * moveSpeed));
         }

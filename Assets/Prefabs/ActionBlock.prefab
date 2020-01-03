@@ -24,12 +24,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 544518141737205387}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 8847817759127811326}
-  m_RootOrder: 3
+  m_Father: {fileID: 770044698166336500}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &216523525997657138
 AudioSource:
@@ -230,12 +230,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1061192783146014617}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 8847817759127811326}
-  m_RootOrder: 1
+  m_Father: {fileID: 770044698166336500}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &3647070996436843242
 AudioSource:
@@ -992,6 +992,39 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &3250876126347806496
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 770044698166336500}
+  m_Layer: 0
+  m_Name: AudioEffects
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &770044698166336500
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3250876126347806496}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 8202224258174225590}
+  - {fileID: 5338004918801822091}
+  - {fileID: 4538392384087449813}
+  m_Father: {fileID: 8847817759127811326}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3614489876974293974
 GameObject:
   m_ObjectHideFlags: 0
@@ -2317,9 +2350,7 @@ Transform:
   m_LocalScale: {x: 2, y: 1, z: 2}
   m_Children:
   - {fileID: 5282799023489401112}
-  - {fileID: 8202224258174225590}
-  - {fileID: 5338004918801822091}
-  - {fileID: 4538392384087449813}
+  - {fileID: 770044698166336500}
   m_Father: {fileID: 9075541032326522506}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2412,6 +2443,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveRange: 0.03
   moveSpeed: 8
+  gameData: {fileID: 11400000, guid: 6536e1c4c68274465943ea28fddf9549, type: 2}
 --- !u!114 &6599369355978958729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2426,6 +2458,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inProgress: 0
   actionDescription: 
+  actionLvl: {fileID: 4007147879984995836}
+  actionIcon: {fileID: 5401526392563689386}
+  actionColor: {r: 0.5803922, g: 1, b: 0, a: 1}
   gameData: {fileID: 11400000, guid: 6536e1c4c68274465943ea28fddf9549, type: 2}
   actionType: 0
   doTwice: 0
@@ -2438,11 +2473,6 @@ MonoBehaviour:
   nextAction: {fileID: 0}
   resources: {fileID: 4226425397951035863}
   hoverCountersNeed: {fileID: 0}
-  needTextObj: {fileID: 0}
-  needCultureObj: {fileID: 0}
-  needConnectionsObj: {fileID: 0}
-  needHumanityObj: {fileID: 0}
-  needSustainabilityObj: {fileID: 0}
   costsTextObj: {fileID: 0}
   costCultureObj: {fileID: 0}
   costCultureText: {fileID: 0}
@@ -2690,12 +2720,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8908391071006964975}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 8847817759127811326}
-  m_RootOrder: 2
+  m_Father: {fileID: 770044698166336500}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &7968915684709620065
 AudioSource:
