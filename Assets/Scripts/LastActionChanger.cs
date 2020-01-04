@@ -10,9 +10,11 @@ public class LastActionChanger : MonoBehaviour
     public void ChangeColor(Image actualImage) {
         actualImage.color = gameData.lastActionColor;
     }
+
     public void ChangeActionLvl(Text actualText) {
         actualText.text = gameData.lastActionLvl;
     }
+
     public void ChangeActionIcon(Image actualImage) {
         actualImage.sprite = gameData.lastActionIcon;
         actualImage.color = new Color(255, 255, 255, 255);
