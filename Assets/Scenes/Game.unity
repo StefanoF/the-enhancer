@@ -487,6 +487,7 @@ GameObject:
   - component: {fileID: 119531909}
   - component: {fileID: 119531908}
   - component: {fileID: 119531907}
+  - component: {fileID: 119531917}
   m_Layer: 5
   m_Name: EventText
   m_TagString: Untagged
@@ -832,6 +833,35 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Action canceled successfully!
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &119531917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119531904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b873b33beda64077bd0392747561758, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: ef6bf2cad921f49a2a147c6b642c6b01, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1796696529}
+        m_MethodName: set_text
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
@@ -3636,6 +3666,7 @@ MonoBehaviour:
   sameActionTwice: {fileID: 11400000, guid: b2195dffdd7f849fc88388655d9b8d27, type: 2}
   notEnoughResources: {fileID: 11400000, guid: 49464418170c64828bb13d2b2a20afda, type: 2}
   actionCanceled: {fileID: 11400000, guid: 7620d97367b344d3b9668589772d3bdc, type: 2}
+  clickOnBottomPlane: {fileID: 11400000, guid: ef6bf2cad921f49a2a147c6b642c6b01, type: 2}
   investComplete: {fileID: 11400000, guid: 1f9fef53cf3124e24a7938e0d38b7f63, type: 2}
   investStarted: {fileID: 11400000, guid: d6b5eefef97c7452281c88f6636a1ca8, type: 2}
   productionComplete: {fileID: 11400000, guid: 0c79d27860de24bc3adb5fd1117d38ae, type: 2}
@@ -4489,7 +4520,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 1, y: 1e-45, z: 6.3973115e-21, w: 1.53e-43}
+  m_BoundingSphereOverride: {x: -1.7014118e+38, y: 9.860761e-32, z: 0, w: 1.8e-43}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -5762,11 +5793,6 @@ PrefabInstance:
       propertyPath: actionTitleText
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 8146152997925240838, guid: 6add6ae9adb844849a7734e36e8bd931,
-        type: 3}
-      propertyPath: m_Text
-      value: "2\x03"
-      objectReference: {fileID: 0}
     - target: {fileID: 4352298175966039679, guid: 6add6ae9adb844849a7734e36e8bd931,
         type: 3}
       propertyPath: m_IsActive
@@ -5781,6 +5807,11 @@ PrefabInstance:
         type: 3}
       propertyPath: spacingRight.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8146152997925240838, guid: 6add6ae9adb844849a7734e36e8bd931,
+        type: 3}
+      propertyPath: m_Text
+      value: "2\x03"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6add6ae9adb844849a7734e36e8bd931, type: 3}
@@ -9771,20 +9802,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1378746314427945653, guid: 5485d390b8df447f58dd4e4d1c318617,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3704263937333057481, guid: 5485d390b8df447f58dd4e4d1c318617,
         type: 3}
       propertyPath: m_IsActive
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4587682915170858783, guid: 5485d390b8df447f58dd4e4d1c318617,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8097929202375790340, guid: 5485d390b8df447f58dd4e4d1c318617,
         type: 3}
@@ -9816,6 +9837,21 @@ PrefabInstance:
       propertyPath: investmentNeeded.Array.data[3]
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3209235134098720199, guid: 5485d390b8df447f58dd4e4d1c318617,
+        type: 3}
+      propertyPath: m_Text
+      value: "3\x03"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1378746314427945653, guid: 5485d390b8df447f58dd4e4d1c318617,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4587682915170858783, guid: 5485d390b8df447f58dd4e4d1c318617,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 673762535548919271, guid: 5485d390b8df447f58dd4e4d1c318617,
         type: 3}
       propertyPath: m_IsActive
@@ -9825,11 +9861,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3209235134098720199, guid: 5485d390b8df447f58dd4e4d1c318617,
-        type: 3}
-      propertyPath: m_Text
-      value: "3\x03"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5485d390b8df447f58dd4e4d1c318617, type: 3}
@@ -10319,17 +10350,7 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1378746314427945653, guid: 5485d390b8df447f58dd4e4d1c318617,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3704263937333057481, guid: 5485d390b8df447f58dd4e4d1c318617,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4587682915170858783, guid: 5485d390b8df447f58dd4e4d1c318617,
         type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -10364,6 +10385,21 @@ PrefabInstance:
       propertyPath: investmentNeeded.Array.data[0]
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3209235134098720199, guid: 5485d390b8df447f58dd4e4d1c318617,
+        type: 3}
+      propertyPath: m_Text
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1378746314427945653, guid: 5485d390b8df447f58dd4e4d1c318617,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4587682915170858783, guid: 5485d390b8df447f58dd4e4d1c318617,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 673762535548919271, guid: 5485d390b8df447f58dd4e4d1c318617,
         type: 3}
       propertyPath: m_IsActive
@@ -10373,11 +10409,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3209235134098720199, guid: 5485d390b8df447f58dd4e4d1c318617,
-        type: 3}
-      propertyPath: m_Text
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5485d390b8df447f58dd4e4d1c318617, type: 3}
@@ -11374,11 +11405,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1378746314427945653, guid: 5485d390b8df447f58dd4e4d1c318617,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3704263937333057481, guid: 5485d390b8df447f58dd4e4d1c318617,
         type: 3}
       propertyPath: m_IsActive
@@ -11412,6 +11438,11 @@ PrefabInstance:
     - target: {fileID: 4163116095426366483, guid: 5485d390b8df447f58dd4e4d1c318617,
         type: 3}
       propertyPath: investmentNeeded.Array.data[2]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1378746314427945653, guid: 5485d390b8df447f58dd4e4d1c318617,
+        type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 673762535548919271, guid: 5485d390b8df447f58dd4e4d1c318617,

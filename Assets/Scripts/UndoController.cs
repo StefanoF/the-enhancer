@@ -18,6 +18,7 @@ public class UndoController : MonoBehaviour
     }
 
     void OnMouseDown() {
+        ActionEvents.Instance.clickOnBottomPlane.Raise();
         if (obj != null) {
             obj.RestoreState();
         }

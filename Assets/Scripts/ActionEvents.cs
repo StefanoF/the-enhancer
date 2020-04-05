@@ -17,6 +17,7 @@ public class ActionEvents : MonoBehaviour {
     public GameEvent sameActionTwice;
     public GameEvent notEnoughResources;
     public GameEvent actionCanceled;
+    public GameEvent clickOnBottomPlane;
     public GameEvent investComplete;
     public GameEvent investStarted;
     public GameEvent productionComplete;
