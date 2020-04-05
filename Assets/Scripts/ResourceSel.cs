@@ -56,7 +56,13 @@ public class ResourceSel : MonoBehaviour
 
     void LeftMouseClick() {
         if (actionBase.actionType == SharedData.ActionType.Invest) {
-            Invest();
+            if (gameData.investments[(int) resourceType]) {
+                DeInvest();
+            }
+            else {
+                Invest();
+            }
+            
             HighlightResource();
         }
         else if (actionBase.actionType == SharedData.ActionType.Goods ||
@@ -72,11 +78,7 @@ public class ResourceSel : MonoBehaviour
     }
 
     void RightMouseClick() {
-        if (actionBase.actionType == SharedData.ActionType.Invest) {
-            DeInvest();
-            HighlightResource();
-        }
-        else if (actionBase.actionType == SharedData.ActionType.Goods ||
+        if (actionBase.actionType == SharedData.ActionType.Goods ||
             actionBase.actionType == SharedData.ActionType.Sensibilization ||
             actionBase.actionType == SharedData.ActionType.Conciliation ||
             actionBase.actionType == SharedData.ActionType.Star) 

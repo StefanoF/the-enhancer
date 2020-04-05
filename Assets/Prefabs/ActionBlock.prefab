@@ -551,7 +551,7 @@ MonoBehaviour:
   actionBase: {fileID: 6599369355978958729}
   actionCounter: {fileID: 3856525748130594753}
   gameData: {fileID: 11400000, guid: 6536e1c4c68274465943ea28fddf9549, type: 2}
-  resourceType: 3
+  resourceType: 5
   activeMaterial: {fileID: 2100000, guid: 3681ab050caf74c0ea8617133aabc88b, type: 2}
   passiveMaterial: {fileID: 2100000, guid: 094f8b0039e8d4b558cf5d594e116f9b, type: 2}
   meshRenderer: {fileID: 0}

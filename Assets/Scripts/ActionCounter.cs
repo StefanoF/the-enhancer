@@ -7,8 +7,10 @@ public class ActionCounter : MonoBehaviour
     public GameObject benefitObj;
     public Vector3 spacing;
     public Vector3 spacingLeft;
+
     private Transform startPos;
     private GameObject[] benefitObjs;
+    private GameObject[,] benefitPerResource;
     private ActionBase actionBase;
 
     void Start() {
@@ -16,6 +18,10 @@ public class ActionCounter : MonoBehaviour
         startPos = benefitObj.GetComponent<Transform>();
 
         benefitObjs = new GameObject[actionBase.nBenefit];
+        benefitObjs = GenerateBenefits(startPos, benefitObjs);
+    }
+
+    GameObject[] GenerateBenefits(Transform startPos, GameObject[] benefits) {
         for(int i = 0; i < actionBase.nBenefit; i++) {
             Vector3 pos = startPos.position;
             if (i >= 4) {
@@ -24,10 +30,12 @@ public class ActionCounter : MonoBehaviour
             else {
                 pos = pos + (i * spacing);
             }
-            benefitObjs[i] = Instantiate(benefitObj, pos, Quaternion.identity) as GameObject;
-            benefitObjs[i].transform.parent = gameObject.transform;
-            benefitObjs[i].SetActive(false);
+            benefits[i] = Instantiate(benefitObj, pos, Quaternion.identity) as GameObject;
+            benefits[i].transform.parent = gameObject.transform;
+            benefits[i].SetActive(false);
         }
+
+        return benefits;
     }
 
     public void ActivateBenefits() {
