@@ -6,6 +6,7 @@ TagManager:
   tags:
   - BackPlane
   - Actionable
+  - Building
   layers:
   - Default
   - TransparentFX

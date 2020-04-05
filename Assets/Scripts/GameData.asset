@@ -12,15 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65f0f279f17c94e6c98f01376732bfd1, type: 3}
   m_Name: GameData
   m_EditorClassIdentifier: Assembly-CSharp::GameScriptable
-  lastActionName: InvestBlock
-  lastActionLvl: "1\x03"
-  lastActionIcon: {fileID: 21300000, guid: c74c9f8c50d2e4ab2bb34f7c4d0be556, type: 3}
-  lastActionColor: {r: 0.63529414, g: 0.9960785, b: 0.31764707, a: 1}
-  culture: 0
-  connections: 0
-  sustainability: 0
-  humanity: 0
-  wealth: 0
+  lastActionName: SensibilizationBlock2
+  lastActionLvl: "2\x03"
+  lastActionIcon: {fileID: 21300000, guid: abdf056837b9041af9028e76afac3c51, type: 3}
+  lastActionColor: {r: 0, g: 0.7411765, b: 0.9843138, a: 1}
+  culture: 9
+  connections: 4
+  sustainability: 3
+  humanity: 7
+  wealth: 5
   wealthGoal: 15
   investments: 01000001
   investCounter: 2
@@ -28,7 +28,7 @@ MonoBehaviour:
   productCounter: 0
   stars: 0
   totalStars: 4
-  actions: 1
+  actions: 9
   helpText: 'The goal is to reach 15 of wealth (see the stats upward).
 
     Click on a action box to start!'
