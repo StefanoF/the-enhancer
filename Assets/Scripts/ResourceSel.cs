@@ -93,7 +93,7 @@ public class ResourceSel : MonoBehaviour
     void Invest() {
         if (gameData.InvestResource(resourceType, actionBase.nBenefit, actionBase.localInvestCounter)) {
             actionBase.localInvestCounter++;
-            actionCounter.RemoveBenefit();
+            actionCounter.RemoveBenefit((int) resourceType);
 
             ResourceEvents.Instance.actualResourceType = resourceType;
             ResourceEvents.Instance.invest.Raise();
@@ -103,7 +103,7 @@ public class ResourceSel : MonoBehaviour
     void DeInvest() {
         if (gameData.DisinvestResource(resourceType, actionBase.nBenefit)) {
             actionBase.localInvestCounter--;
-            actionCounter.AddBenefit();
+            actionCounter.AddBenefit((int) resourceType);
 
             ResourceEvents.Instance.actualResourceType = resourceType;
             ResourceEvents.Instance.deInvest.Raise();
@@ -112,7 +112,7 @@ public class ResourceSel : MonoBehaviour
 
     void Production(bool withInvestments) {
         if (gameData.ProductResource(resourceType, actionBase.nBenefit, withInvestments)) {
-            actionCounter.RemoveBenefit();
+            actionCounter.RemoveBenefit((int) resourceType);
 
             ResourceEvents.Instance.actualResourceType = resourceType;
             ResourceEvents.Instance.product.Raise();
@@ -121,7 +121,7 @@ public class ResourceSel : MonoBehaviour
 
     void DeProduction(bool withInvestments) {
         if (gameData.DeProductResource(resourceType, actionBase.nBenefit, withInvestments)) {
-            actionCounter.AddBenefit();
+            actionCounter.AddBenefit((int) resourceType);
 
             ResourceEvents.Instance.actualResourceType = resourceType;
             ResourceEvents.Instance.deProduct.Raise();

@@ -475,7 +475,7 @@ Transform:
   m_Children:
   - {fileID: 3954736434151433544}
   m_Father: {fileID: 8484320863028247485}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5009923264758646076
 MeshFilter:
@@ -1249,7 +1249,7 @@ Transform:
   m_Children:
   - {fileID: 1667854896736842838}
   m_Father: {fileID: 8484320863028247485}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3944438429756912461
 MeshFilter:
@@ -1361,8 +1361,8 @@ Transform:
   - {fileID: 1649626825921075694}
   - {fileID: 106721691244264705}
   - {fileID: 2356841378199919404}
-  - {fileID: 214064636185857585}
   - {fileID: 427089549572814612}
+  - {fileID: 214064636185857585}
   - {fileID: 9027444419119237214}
   m_Father: {fileID: 9075541032326522506}
   m_RootOrder: 1
@@ -2502,9 +2502,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f028f3fc84cf84065b94f4305caf2f78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  resourceObjs:
+  - {fileID: 6022956859981138326}
+  - {fileID: 5367836671987111367}
+  - {fileID: 2917613414569840626}
+  - {fileID: 7743057929305085759}
+  - {fileID: 3933655177595547824}
+  - {fileID: 1764123852516288574}
   benefitObj: {fileID: 8860468433673720709}
   spacing: {x: 0, y: 0, z: -0.35}
   spacingLeft: {x: 2.5, y: 0, z: 0}
+  spacingBottomDefault: {x: -0.1, y: 0, z: -0.8}
+  spacingBottom: {x: 0.2, y: 0, z: -0.8}
+  spacingBottomDelta: {x: 0, y: 0, z: -0.4}
 --- !u!1 &8858972014170374785
 GameObject:
   m_ObjectHideFlags: 0
@@ -2630,7 +2640,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8860468433673720709}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.25, y: 0, z: 1}
   m_LocalScale: {x: 0.25, y: 0.5, z: 0.25}
   m_Children: []
