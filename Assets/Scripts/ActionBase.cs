@@ -206,6 +206,7 @@ public class ActionBase : MonoBehaviour
         inProgress = false;
         resources.SetActive(false);
         actionCounter.DeActivateBenefits();
+        HideCostsAndNeeds();
     }
 
     public void ConcludeAction() {
