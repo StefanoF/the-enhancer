@@ -24,11 +24,8 @@ public class ActionProduction : MonoBehaviour
         investmentNeededCounter = count;
     }
 
-    void OnMouseOver() {
-        if (Input.GetMouseButtonDown(0)) {
-            // left mouse button click
-            LeftMouseClick();
-        }
+    void OnMouseDown() {
+        LeftMouseClick();
     }
 
     void LeftMouseClick() {

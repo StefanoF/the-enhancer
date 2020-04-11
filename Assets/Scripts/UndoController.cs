@@ -9,7 +9,7 @@ public class UndoController : MonoBehaviour
 
     public SharedData gameData;
 
-    void OnMouseOver() {
+    void OnMouseEnter() {
         gameData.inPlane = true;
     }
 

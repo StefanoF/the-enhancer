@@ -31,12 +31,6 @@ public class HoverMenuText : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         originalSize = elemText.fontSize;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void OnPointerClick(PointerEventData pointerEventData) {
         switch (actionType){
             case ActionType.Start:

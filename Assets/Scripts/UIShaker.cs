@@ -27,29 +27,26 @@ public class UIShaker : MonoBehaviour
         actualShakeDuration = shakeDuration;
 		originalPos = rect.localPosition;
 	}
-
-
-    void Update() {
-        if (shaking) {
-            if (actualShakeDuration > 0)
-            {
-                Vector3 newPos = originalPos + Random.insideUnitSphere * shakeAmount;
-                // newPos.y = originalPos.y;
-                // newPos.z = originalPos.z;
-                rect.localPosition = newPos;
-
-                actualShakeDuration -= Time.deltaTime * decreaseFactor;
-            }
-            else
-            {
-                shaking = false;
-                actualShakeDuration = shakeDuration;
-                rect.localPosition = originalPos;
-            }
+        
+    IEnumerator Shake() {
+        if (!shaking) {
+            yield return null;
         }
+        while (actualShakeDuration > 0)
+        {
+            Vector3 newPos = originalPos + Random.insideUnitSphere * shakeAmount;
+            rect.localPosition = newPos;
+            actualShakeDuration -= Time.deltaTime * decreaseFactor;
+            yield return null;
+        }
+        
+        shaking = false;
+        actualShakeDuration = shakeDuration;
+        rect.localPosition = originalPos;
     }
 
     public void ShakeNow() {
         shaking = true;
+        StartCoroutine(Shake());
     }
 }

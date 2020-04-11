@@ -154,9 +154,14 @@ public class ActionBase : MonoBehaviour
         actionCounter.DeActivateBenefits();
     }
 
-    void Update() {
-        if (!inProgress && gameData.inPlane) {
-            resources.SetActive(false);
+    IEnumerator EndOver(float time) {
+        float curTime = 0f;
+        while (curTime < time) {
+            curTime += Time.deltaTime;
+            if (!inProgress && gameData.inPlane) {
+                resources.SetActive(false);
+            }
+            yield return null;
         }
     }
 
@@ -164,9 +169,10 @@ public class ActionBase : MonoBehaviour
         if (!gameData.actionInProgress) {
             HideCostsAndNeeds();
         }
+        StartCoroutine(EndOver(0.5f));
     }
 
-    void OnMouseOver() {
+    void OnMouseEnter() {
         if (!gameData.actionInProgress) {
             ShowCostsAndNeeds();
             resourcesScript.DisableColliders();

@@ -17,9 +17,11 @@ public class CameraFollow : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
-        transform.position = Vector3.Lerp(transform.position, target, Time.deltaTime * speed);
+        if (Vector3.Distance(transform.position, target) > 0.3f) {
+            transform.position = Vector3.Lerp(transform.position, target, Time.deltaTime * speed);
+        }
     }
 
     public void SetTarget(Vector3 pos) {

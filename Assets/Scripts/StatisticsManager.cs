@@ -117,9 +117,43 @@ public class StatisticsManager : MonoBehaviour
         BlinkStatUpdate(resourceType, false);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
+    public void HighlightInvested() {
+        if (gameData.investments[0]) {
+            cultureBack.color = highlightBackColor;
+        }
+        else {
+            cultureBack.color = defaultBackColor;
+        }
+        if (gameData.investments[1]) {
+            connectionsBack.color = highlightBackColor;
+        }
+        else {
+            connectionsBack.color = defaultBackColor;
+        }
+        if (gameData.investments[2]) {
+            sustainabilityBack.color = highlightBackColor;
+        }
+        else {
+            sustainabilityBack.color = defaultBackColor;
+        }
+        if (gameData.investments[3]) {
+            humanityBack.color = highlightBackColor;
+        }
+        else {
+            humanityBack.color = defaultBackColor;
+        }
+    }
+    
+    public void EndGame() {
+        if (gameData.wealth >= gameData.wealthGoal) {
+            audioMan.Victory();
+            gameData.CalculateScore();
+            endGame.SetActive(true);
+            gameObject.SetActive(false);
+        }
+    }
+
+    public void ActionCompleted() {
         if (wealthText) {
             wealthText.text = gameData.wealth.ToString() + "/" + gameData.wealthGoal;
             SharedData.ResourceType rWealth = SharedData.ResourceType.Wealth;
@@ -152,45 +186,6 @@ public class StatisticsManager : MonoBehaviour
         }
         if (actionsCounterText) {
             actionsCounterText.text = gameData.actions.ToString();
-        }
-        if (helpText) {
-            // helpText.text = gameData.helpText.ToString();
-        }
-
-        if (gameData.wealth >= gameData.wealthGoal) {
-            audioMan.Victory();
-            gameData.CalculateScore();
-            endGame.SetActive(true);
-            gameObject.SetActive(false);
-        }
-
-        HighlightInvested();
-    }
-
-    void HighlightInvested() {
-        if (gameData.investments[0]) {
-            cultureBack.color = highlightBackColor;
-        }
-        else {
-            cultureBack.color = defaultBackColor;
-        }
-        if (gameData.investments[1]) {
-            connectionsBack.color = highlightBackColor;
-        }
-        else {
-            connectionsBack.color = defaultBackColor;
-        }
-        if (gameData.investments[2]) {
-            sustainabilityBack.color = highlightBackColor;
-        }
-        else {
-            sustainabilityBack.color = defaultBackColor;
-        }
-        if (gameData.investments[3]) {
-            humanityBack.color = highlightBackColor;
-        }
-        else {
-            humanityBack.color = defaultBackColor;
         }
     }
 }

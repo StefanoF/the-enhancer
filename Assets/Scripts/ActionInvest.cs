@@ -14,10 +14,8 @@ public class ActionInvest : MonoBehaviour
         actionCounter = gameObject.GetComponent<ActionCounter>();
     }
 
-    void OnMouseOver() {
-        if (Input.GetMouseButtonDown(0)) {
-            LeftMouseClick();
-        }
+    void OnMouseDown() {
+        LeftMouseClick();
     }
 
     void LeftMouseClick() {
