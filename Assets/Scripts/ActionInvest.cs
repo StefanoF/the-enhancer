@@ -6,9 +6,12 @@ using UnityEngine.UI;
 public class ActionInvest : MonoBehaviour
 {
     private ActionBase actionBase;
+    private ActionCounter actionCounter;
+
 
     void Awake() {
         actionBase = gameObject.GetComponent<ActionBase>();
+        actionCounter = gameObject.GetComponent<ActionCounter>();
     }
 
     void OnMouseOver() {
@@ -36,6 +39,7 @@ public class ActionInvest : MonoBehaviour
         actionBase.SaveStateToUndo();
 
         if (actionBase.nBenefit < actionBase.gameData.investCounter) {
+            actionCounter.ResetBenefits();
             actionBase.gameData.investCounter = 0;
             actionBase.gameData.investments = new bool[4];
             actionBase.resources.GetComponent<Resources>().UpdateHighlight();

@@ -37,6 +37,14 @@ public class ActionCounter : MonoBehaviour
         }
     }
 
+    public void ResetBenefits() {
+        for(int i = 0; i < actionBase.gameData.investments.Length; i++) {
+            if (actionBase.gameData.investments[i]) {
+                benefitResourceObjs[i,0].SetActive(false);
+            }
+        }
+    }
+
     GameObject[] GenerateBenefits(Transform initialPos, int size, bool bottom) {
         GameObject[] benefits = new GameObject[size];
         for(int i = 0; i < size; i++) {
@@ -76,6 +84,14 @@ public class ActionCounter : MonoBehaviour
         for(int i = 0; i < last; i++) {
             benefitObjs[i].SetActive(true);
         }
+
+        if (!actionBase.gameData.actionInProgress && actionBase.actionType == SharedData.ActionType.Invest) {
+            for(int i = 0; i < actionBase.gameData.investments.Length; i++) {
+                if (actionBase.gameData.investments[i]) {
+                    RemoveBenefit(i, true);
+                }
+            }
+        }
     }
 
     public void DeActivateBenefits() {
@@ -109,13 +125,19 @@ public class ActionCounter : MonoBehaviour
         }
     }
 
-    public void RemoveBenefit(int resourceType) {
-        for(int i = 0; i < actionBase.nBenefit; i++) {
-            if (!benefitResourceObjs[resourceType,i].activeSelf) {
-                benefitResourceObjs[resourceType,i].SetActive(true);
-                break;
+    public void RemoveBenefit(int resourceType, bool single = false) {
+        if (single && !benefitResourceObjs[resourceType,0].activeSelf) {
+            benefitResourceObjs[resourceType,0].SetActive(true);
+        }
+        else {
+            for(int i = 0; i < actionBase.nBenefit; i++) {
+                if (!benefitResourceObjs[resourceType,i].activeSelf) {
+                    benefitResourceObjs[resourceType,i].SetActive(true);
+                    break;
+                }
             }
         }
+        
 
         for(int i = actionBase.nBenefit - 1; i >= 0; i--) {
             if (benefitObjs[i].activeSelf) {
