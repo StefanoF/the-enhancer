@@ -38,12 +38,15 @@ public class StatisticsManager : MonoBehaviour
 
     public AudioMan audioMan;
 
+    void Awake() {
+        gameData.ResetStats();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         lastResource = new int[6];
         isBlinkingResource = new bool[6];
-        gameData.ResetStats();
     }
 
     public void BlinkStat(int last, int actual, Text textObj, SharedData.ResourceType resourceType) {

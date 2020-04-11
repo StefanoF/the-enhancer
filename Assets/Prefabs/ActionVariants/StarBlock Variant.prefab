@@ -121,6 +121,11 @@ PrefabInstance:
       propertyPath: actionColor.b
       value: 0.32941177
       objectReference: {fileID: 0}
+    - target: {fileID: 6599369355978958729, guid: 91106ea2ee39441e5aee8b259b04a171,
+        type: 3}
+      propertyPath: activeMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: e5a8676d962bb49c4985cb1c2eda12f4, type: 2}
     - target: {fileID: 6022956859981138326, guid: 91106ea2ee39441e5aee8b259b04a171,
         type: 3}
       propertyPath: m_IsActive

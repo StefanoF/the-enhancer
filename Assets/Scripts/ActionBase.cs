@@ -10,6 +10,10 @@ public class ActionBase : MonoBehaviour
     public Text actionLvl;
     public Image actionIcon;
     public Color actionColor;
+    public Material activeMaterial;
+    public Material passiveMaterial;
+    private MeshRenderer meshRenderer;
+
 
     [Header("Stats data")]
     public SharedData gameData;
@@ -66,6 +70,7 @@ public class ActionBase : MonoBehaviour
     public AudioSource mM;
 
     void Awake() {
+        meshRenderer = gameObject.GetComponent<MeshRenderer>();
         resourcesScript = resources.GetComponent<Resources>();
         cameraFollow = Camera.main.gameObject.GetComponent<CameraFollow>();
         actionProduction = gameObject.GetComponent<ActionProduction>();
@@ -89,6 +94,7 @@ public class ActionBase : MonoBehaviour
 
         actionTitleText.text = "";
         actionSubTitleText.text = "";
+        ChangeMaterial();
     }
 
     void ToogleTitle(bool active) {
@@ -259,5 +265,25 @@ public class ActionBase : MonoBehaviour
         ActionEvents.Instance.actionCanceled.Raise();
         undoController.Reset();
         DeActivate();
+    }
+
+    public void ChangeMaterial() {
+        if (!gameObject.activeSelf || costDict == null) {
+            return;
+        }
+        if (needInvestment) {
+            if (gameData.investCounter <= 0) {
+                meshRenderer.material = passiveMaterial;
+                return;
+            }
+            meshRenderer.material = activeMaterial;
+        }
+
+        if (gameData.HasResources(costDict)) {
+            meshRenderer.material = activeMaterial;
+        }
+        else {
+            meshRenderer.material = passiveMaterial;
+        }
     }
 }
