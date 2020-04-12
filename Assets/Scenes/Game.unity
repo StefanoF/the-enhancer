@@ -20,11 +20,11 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 0.2874409, g: 0.5149178, b: 0.637597, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: 0.5
@@ -44,7 +44,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -56,7 +56,7 @@ LightmapSettings:
   m_LightmapEditorSettings:
     serializedVersion: 12
     m_Resolution: 2
-    m_BakeResolution: 40
+    m_BakeResolution: 16
     m_AtlasSize: 1024
     m_AO: 0
     m_AOMaxDistance: 1
@@ -75,11 +75,11 @@ LightmapSettings:
     m_BakeBackend: 1
     m_PVRSampling: 1
     m_PVRDirectSampleCount: 32
-    m_PVRSampleCount: 500
+    m_PVRSampleCount: 512
     m_PVRBounces: 2
-    m_PVREnvironmentSampleCount: 500
+    m_PVREnvironmentSampleCount: 512
     m_PVREnvironmentReferencePointCount: 2048
-    m_PVRFilteringMode: 2
+    m_PVRFilteringMode: 1
     m_PVRDenoiserTypeDirect: 0
     m_PVRDenoiserTypeIndirect: 0
     m_PVRDenoiserTypeAO: 0
@@ -1511,7 +1511,7 @@ PrefabInstance:
     - target: {fileID: 2829097745313502073, guid: 1ddfe95d04cfd4fdd947b8254a8e7ded,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -298
+      value: -118
       objectReference: {fileID: 0}
     - target: {fileID: 2829097745313502073, guid: 1ddfe95d04cfd4fdd947b8254a8e7ded,
         type: 3}
@@ -2801,8 +2801,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 40}
-  m_SizeDelta: {x: -480, y: 60}
+  m_AnchoredPosition: {x: 0, y: 30}
+  m_SizeDelta: {x: 0, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &433759363
 CanvasRenderer:
@@ -2941,7 +2941,7 @@ PrefabInstance:
     - target: {fileID: 2829097745313502073, guid: 1ddfe95d04cfd4fdd947b8254a8e7ded,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -268
+      value: -88
       objectReference: {fileID: 0}
     - target: {fileID: 2829097745313502073, guid: 1ddfe95d04cfd4fdd947b8254a8e7ded,
         type: 3}
@@ -3095,7 +3095,7 @@ PrefabInstance:
     - target: {fileID: 2829097745313502073, guid: 1ddfe95d04cfd4fdd947b8254a8e7ded,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -358
+      value: -178
       objectReference: {fileID: 0}
     - target: {fileID: 2829097745313502073, guid: 1ddfe95d04cfd4fdd947b8254a8e7ded,
         type: 3}
@@ -3439,7 +3439,7 @@ PrefabInstance:
     - target: {fileID: 2829097745313502073, guid: 1ddfe95d04cfd4fdd947b8254a8e7ded,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -328
+      value: -148
       objectReference: {fileID: 0}
     - target: {fileID: 2829097745313502073, guid: 1ddfe95d04cfd4fdd947b8254a8e7ded,
         type: 3}
@@ -4520,10 +4520,10 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: -1.7014118e+38, y: 9.860761e-32, z: 0, w: 1.8e-43}
+  m_BoundingSphereOverride: {x: 4.5915e-41, y: 3.6827386e-35, z: 1e-45, w: 3.6261889e-35}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
-  m_ShadowAngle: 0
+  m_ShadowAngle: 45
 --- !u!4 &705507995
 Transform:
   m_ObjectHideFlags: 0
@@ -4579,8 +4579,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 80, y: 0}
-  m_SizeDelta: {x: 60, y: -479.896}
+  m_AnchoredPosition: {x: 80, y: 50}
+  m_SizeDelta: {x: 60, y: -380}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &707052724
 MonoBehaviour:
@@ -4959,7 +4959,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &831195259
 Transform:
@@ -5429,7 +5429,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.61960787, g: 0.76470596, b: 0.85098046, a: 0.78431374}
+  m_Color: {r: 0.6497419, g: 0.8113827, b: 0.8773585, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -6283,7 +6283,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1175925371
 Transform:
@@ -6650,7 +6650,7 @@ GameObject:
   m_TagString: BackPlane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!64 &1258920994
 MeshCollider:
@@ -6994,7 +6994,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1259612958
 Transform:
@@ -7286,7 +7286,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!114 &1318080264
 MonoBehaviour:
@@ -10016,7 +10016,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -220}
+  m_AnchoredPosition: {x: 0, y: -40}
   m_SizeDelta: {x: 60, y: 20}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1942273684
@@ -11660,7 +11660,7 @@ PrefabInstance:
     - target: {fileID: 2829097745313502073, guid: 1ddfe95d04cfd4fdd947b8254a8e7ded,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -238
+      value: -58
       objectReference: {fileID: 0}
     - target: {fileID: 2829097745313502073, guid: 1ddfe95d04cfd4fdd947b8254a8e7ded,
         type: 3}
@@ -11965,7 +11965,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.3018868, g: 0.23288326, b: 0.20363119, a: 0}
+  m_BackGroundColor: {r: 0.59607846, g: 0.78823537, b: 0.86666673, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
