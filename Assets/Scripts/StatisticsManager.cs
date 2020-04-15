@@ -40,6 +40,7 @@ public class StatisticsManager : MonoBehaviour
 
     void Awake() {
         gameData.ResetStats();
+        helpText.text = "";
     }
 
     // Start is called before the first frame update
