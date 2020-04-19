@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameScriptable
   lastActionName: 
   lastActionLvl: "1\x03"
-  lastActionIcon: {fileID: 21300000, guid: c74c9f8c50d2e4ab2bb34f7c4d0be556, type: 3}
-  lastActionColor: {r: 0.63529414, g: 0.9960785, b: 0.31764707, a: 1}
+  lastActionIcon: {fileID: 21300000, guid: 3ec70152688f043cd9066a61420d04fa, type: 3}
+  lastActionColor: {r: 0.93725497, g: 1, b: 1, a: 1}
   culture: 0
   connections: 0
   sustainability: 0
@@ -32,6 +32,6 @@ MonoBehaviour:
   helpText: 'The goal is to reach 15 of wealth (see the stats upward).
 
     Click on a action box to start!'
-  actionInProgress: 1
+  actionInProgress: 0
   score: 0
   inPlane: 0

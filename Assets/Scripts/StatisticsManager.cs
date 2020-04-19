@@ -150,7 +150,6 @@ public class StatisticsManager : MonoBehaviour
             audioMan.Victory();
             gameData.CalculateScore();
             endGame.SetActive(true);
-            gameObject.SetActive(false);
         }
     }
 

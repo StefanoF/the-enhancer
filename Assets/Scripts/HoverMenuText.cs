@@ -14,7 +14,7 @@ public class HoverMenuText : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     public int originalSize;
 
     public enum ActionType {
-        Start, Rules, Credits, Menu
+        Start, Rules, Credits, Menu, Tutorial
     };
 
     public ActionType actionType;
@@ -45,6 +45,10 @@ public class HoverMenuText : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
             case ActionType.Menu:
                 menuObj.SetActive(true);
                 creditsObj.SetActive(false);
+                break;
+            
+            case ActionType.Tutorial:
+                SceneManager.LoadScene(2);
                 break;
         }
     }

@@ -25,6 +25,9 @@ public class ActionProduction : MonoBehaviour
     }
 
     void OnMouseDown() {
+        if (actionBase.gameData.wealth >= actionBase.gameData.wealthGoal) {
+            return;
+        }
         LeftMouseClick();
     }
 

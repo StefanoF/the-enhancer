@@ -251,8 +251,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   customEvent: {fileID: 11400000, guid: de2ba1f351d644472bba58a987ff99de, type: 2}
-  pauseGame: 1
-  unpauseOnClick: 1
+  pauseGame: 0
+  unpauseOnClick: 0
 --- !u!114 &636842498837082451
 MonoBehaviour:
   m_ObjectHideFlags: 0

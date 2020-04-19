@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class TutorialClick : MonoBehaviour, IPointerDownHandler
 {
@@ -17,8 +18,12 @@ public class TutorialClick : MonoBehaviour, IPointerDownHandler
 
     public void OnPointerDown (PointerEventData eventData) {
         customEvent.Raise();
-        if (pauseGame && unpauseOnClick) {
+        if (unpauseOnClick) {
             Time.timeScale = 1.0f;
         }
+    }
+
+    public void ReturnToMenu() {
+        SceneManager.LoadScene(0);
     }
 }

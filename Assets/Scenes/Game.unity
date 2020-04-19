@@ -950,7 +950,7 @@ PrefabInstance:
     - target: {fileID: 948793623387938929, guid: 32753f34a4b7646fea03f4ce372fc1ba,
         type: 3}
       propertyPath: sustainability
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 948793623387938929, guid: 32753f34a4b7646fea03f4ce372fc1ba,
         type: 3}
@@ -960,7 +960,7 @@ PrefabInstance:
     - target: {fileID: 948793623387938929, guid: 32753f34a4b7646fea03f4ce372fc1ba,
         type: 3}
       propertyPath: connections
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 948793623387938929, guid: 32753f34a4b7646fea03f4ce372fc1ba,
         type: 3}
@@ -4169,11 +4169,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4928083872157956974, guid: b0bcbdf8002c34a3d9b7d583ab662317,
-        type: 3}
-      propertyPath: m_Text
-      value: "2\x03"
-      objectReference: {fileID: 0}
     - target: {fileID: 7040466551609893710, guid: b0bcbdf8002c34a3d9b7d583ab662317,
         type: 3}
       propertyPath: m_IsActive
@@ -4188,6 +4183,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4928083872157956974, guid: b0bcbdf8002c34a3d9b7d583ab662317,
+        type: 3}
+      propertyPath: m_Text
+      value: "2\x03"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0bcbdf8002c34a3d9b7d583ab662317, type: 3}
@@ -4345,7 +4345,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 00
+  m_Text: "0\x03"
 --- !u!222 &682711142
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5685,7 +5685,7 @@ PrefabInstance:
     - target: {fileID: 2091190091725617779, guid: 6add6ae9adb844849a7734e36e8bd931,
         type: 3}
       propertyPath: wealth
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2091190091725617779, guid: 6add6ae9adb844849a7734e36e8bd931,
         type: 3}
@@ -6955,11 +6955,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4928083872157956974, guid: b0bcbdf8002c34a3d9b7d583ab662317,
-        type: 3}
-      propertyPath: m_Text
-      value: "3\x03"
-      objectReference: {fileID: 0}
     - target: {fileID: 7040466551609893710, guid: b0bcbdf8002c34a3d9b7d583ab662317,
         type: 3}
       propertyPath: m_IsActive
@@ -6969,6 +6964,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4928083872157956974, guid: b0bcbdf8002c34a3d9b7d583ab662317,
+        type: 3}
+      propertyPath: m_Text
+      value: "3\x03"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0bcbdf8002c34a3d9b7d583ab662317, type: 3}
@@ -7979,7 +7979,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1/15
+  m_Text: 0/15
 --- !u!222 &1476435403
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9781,7 +9781,7 @@ PrefabInstance:
     - target: {fileID: 4647973111170744242, guid: 5485d390b8df447f58dd4e4d1c318617,
         type: 3}
       propertyPath: humanity
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4647973111170744242, guid: 5485d390b8df447f58dd4e4d1c318617,
         type: 3}
@@ -9796,12 +9796,12 @@ PrefabInstance:
     - target: {fileID: 4647973111170744242, guid: 5485d390b8df447f58dd4e4d1c318617,
         type: 3}
       propertyPath: nBenefit
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4647973111170744242, guid: 5485d390b8df447f58dd4e4d1c318617,
         type: 3}
       propertyPath: culture
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4647973111170744242, guid: 5485d390b8df447f58dd4e4d1c318617,
         type: 3}
@@ -9948,17 +9948,7 @@ PrefabInstance:
       propertyPath: investmentNeeded.Array.data[3]
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3209235134098720199, guid: 5485d390b8df447f58dd4e4d1c318617,
-        type: 3}
-      propertyPath: m_Text
-      value: "3\x03"
-      objectReference: {fileID: 0}
     - target: {fileID: 1378746314427945653, guid: 5485d390b8df447f58dd4e4d1c318617,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4587682915170858783, guid: 5485d390b8df447f58dd4e4d1c318617,
         type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -9969,6 +9959,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7370767941805697006, guid: 5485d390b8df447f58dd4e4d1c318617,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3209235134098720199, guid: 5485d390b8df447f58dd4e4d1c318617,
+        type: 3}
+      propertyPath: m_Text
+      value: "3\x03"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4587682915170858783, guid: 5485d390b8df447f58dd4e4d1c318617,
         type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -10339,7 +10339,7 @@ PrefabInstance:
     - target: {fileID: 4647973111170744242, guid: 5485d390b8df447f58dd4e4d1c318617,
         type: 3}
       propertyPath: connections
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4647973111170744242, guid: 5485d390b8df447f58dd4e4d1c318617,
         type: 3}
@@ -10349,12 +10349,12 @@ PrefabInstance:
     - target: {fileID: 4647973111170744242, guid: 5485d390b8df447f58dd4e4d1c318617,
         type: 3}
       propertyPath: nBenefit
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4647973111170744242, guid: 5485d390b8df447f58dd4e4d1c318617,
         type: 3}
       propertyPath: wealth
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4647973111170744242, guid: 5485d390b8df447f58dd4e4d1c318617,
         type: 3}
@@ -10451,6 +10451,11 @@ PrefabInstance:
       propertyPath: actionTitleText
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4647973111170744242, guid: 5485d390b8df447f58dd4e4d1c318617,
+        type: 3}
+      propertyPath: sustainability
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5224341351825592749, guid: 5485d390b8df447f58dd4e4d1c318617,
         type: 3}
       propertyPath: m_IsActive
@@ -10496,20 +10501,10 @@ PrefabInstance:
       propertyPath: investmentNeeded.Array.data[0]
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3209235134098720199, guid: 5485d390b8df447f58dd4e4d1c318617,
-        type: 3}
-      propertyPath: m_Text
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 1378746314427945653, guid: 5485d390b8df447f58dd4e4d1c318617,
         type: 3}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4587682915170858783, guid: 5485d390b8df447f58dd4e4d1c318617,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 673762535548919271, guid: 5485d390b8df447f58dd4e4d1c318617,
         type: 3}
@@ -10517,6 +10512,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7370767941805697006, guid: 5485d390b8df447f58dd4e4d1c318617,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3209235134098720199, guid: 5485d390b8df447f58dd4e4d1c318617,
+        type: 3}
+      propertyPath: m_Text
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4587682915170858783, guid: 5485d390b8df447f58dd4e4d1c318617,
         type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -11801,7 +11806,7 @@ PrefabInstance:
     - target: {fileID: 948793623387938929, guid: 32753f34a4b7646fea03f4ce372fc1ba,
         type: 3}
       propertyPath: culture
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 948793623387938929, guid: 32753f34a4b7646fea03f4ce372fc1ba,
         type: 3}
@@ -11811,7 +11816,7 @@ PrefabInstance:
     - target: {fileID: 948793623387938929, guid: 32753f34a4b7646fea03f4ce372fc1ba,
         type: 3}
       propertyPath: humanity
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 948793623387938929, guid: 32753f34a4b7646fea03f4ce372fc1ba,
         type: 3}
@@ -12474,7 +12479,7 @@ PrefabInstance:
     - target: {fileID: 2091190091725617779, guid: 6add6ae9adb844849a7734e36e8bd931,
         type: 3}
       propertyPath: wealth
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8916769292397848568, guid: 6add6ae9adb844849a7734e36e8bd931,
         type: 3}
