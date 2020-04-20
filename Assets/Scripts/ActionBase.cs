@@ -54,7 +54,9 @@ public class ActionBase : MonoBehaviour
     public bool uiUpdated;
 
     public bool needInvestment;
+    public int needInvestCounter;
     public int localInvestCounter;
+
 
     private CameraFollow cameraFollow;
     private ActionProduction actionProduction;
@@ -273,12 +275,16 @@ public class ActionBase : MonoBehaviour
         DeActivate();
     }
 
+    public bool CheckInvestmentsNeeded() {
+        return (needInvestment && gameData.investCounter < needInvestCounter);
+    }
+
     public void ChangeMaterial() {
         if (!gameObject.activeSelf || costDict == null) {
             return;
         }
         if (needInvestment) {
-            if (gameData.investCounter <= 0) {
+            if (CheckInvestmentsNeeded()) {
                 meshRenderer.material = passiveMaterial;
                 return;
             }

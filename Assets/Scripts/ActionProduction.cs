@@ -49,7 +49,7 @@ public class ActionProduction : MonoBehaviour
         }
 
         if (actionBase.needInvestment) {
-            if (actionBase.gameData.investCounter == 0) {
+            if (actionBase.CheckInvestmentsNeeded()) {
                 ActionEvents.Instance.needToInvest.Raise();
                 return;
             }

@@ -9806,7 +9806,7 @@ PrefabInstance:
     - target: {fileID: 4647973111170744242, guid: 5485d390b8df447f58dd4e4d1c318617,
         type: 3}
       propertyPath: wealth
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4647973111170744242, guid: 5485d390b8df447f58dd4e4d1c318617,
         type: 3}
@@ -9902,6 +9902,11 @@ PrefabInstance:
         type: 3}
       propertyPath: actionTitleText
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4647973111170744242, guid: 5485d390b8df447f58dd4e4d1c318617,
+        type: 3}
+      propertyPath: needInvestCounter
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5224341351825592749, guid: 5485d390b8df447f58dd4e4d1c318617,
         type: 3}
@@ -10333,28 +10338,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4647973111170744242, guid: 5485d390b8df447f58dd4e4d1c318617,
         type: 3}
-      propertyPath: humanity
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4647973111170744242, guid: 5485d390b8df447f58dd4e4d1c318617,
-        type: 3}
-      propertyPath: connections
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4647973111170744242, guid: 5485d390b8df447f58dd4e4d1c318617,
-        type: 3}
-      propertyPath: culture
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4647973111170744242, guid: 5485d390b8df447f58dd4e4d1c318617,
-        type: 3}
       propertyPath: nBenefit
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4647973111170744242, guid: 5485d390b8df447f58dd4e4d1c318617,
-        type: 3}
-      propertyPath: wealth
-      value: 0
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4647973111170744242, guid: 5485d390b8df447f58dd4e4d1c318617,
         type: 3}
@@ -10453,8 +10438,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4647973111170744242, guid: 5485d390b8df447f58dd4e4d1c318617,
         type: 3}
-      propertyPath: sustainability
-      value: 1
+      propertyPath: needInvestCounter
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5224341351825592749, guid: 5485d390b8df447f58dd4e4d1c318617,
         type: 3}
@@ -11510,6 +11495,11 @@ PrefabInstance:
         type: 3}
       propertyPath: actionTitleText
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4647973111170744242, guid: 5485d390b8df447f58dd4e4d1c318617,
+        type: 3}
+      propertyPath: needInvestCounter
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5224341351825592749, guid: 5485d390b8df447f58dd4e4d1c318617,
         type: 3}
