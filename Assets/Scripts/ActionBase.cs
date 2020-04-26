@@ -10,6 +10,7 @@ public class ActionBase : MonoBehaviour
     public Text actionLvl;
     public Image actionIcon;
     public Color actionColor;
+    public bool actionActive;
     public Material activeMaterial;
     public Material passiveMaterial;
     private MeshRenderer meshRenderer;
@@ -27,6 +28,11 @@ public class ActionBase : MonoBehaviour
     public int sustainability;
     public int wealth;
     private Dictionary<string, int> costDict;
+
+    [Header("Investments")]
+    public bool needInvestment;
+    public int needInvestCounter;
+    public int localInvestCounter;
 
     [Header("Benefits")]
     public int nBenefit;
@@ -53,10 +59,9 @@ public class ActionBase : MonoBehaviour
     public Text costWealthText;
     public bool uiUpdated;
 
-    public bool needInvestment;
-    public int needInvestCounter;
-    public int localInvestCounter;
-
+    [Header("UI Costs Blink")]
+    public bool isBlinkingCosts;
+    public IEnumerator co;
 
     private CameraFollow cameraFollow;
     private ActionProduction actionProduction;
@@ -156,6 +161,56 @@ public class ActionBase : MonoBehaviour
         actionCounter.DeActivateBenefits();
     }
 
+    void ToogleCosts(bool active) {
+        if (culture > 0 || connections > 0 || humanity > 0 || sustainability > 0 || wealth > 0) {
+            costsTextObj.SetActive(active);
+        }
+        if (culture > 0) {
+            costCultureObj.SetActive(active);
+        }
+        if (connections > 0) {
+            costConnectionsObj.SetActive(active);
+        }
+        if (humanity > 0) {
+            costHumanityObj.SetActive(active);
+        }
+        if (sustainability > 0) {
+            costSustainabilityObj.SetActive(active);
+        }
+        if (wealth > 0) {
+            costWealthObj.SetActive(active);
+        }
+    }
+
+    public IEnumerator BlinkCosts(float blinkingTime, float blinkingRatio) {
+        if (isBlinkingCosts) {
+            yield return null;
+        }
+        float t = 0;
+        isBlinkingCosts = true;
+        while (t < blinkingTime) {
+            ToogleCosts(true);
+
+            yield return new WaitForSeconds(blinkingRatio);
+            ToogleCosts(false);
+
+            yield return new WaitForSeconds(blinkingRatio);
+            ToogleCosts(true);
+
+            t += Time.deltaTime;
+        }
+        isBlinkingCosts = false;
+        yield return null;
+    }
+
+    public void StartBlinking() {
+        if (isBlinkingCosts) {
+            StopCoroutine(co);
+        }
+        co = BlinkCosts(1f, 0.3f);
+        StartCoroutine(co);
+    }
+
     IEnumerator EndOver(float time) {
         float curTime = 0f;
         while (curTime < time) {
@@ -170,6 +225,10 @@ public class ActionBase : MonoBehaviour
     void OnMouseExit() {
         if (!gameData.actionInProgress) {
             HideCostsAndNeeds();
+            if (isBlinkingCosts) {
+                StopCoroutine(co);
+            }
+            
         }
         StartCoroutine(EndOver(0.5f));
     }
@@ -177,8 +236,10 @@ public class ActionBase : MonoBehaviour
     void OnMouseEnter() {
         if (!gameData.actionInProgress) {
             ShowCostsAndNeeds();
-            resourcesScript.DisableColliders();
-            resources.SetActive(true);
+            if (actionActive) {
+                resourcesScript.DisableColliders();
+                resources.SetActive(true);
+            }
         }
     }
 
@@ -285,16 +346,20 @@ public class ActionBase : MonoBehaviour
         }
         if (needInvestment) {
             if (CheckInvestmentsNeeded()) {
+                actionActive = false;
                 meshRenderer.material = passiveMaterial;
                 return;
             }
+            actionActive = true;
             meshRenderer.material = activeMaterial;
         }
 
         if (gameData.HasResources(costDict)) {
+            actionActive = true;
             meshRenderer.material = activeMaterial;
         }
         else {
+            actionActive = false;
             meshRenderer.material = passiveMaterial;
         }
     }

@@ -85,7 +85,7 @@ public class ActionCounter : MonoBehaviour
             benefitObjs[i].SetActive(true);
         }
 
-        if (!actionBase.gameData.actionInProgress && actionBase.actionType == SharedData.ActionType.Invest) {
+        if (actionBase.actionActive && !actionBase.gameData.actionInProgress && actionBase.actionType == SharedData.ActionType.Invest) {
             for(int i = 0; i < actionBase.gameData.investments.Length; i++) {
                 if (actionBase.gameData.investments[i]) {
                     RemoveBenefit(i, true);

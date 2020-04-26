@@ -18,6 +18,9 @@ public class ActionInvest : MonoBehaviour
         if (actionBase.gameData.wealth >= actionBase.gameData.wealthGoal) {
             return;
         }
+        if (!actionBase.actionActive) {
+            actionBase.StartBlinking();
+        }
         LeftMouseClick();
     }
 
