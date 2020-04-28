@@ -46,7 +46,7 @@ public class ActionInvest : MonoBehaviour
             actionCounter.ResetBenefits();
             actionBase.gameData.investCounter = 0;
             actionBase.gameData.investments = new bool[4];
-            actionBase.resources.GetComponent<Resources>().UpdateHighlight();
+            actionBase.resources.GetComponent<ResourceManager>().UpdateHighlight();
         }
 
         ActionEvents.Instance.investStarted.Raise();

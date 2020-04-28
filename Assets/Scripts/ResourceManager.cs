@@ -1,7 +1,7 @@
 
 using UnityEngine;
 
-public class Resources : MonoBehaviour
+public class ResourceManager : MonoBehaviour
 {
     private ResourceSel[] resourceChilds;
 

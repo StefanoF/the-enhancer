@@ -40,7 +40,7 @@ public class ActionBase : MonoBehaviour
 
     [Header("Resources")]
     public GameObject resources;
-    private Resources resourcesScript;
+    private ResourceManager resourcesScript;
 
     [Header("UI Need")]
     public GameObject hoverCountersNeed;
@@ -78,7 +78,7 @@ public class ActionBase : MonoBehaviour
 
     void Awake() {
         meshRenderer = gameObject.GetComponent<MeshRenderer>();
-        resourcesScript = resources.GetComponent<Resources>();
+        resourcesScript = resources.GetComponent<ResourceManager>();
         cameraFollow = Camera.main.gameObject.GetComponent<CameraFollow>();
         actionProduction = gameObject.GetComponent<ActionProduction>();
         actionCounter = gameObject.GetComponent<ActionCounter>();
