@@ -191,7 +191,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: SUSTAINABILITY
+  m_Text: tooltip_sustain
 --- !u!222 &6512458
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -270,7 +270,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: GOAL 1 COMPLETED
+  m_Text: end_title
 --- !u!222 &30415760
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -881,47 +881,49 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 1796696529}
   OneActionAtTime:
-  - 'Don''t get your hands in too much business: it''s risky!'
-  - Maintain your focus on a single action to make better decisions
+  - one_action_at_time_1
+  - one_action_at_time_2
   ActionCanceled:
-  - It is better to think more about it and make wise decisions
-  - I agree with you it's not the right time to do that
+  - action_canceled_1
+  - action_canceled_2
   InvestComplete:
-  - A lot of money has been moved, hopefully it will pay off
-  - People wonder if they are the right investments for their future
-  - These investments will drive production growth
+  - invest_complete_1
+  - invest_complete_2
+  - invest_complete_3
   InvestStarted:
-  - The best decisions must be made for the long term
-  - It is time to invest in something productive
-  - Production is waste without proper investments
+  - invest_started_1
+  - invest_started_2
+  - invest_started_3
   NeedCorrectInvestment:
-  - The most important choices are made with the right tools
-  - Invest the required resources first
-  - You have not taken the correct steps in the past these are the consequences
+  - need_correct_invest_1
+  - need_correct_invest_2
+  - need_correct_invest_3
   NeedToInvest:
-  - You need to invest at this level of investments to produce here
+  - need_to_invest_1
   NotEnoughResources:
-  - Not have enough resources, see the costs on the left!
+  - not_enough_res_1
   ProductionComplete:
-  - Investments are bringing their benefits
-  - People are getting better
-  - Production is improving people's habits
+  - production_complete_1
+  - production_complete_2
+  - production_complete_3
   ProductionStarted:
-  - It's time to put all these investments to good use
-  - It is better if you already know what to bet on
-  - You have to be ready to make the best choices
+  - production_started_1
+  - production_started_2
+  - production_started_3
   SameActionTwice:
-  - You seem to like this action, don't abuse it
-  - Don't do same action twice!
-  - Try to change try new ways
+  - same_action_twice_1
+  - same_action_twice_2
+  - same_action_twice_3
   UseAllBenefits:
-  - 'Do not leave anything on the plate, it is not polite: use all benefits!'
-  - Use everything you can because it's never enough!
-  - Use all the benefits for this action!
+  - use_all_benefetis_1
+  - use_all_benefetis_2
+  - use_all_benefetis_3
   ResourceInvest: []
-  ResourceDeInvest: []
+  ResourceDeInvest:
+  - resource_de_invest_1
   ResourceProduct: []
-  ResourceDeProduct: []
+  ResourceDeProduct:
+  - resource_de_product_1
 --- !u!114 &119531919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -938,15 +940,15 @@ MonoBehaviour:
   response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1796696529}
-        m_MethodName: set_text
+      - m_Target: {fileID: 119531918}
+        m_MethodName: RandomIn
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Maybe you need another resource, right?!
+          m_StringArgument: ResourceDeProduct
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
@@ -975,7 +977,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 'We are growing well in '
+          m_StringArgument: resource_product_1
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
@@ -996,15 +998,15 @@ MonoBehaviour:
   response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1796696529}
-        m_MethodName: set_text
+      - m_Target: {fileID: 119531918}
+        m_MethodName: RandomIn
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Maybe another investment is better
+          m_StringArgument: ResourceDeInvest
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
@@ -1033,7 +1035,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 'All efforts are committed to improving '
+          m_StringArgument: resource_invest_1
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
@@ -2600,7 +2602,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: CULTURE
+  m_Text: tooltip_culture
 --- !u!222 &379114257
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2679,7 +2681,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: You have obtained equality
+  m_Text: end_subtitle
 --- !u!222 &379498942
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2758,7 +2760,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: CONNECTIONS
+  m_Text: tooltip_connections
 --- !u!222 &406572993
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4609,7 +4611,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: POINTS
+  m_Text: tooltip_points
 --- !u!222 &704975839
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4992,7 +4994,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 10}
-  m_SizeDelta: {x: 70, y: 30}
+  m_SizeDelta: {x: 90, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &802892165
 MonoBehaviour:
@@ -5019,7 +5021,7 @@ MonoBehaviour:
     m_FontSize: 10
     m_FontStyle: 0
     m_BestFit: 1
-    m_MinSize: 6
+    m_MinSize: 1
     m_MaxSize: 10
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -5027,7 +5029,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: LAST ACTION
+  m_Text: tooltip_last_action
 --- !u!222 &802892166
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5106,7 +5108,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: try again
+  m_Text: end_try_again
 --- !u!222 &830321161
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5307,7 +5309,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: MORE IS BETTER
+  m_Text: tooltip_more
 --- !u!222 &878443719
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5541,7 +5543,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: LESS IS BETTER
+  m_Text: tooltip_less
 --- !u!222 &927148846
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5767,7 +5769,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: WEALTH
+  m_Text: tooltip_wealth
 --- !u!222 &1086073817
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6062,7 +6064,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: main menu
+  m_Text: end_main_menu
 --- !u!222 &1123935019
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6263,7 +6265,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: MORE IS BETTER
+  m_Text: tooltip_more
 --- !u!222 &1149126246
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6715,7 +6717,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: WEALTH
+  m_Text: tooltip_wealth
 --- !u!222 &1242669968
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7432,7 +7434,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: STARS
+  m_Text: tooltip_stars
 --- !u!222 &1301586088
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7705,7 +7707,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: HUMANITY
+  m_Text: tooltip_humanity
 --- !u!222 &1384639960
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7926,6 +7928,77 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1394773548
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1394773550}
+  - component: {fileID: 1394773549}
+  m_Layer: 0
+  m_Name: Translator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1394773549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1394773548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ea4cb93ea19249c481518165b409527, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: c0f468da8c5bb4f778f0d823fdbebf07, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  gameData: {fileID: 11400000, guid: 6536e1c4c68274465943ea28fddf9549, type: 2}
+  texts:
+  - {fileID: 1942273684}
+  - {fileID: 1242669967}
+  - {fileID: 379114256}
+  - {fileID: 406572992}
+  - {fileID: 6512457}
+  - {fileID: 1384639959}
+  - {fileID: 1301586087}
+  - {fileID: 2029721410}
+  - {fileID: 802892165}
+  - {fileID: 30415759}
+  - {fileID: 379498941}
+  - {fileID: 1086073816}
+  - {fileID: 1838964594}
+  - {fileID: 1707631172}
+  - {fileID: 704975838}
+  - {fileID: 878443718}
+  - {fileID: 1149126245}
+  - {fileID: 927148845}
+  - {fileID: 830321160}
+  - {fileID: 1123935018}
+--- !u!4 &1394773550
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1394773548}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1406959364
 GameObject:
   m_ObjectHideFlags: 0
@@ -8363,8 +8436,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 10, y: 0}
-  m_SizeDelta: {x: 80, y: 20}
+  m_AnchoredPosition: {x: 20, y: 0}
+  m_SizeDelta: {x: 100, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1527887655
 MonoBehaviour:
@@ -9178,7 +9251,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ACTIONS
+  m_Text: tooltip_actions
 --- !u!222 &1707631173
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9793,7 +9866,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: STARS
+  m_Text: tooltip_stars
 --- !u!222 &1838964595
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10228,7 +10301,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Costs
+  m_Text: costs
 --- !u!222 &1942273685
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11037,7 +11110,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ACTIONS
+  m_Text: tooltip_actions
 --- !u!222 &2029721411
 CanvasRenderer:
   m_ObjectHideFlags: 0

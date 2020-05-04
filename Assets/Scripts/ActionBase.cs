@@ -114,8 +114,8 @@ public class ActionBase : MonoBehaviour
         if (uiUpdated) {
             return;
         }
-        actionTitleText.text = actionType.ToString();
-        actionSubTitleText.text = actionDescription.ToString();
+        actionTitleText.text = I18n.Fields[actionType.ToString().ToLower()];
+        actionSubTitleText.text = I18n.Fields[actionDescription.ToString()];
         ToogleTitle(true);
         if (culture > 0) {
             costsTextObj.SetActive(true);

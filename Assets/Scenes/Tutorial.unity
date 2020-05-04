@@ -897,7 +897,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: (right-click on the resource to undo)
+  m_Text: tut_prod_finish_continue_1
 --- !u!222 &234245691
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -906,6 +906,91 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 234245688}
   m_CullTransparentMesh: 0
+--- !u!1 &237419056
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 237419057}
+  - component: {fileID: 237419058}
+  m_Layer: 0
+  m_Name: Translator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &237419057
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 237419056}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &237419058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 237419056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ea4cb93ea19249c481518165b409527, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: c0f468da8c5bb4f778f0d823fdbebf07, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  gameData: {fileID: 11400000, guid: 6536e1c4c68274465943ea28fddf9549, type: 2}
+  texts:
+  - {fileID: 636842497369851610}
+  - {fileID: 636842497369851609}
+  - {fileID: 1426553897}
+  - {fileID: 1426553896}
+  - {fileID: 1003939164}
+  - {fileID: 1003939163}
+  - {fileID: 2041777168}
+  - {fileID: 2041777167}
+  - {fileID: 2016539922}
+  - {fileID: 2016539921}
+  - {fileID: 1056443534}
+  - {fileID: 1056443533}
+  - {fileID: 425636874}
+  - {fileID: 1411187682}
+  - {fileID: 1411187681}
+  - {fileID: 580345274}
+  - {fileID: 580345273}
+  - {fileID: 1661462654}
+  - {fileID: 1661462653}
+  - {fileID: 1927305826}
+  - {fileID: 1135689963}
+  - {fileID: 1135689962}
+  - {fileID: 234245690}
+  - {fileID: 1368391050}
+  - {fileID: 1368391049}
+  - {fileID: 921022234}
+  - {fileID: 300419316}
+  - {fileID: 300419315}
+  - {fileID: 1580309352}
+  - {fileID: 1580309351}
+  - {fileID: 2082608862}
+  - {fileID: 2082608861}
+  - {fileID: 2007027595}
+  - {fileID: 2007027594}
 --- !u!1001 &241505098
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1663,7 +1748,7 @@ PrefabInstance:
     - target: {fileID: 636842497996617117, guid: f59a0040472a64240a1e5cbe76903888,
         type: 3}
       propertyPath: m_Text
-      value: Nice! Now you can produce any resources!
+      value: tut_prod_congrat_help
       objectReference: {fileID: 0}
     - target: {fileID: 636842498618358169, guid: f59a0040472a64240a1e5cbe76903888,
         type: 3}
@@ -1684,6 +1769,30 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 300419312}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &300419315 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 636842498789907243, guid: f59a0040472a64240a1e5cbe76903888,
+    type: 3}
+  m_PrefabInstance: {fileID: 300419312}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &300419316 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 636842497996617117, guid: f59a0040472a64240a1e5cbe76903888,
+    type: 3}
+  m_PrefabInstance: {fileID: 300419312}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &309712368 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2829097745313502073, guid: 1ddfe95d04cfd4fdd947b8254a8e7ded,
@@ -2590,7 +2699,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -57}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 75.76001}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &425636874
@@ -2626,7 +2735,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: your action is canceled
+  m_Text: tut_action_canceled
 --- !u!222 &425636875
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3830,12 +3939,12 @@ PrefabInstance:
     - target: {fileID: 636842497996617117, guid: f59a0040472a64240a1e5cbe76903888,
         type: 3}
       propertyPath: m_Text
-      value: To produce some prior invested resources
+      value: tut_action_production_help
       objectReference: {fileID: 0}
     - target: {fileID: 636842498789907243, guid: f59a0040472a64240a1e5cbe76903888,
         type: 3}
       propertyPath: m_Text
-      value: click on the action block to continue
+      value: tut_action_production_continue
       objectReference: {fileID: 0}
     - target: {fileID: 636842498618358170, guid: f59a0040472a64240a1e5cbe76903888,
         type: 3}
@@ -3946,6 +4055,30 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &580345273 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 636842498789907243, guid: f59a0040472a64240a1e5cbe76903888,
+    type: 3}
+  m_PrefabInstance: {fileID: 580345269}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &580345274 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 636842497996617117, guid: f59a0040472a64240a1e5cbe76903888,
+    type: 3}
+  m_PrefabInstance: {fileID: 580345269}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &588866737
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5267,7 +5400,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 43}
   m_SizeDelta: {x: 0, y: 75.76001}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &921022234
@@ -5303,7 +5436,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: your action is canceled
+  m_Text: tut_prod_action_canceled_continue_1
 --- !u!222 &921022235
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6352,12 +6485,12 @@ PrefabInstance:
     - target: {fileID: 636842497996617117, guid: f59a0040472a64240a1e5cbe76903888,
         type: 3}
       propertyPath: m_Text
-      value: To invest on some resource
+      value: tut_action_help
       objectReference: {fileID: 0}
     - target: {fileID: 636842498789907243, guid: f59a0040472a64240a1e5cbe76903888,
         type: 3}
       propertyPath: m_Text
-      value: click on the action block to continue
+      value: tut_action_continue
       objectReference: {fileID: 0}
     - target: {fileID: 636842498618358170, guid: f59a0040472a64240a1e5cbe76903888,
         type: 3}
@@ -6404,6 +6537,16 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -50
       objectReference: {fileID: 0}
+    - target: {fileID: 636842497996617116, guid: f59a0040472a64240a1e5cbe76903888,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 43
+      objectReference: {fileID: 0}
+    - target: {fileID: 636842498789907242, guid: f59a0040472a64240a1e5cbe76903888,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f59a0040472a64240a1e5cbe76903888, type: 3}
 --- !u!224 &1003939161 stripped
@@ -6418,6 +6561,30 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1003939160}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1003939163 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 636842498789907243, guid: f59a0040472a64240a1e5cbe76903888,
+    type: 3}
+  m_PrefabInstance: {fileID: 1003939160}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1003939164 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 636842497996617117, guid: f59a0040472a64240a1e5cbe76903888,
+    type: 3}
+  m_PrefabInstance: {fileID: 1003939160}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1014709833
 GameObject:
   m_ObjectHideFlags: 0
@@ -6667,12 +6834,12 @@ PrefabInstance:
     - target: {fileID: 636842497996617117, guid: f59a0040472a64240a1e5cbe76903888,
         type: 3}
       propertyPath: m_Text
-      value: If you click outside of the action
+      value: tut_action_canceled_help
       objectReference: {fileID: 0}
     - target: {fileID: 636842498789907243, guid: f59a0040472a64240a1e5cbe76903888,
         type: 3}
       propertyPath: m_Text
-      value: click on the action block to continue
+      value: tut_action_canceled_continue
       objectReference: {fileID: 0}
     - target: {fileID: 636842498618358170, guid: f59a0040472a64240a1e5cbe76903888,
         type: 3}
@@ -6722,7 +6889,12 @@ PrefabInstance:
     - target: {fileID: 636842497996617116, guid: f59a0040472a64240a1e5cbe76903888,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -34
+      value: 43
+      objectReference: {fileID: 0}
+    - target: {fileID: 636842498789907242, guid: f59a0040472a64240a1e5cbe76903888,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -40
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 636842498837082451, guid: f59a0040472a64240a1e5cbe76903888, type: 3}
@@ -6779,6 +6951,30 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &1056443533 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 636842498789907243, guid: f59a0040472a64240a1e5cbe76903888,
+    type: 3}
+  m_PrefabInstance: {fileID: 1056443529}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1056443534 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 636842497996617117, guid: f59a0040472a64240a1e5cbe76903888,
+    type: 3}
+  m_PrefabInstance: {fileID: 1056443529}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1086073814
 GameObject:
   m_ObjectHideFlags: 0
@@ -7151,12 +7347,12 @@ PrefabInstance:
     - target: {fileID: 636842497996617117, guid: f59a0040472a64240a1e5cbe76903888,
         type: 3}
       propertyPath: m_Text
-      value: When chooses all the resources to produce
+      value: tut_prod_finish_help
       objectReference: {fileID: 0}
     - target: {fileID: 636842498789907243, guid: f59a0040472a64240a1e5cbe76903888,
         type: 3}
       propertyPath: m_Text
-      value: click on the action block to confirm
+      value: tut_prod_finish_continue
       objectReference: {fileID: 0}
     - target: {fileID: 636842498618358170, guid: f59a0040472a64240a1e5cbe76903888,
         type: 3}
@@ -7252,6 +7448,30 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &1135689962 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 636842498789907243, guid: f59a0040472a64240a1e5cbe76903888,
+    type: 3}
+  m_PrefabInstance: {fileID: 1135689958}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1135689963 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 636842497996617117, guid: f59a0040472a64240a1e5cbe76903888,
+    type: 3}
+  m_PrefabInstance: {fileID: 1135689958}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1145108036
 GameObject:
   m_ObjectHideFlags: 0
@@ -7616,7 +7836,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7e4c1e8f5887149c5bfe7f513f0177ed, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.25
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -8694,12 +8914,12 @@ PrefabInstance:
     - target: {fileID: 636842497996617117, guid: f59a0040472a64240a1e5cbe76903888,
         type: 3}
       propertyPath: m_Text
-      value: If you click outside of the action
+      value: tut_prod_action_canceled_help
       objectReference: {fileID: 0}
     - target: {fileID: 636842498789907243, guid: f59a0040472a64240a1e5cbe76903888,
         type: 3}
       propertyPath: m_Text
-      value: click on the action block to continue
+      value: tut_prod_action_canceled_continue
       objectReference: {fileID: 0}
     - target: {fileID: 636842498618358170, guid: f59a0040472a64240a1e5cbe76903888,
         type: 3}
@@ -8754,7 +8974,17 @@ PrefabInstance:
     - target: {fileID: 636842498789907242, guid: f59a0040472a64240a1e5cbe76903888,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 43
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 636842497996617115, guid: f59a0040472a64240a1e5cbe76903888,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 636842498789907241, guid: f59a0040472a64240a1e5cbe76903888,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 636842498837082451, guid: f59a0040472a64240a1e5cbe76903888, type: 3}
@@ -8811,6 +9041,30 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &1368391049 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 636842498789907243, guid: f59a0040472a64240a1e5cbe76903888,
+    type: 3}
+  m_PrefabInstance: {fileID: 1368391045}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1368391050 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 636842497996617117, guid: f59a0040472a64240a1e5cbe76903888,
+    type: 3}
+  m_PrefabInstance: {fileID: 1368391045}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1384639957
 GameObject:
   m_ObjectHideFlags: 0
@@ -9360,7 +9614,7 @@ PrefabInstance:
     - target: {fileID: 636842497996617117, guid: f59a0040472a64240a1e5cbe76903888,
         type: 3}
       propertyPath: m_Text
-      value: Yeah! You invest correctly!
+      value: tut_invest_correctly
       objectReference: {fileID: 0}
     - target: {fileID: 636842498618358169, guid: f59a0040472a64240a1e5cbe76903888,
         type: 3}
@@ -9471,6 +9725,30 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &1411187681 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 636842498789907243, guid: f59a0040472a64240a1e5cbe76903888,
+    type: 3}
+  m_PrefabInstance: {fileID: 1411187676}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1411187682 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 636842497996617117, guid: f59a0040472a64240a1e5cbe76903888,
+    type: 3}
+  m_PrefabInstance: {fileID: 1411187676}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1426553894
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9648,7 +9926,7 @@ PrefabInstance:
     - target: {fileID: 636842497996617117, guid: f59a0040472a64240a1e5cbe76903888,
         type: 3}
       propertyPath: m_Text
-      value: The top bar shows your stats for each resource
+      value: tut_stats_resources_help
       objectReference: {fileID: 0}
     - target: {fileID: 636842498618358169, guid: f59a0040472a64240a1e5cbe76903888,
         type: 3}
@@ -9673,6 +9951,30 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1426553894}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1426553896 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 636842498789907243, guid: f59a0040472a64240a1e5cbe76903888,
+    type: 3}
+  m_PrefabInstance: {fileID: 1426553894}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1426553897 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 636842497996617117, guid: f59a0040472a64240a1e5cbe76903888,
+    type: 3}
+  m_PrefabInstance: {fileID: 1426553894}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1449239917
 GameObject:
   m_ObjectHideFlags: 0
@@ -10336,7 +10638,7 @@ PrefabInstance:
     - target: {fileID: 636842497996617117, guid: f59a0040472a64240a1e5cbe76903888,
         type: 3}
       propertyPath: m_Text
-      value: This count the total number of actions for calculating end score
+      value: tut_action_number_help
       objectReference: {fileID: 0}
     - target: {fileID: 636842498618358170, guid: f59a0040472a64240a1e5cbe76903888,
         type: 3}
@@ -10372,6 +10674,30 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1580309348}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1580309351 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 636842498789907243, guid: f59a0040472a64240a1e5cbe76903888,
+    type: 3}
+  m_PrefabInstance: {fileID: 1580309348}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1580309352 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 636842497996617117, guid: f59a0040472a64240a1e5cbe76903888,
+    type: 3}
+  m_PrefabInstance: {fileID: 1580309348}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1583708202
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10673,12 +10999,12 @@ PrefabInstance:
     - target: {fileID: 636842497996617117, guid: f59a0040472a64240a1e5cbe76903888,
         type: 3}
       propertyPath: m_Text
-      value: Now produce the prior invested resources
+      value: tut_prod_resources
       objectReference: {fileID: 0}
     - target: {fileID: 636842498789907243, guid: f59a0040472a64240a1e5cbe76903888,
         type: 3}
       propertyPath: m_Text
-      value: click on the resource to continue
+      value: tut_prod_resources_continue
       objectReference: {fileID: 0}
     - target: {fileID: 636842498618358170, guid: f59a0040472a64240a1e5cbe76903888,
         type: 3}
@@ -10754,6 +11080,30 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &1661462653 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 636842498789907243, guid: f59a0040472a64240a1e5cbe76903888,
+    type: 3}
+  m_PrefabInstance: {fileID: 1661462649}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1661462654 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 636842497996617117, guid: f59a0040472a64240a1e5cbe76903888,
+    type: 3}
+  m_PrefabInstance: {fileID: 1661462649}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1664148176
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12157,7 +12507,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: You can only produce the highlighted ones
+  m_Text: tut_prod_resources_1
 --- !u!222 &1927305827
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12621,7 +12971,7 @@ PrefabInstance:
     - target: {fileID: 636842497996617117, guid: f59a0040472a64240a1e5cbe76903888,
         type: 3}
       propertyPath: m_Text
-      value: Great! You are ready to play!
+      value: tut_end_help
       objectReference: {fileID: 0}
     - target: {fileID: 636842497996617117, guid: f59a0040472a64240a1e5cbe76903888,
         type: 3}
@@ -12641,7 +12991,7 @@ PrefabInstance:
     - target: {fileID: 636842498789907243, guid: f59a0040472a64240a1e5cbe76903888,
         type: 3}
       propertyPath: m_Text
-      value: click to return to menu
+      value: tut_end_continue
       objectReference: {fileID: 0}
     - target: {fileID: 636842498789907243, guid: f59a0040472a64240a1e5cbe76903888,
         type: 3}
@@ -12687,6 +13037,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eff2fdd2e0b51477f99be6623624281c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2007027594 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 636842498789907243, guid: f59a0040472a64240a1e5cbe76903888,
+    type: 3}
+  m_PrefabInstance: {fileID: 2007027590}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2007027595 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 636842497996617117, guid: f59a0040472a64240a1e5cbe76903888,
+    type: 3}
+  m_PrefabInstance: {fileID: 2007027590}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2008792870
@@ -12932,12 +13306,12 @@ PrefabInstance:
     - target: {fileID: 636842497996617117, guid: f59a0040472a64240a1e5cbe76903888,
         type: 3}
       propertyPath: m_Text
-      value: When chooses all the resources to invest
+      value: tut_finish_help
       objectReference: {fileID: 0}
     - target: {fileID: 636842498789907243, guid: f59a0040472a64240a1e5cbe76903888,
         type: 3}
       propertyPath: m_Text
-      value: click on the action block to confirm
+      value: tut_finish_continue
       objectReference: {fileID: 0}
     - target: {fileID: 636842498618358170, guid: f59a0040472a64240a1e5cbe76903888,
         type: 3}
@@ -13033,6 +13407,30 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &2016539921 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 636842498789907243, guid: f59a0040472a64240a1e5cbe76903888,
+    type: 3}
+  m_PrefabInstance: {fileID: 2016539917}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2016539922 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 636842497996617117, guid: f59a0040472a64240a1e5cbe76903888,
+    type: 3}
+  m_PrefabInstance: {fileID: 2016539917}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &2022979463 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 636842498837082463, guid: f59a0040472a64240a1e5cbe76903888,
@@ -13285,12 +13683,12 @@ PrefabInstance:
     - target: {fileID: 636842497996617117, guid: f59a0040472a64240a1e5cbe76903888,
         type: 3}
       propertyPath: m_Text
-      value: Now choose the resources to invest
+      value: tut_choose_resources_help
       objectReference: {fileID: 0}
     - target: {fileID: 636842498789907243, guid: f59a0040472a64240a1e5cbe76903888,
         type: 3}
       propertyPath: m_Text
-      value: click on the resource to continue
+      value: tut_choose_resources_continue
       objectReference: {fileID: 0}
     - target: {fileID: 636842498618358170, guid: f59a0040472a64240a1e5cbe76903888,
         type: 3}
@@ -13366,6 +13764,30 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &2041777167 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 636842498789907243, guid: f59a0040472a64240a1e5cbe76903888,
+    type: 3}
+  m_PrefabInstance: {fileID: 2041777163}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2041777168 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 636842497996617117, guid: f59a0040472a64240a1e5cbe76903888,
+    type: 3}
+  m_PrefabInstance: {fileID: 2041777163}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2078982449
 GameObject:
   m_ObjectHideFlags: 0
@@ -13624,12 +14046,12 @@ PrefabInstance:
     - target: {fileID: 636842497996617117, guid: f59a0040472a64240a1e5cbe76903888,
         type: 3}
       propertyPath: m_Text
-      value: You can't do same action twice (except invest action)
+      value: tut_last_action_help
       objectReference: {fileID: 0}
     - target: {fileID: 636842498789907243, guid: f59a0040472a64240a1e5cbe76903888,
         type: 3}
       propertyPath: m_Text
-      value: pay attention of this in game
+      value: tut_last_action_continue
       objectReference: {fileID: 0}
     - target: {fileID: 636842498618358170, guid: f59a0040472a64240a1e5cbe76903888,
         type: 3}
@@ -13665,6 +14087,30 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2082608858}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2082608861 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 636842498789907243, guid: f59a0040472a64240a1e5cbe76903888,
+    type: 3}
+  m_PrefabInstance: {fileID: 2082608858}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2082608862 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 636842497996617117, guid: f59a0040472a64240a1e5cbe76903888,
+    type: 3}
+  m_PrefabInstance: {fileID: 2082608858}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2090608008
 GameObject:
   m_ObjectHideFlags: 0
@@ -14081,6 +14527,11 @@ PrefabInstance:
       propertyPath: response.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: SetActive
       objectReference: {fileID: 0}
+    - target: {fileID: 636842497996617117, guid: f59a0040472a64240a1e5cbe76903888,
+        type: 3}
+      propertyPath: m_Text
+      value: tut_enough_wealth_help
+      objectReference: {fileID: 0}
     - target: {fileID: 636842498618358170, guid: f59a0040472a64240a1e5cbe76903888,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -14098,6 +14549,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f59a0040472a64240a1e5cbe76903888, type: 3}
+--- !u!114 &636842497369851609 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 636842498789907243, guid: f59a0040472a64240a1e5cbe76903888,
+    type: 3}
+  m_PrefabInstance: {fileID: 636842497369851608}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &636842497369851610 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 636842497996617117, guid: f59a0040472a64240a1e5cbe76903888,
+    type: 3}
+  m_PrefabInstance: {fileID: 636842497369851608}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2520230973630257004
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14335,7 +14810,7 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8467337971433505114, guid: 5485d390b8df447f58dd4e4d1c318617,
+    - target: {fileID: 2993132482638914257, guid: 5485d390b8df447f58dd4e4d1c318617,
         type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -14345,7 +14820,7 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2993132482638914257, guid: 5485d390b8df447f58dd4e4d1c318617,
+    - target: {fileID: 8467337971433505114, guid: 5485d390b8df447f58dd4e4d1c318617,
         type: 3}
       propertyPath: m_Enabled
       value: 0

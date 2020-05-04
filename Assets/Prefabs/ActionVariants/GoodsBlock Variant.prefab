@@ -26,6 +26,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: GoodsBlock Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 6599369355978958729, guid: 91106ea2ee39441e5aee8b259b04a171,
+        type: 3}
+      propertyPath: actionType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599369355978958729, guid: 91106ea2ee39441e5aee8b259b04a171,
+        type: 3}
+      propertyPath: nBenefit
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599369355978958729, guid: 91106ea2ee39441e5aee8b259b04a171,
+        type: 3}
+      propertyPath: needInvestment
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599369355978958729, guid: 91106ea2ee39441e5aee8b259b04a171,
+        type: 3}
+      propertyPath: actionDescription
+      value: goods_desc
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599369355978958729, guid: 91106ea2ee39441e5aee8b259b04a171,
+        type: 3}
+      propertyPath: actionColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599369355978958729, guid: 91106ea2ee39441e5aee8b259b04a171,
+        type: 3}
+      propertyPath: actionColor.g
+      value: 0.47058827
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599369355978958729, guid: 91106ea2ee39441e5aee8b259b04a171,
+        type: 3}
+      propertyPath: actionColor.b
+      value: 0.227451
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599369355978958729, guid: 91106ea2ee39441e5aee8b259b04a171,
+        type: 3}
+      propertyPath: activeMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: a9700fd7fe7174a43870a277c2ad921e, type: 2}
     - target: {fileID: 9075541032326522506, guid: 91106ea2ee39441e5aee8b259b04a171,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -84,46 +124,6 @@ PrefabInstance:
     - target: {fileID: 8847817759127811324, guid: 91106ea2ee39441e5aee8b259b04a171,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: a9700fd7fe7174a43870a277c2ad921e, type: 2}
-    - target: {fileID: 6599369355978958729, guid: 91106ea2ee39441e5aee8b259b04a171,
-        type: 3}
-      propertyPath: actionType
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6599369355978958729, guid: 91106ea2ee39441e5aee8b259b04a171,
-        type: 3}
-      propertyPath: nBenefit
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6599369355978958729, guid: 91106ea2ee39441e5aee8b259b04a171,
-        type: 3}
-      propertyPath: needInvestment
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6599369355978958729, guid: 91106ea2ee39441e5aee8b259b04a171,
-        type: 3}
-      propertyPath: actionDescription
-      value: produce some resources
-      objectReference: {fileID: 0}
-    - target: {fileID: 6599369355978958729, guid: 91106ea2ee39441e5aee8b259b04a171,
-        type: 3}
-      propertyPath: actionColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6599369355978958729, guid: 91106ea2ee39441e5aee8b259b04a171,
-        type: 3}
-      propertyPath: actionColor.g
-      value: 0.47058827
-      objectReference: {fileID: 0}
-    - target: {fileID: 6599369355978958729, guid: 91106ea2ee39441e5aee8b259b04a171,
-        type: 3}
-      propertyPath: actionColor.b
-      value: 0.227451
-      objectReference: {fileID: 0}
-    - target: {fileID: 6599369355978958729, guid: 91106ea2ee39441e5aee8b259b04a171,
-        type: 3}
-      propertyPath: activeMaterial
       value: 
       objectReference: {fileID: 2100000, guid: a9700fd7fe7174a43870a277c2ad921e, type: 2}
     - target: {fileID: 5401526392563689386, guid: 91106ea2ee39441e5aee8b259b04a171,

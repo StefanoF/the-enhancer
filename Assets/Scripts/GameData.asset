@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameScriptable
   lastActionName: 
   lastActionLvl: "1\x03"
-  lastActionIcon: {fileID: 21300000, guid: 3ec70152688f043cd9066a61420d04fa, type: 3}
-  lastActionColor: {r: 0.93725497, g: 1, b: 1, a: 1}
+  lastActionIcon: {fileID: 21300000, guid: 6a2d49b058221411d8167faac913a0ae, type: 3}
+  lastActionColor: {r: 1, g: 0.47058827, b: 0.227451, a: 1}
   culture: 0
   connections: 0
   sustainability: 0
@@ -35,3 +35,4 @@ MonoBehaviour:
   actionInProgress: 0
   score: 0
   inPlane: 0
+  currentLang: 

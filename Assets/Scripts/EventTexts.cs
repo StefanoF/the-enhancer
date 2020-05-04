@@ -23,12 +23,13 @@ public class EventTexts : MonoBehaviour
     public string[] ResourceProduct;
     public string[] ResourceDeProduct;
 
-    public void ResourceText(string txt) {
-        text.text = txt + ResourceEvents.Instance.actualResourceType.ToString().ToLower();
+    public void ResourceText(string key) {
+        text.text = I18n.Fields[key] + " " + I18n.Fields[ResourceEvents.Instance.actualResourceType.ToString().ToLower()];
     }
     
     public void RandomIn(string eventName) {
         string[] selectedTexts = (string[]) this.GetType().GetField(eventName).GetValue(this);
-        text.text = selectedTexts[Random.Range(0, selectedTexts.Length)];
+        string selectedKey = selectedTexts[Random.Range(0, selectedTexts.Length)];
+        text.text = I18n.Fields[selectedKey];
     }
 }

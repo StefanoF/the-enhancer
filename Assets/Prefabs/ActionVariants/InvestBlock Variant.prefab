@@ -24,6 +24,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: InvestBlock Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 6599369355978958729, guid: 91106ea2ee39441e5aee8b259b04a171,
+        type: 3}
+      propertyPath: actionType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599369355978958729, guid: 91106ea2ee39441e5aee8b259b04a171,
+        type: 3}
+      propertyPath: nBenefit
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599369355978958729, guid: 91106ea2ee39441e5aee8b259b04a171,
+        type: 3}
+      propertyPath: actionDescription
+      value: invest_desc
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599369355978958729, guid: 91106ea2ee39441e5aee8b259b04a171,
+        type: 3}
+      propertyPath: actionColor.r
+      value: 0.63529414
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599369355978958729, guid: 91106ea2ee39441e5aee8b259b04a171,
+        type: 3}
+      propertyPath: actionColor.g
+      value: 0.9960785
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599369355978958729, guid: 91106ea2ee39441e5aee8b259b04a171,
+        type: 3}
+      propertyPath: actionColor.b
+      value: 0.31764707
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599369355978958729, guid: 91106ea2ee39441e5aee8b259b04a171,
+        type: 3}
+      propertyPath: activeMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 099c13c6cb6ce4b84a361b96ceeba05b, type: 2}
     - target: {fileID: 9075541032326522506, guid: 91106ea2ee39441e5aee8b259b04a171,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -79,41 +114,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6599369355978958729, guid: 91106ea2ee39441e5aee8b259b04a171,
-        type: 3}
-      propertyPath: actionType
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6599369355978958729, guid: 91106ea2ee39441e5aee8b259b04a171,
-        type: 3}
-      propertyPath: nBenefit
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6599369355978958729, guid: 91106ea2ee39441e5aee8b259b04a171,
-        type: 3}
-      propertyPath: actionDescription
-      value: invest in some resources
-      objectReference: {fileID: 0}
-    - target: {fileID: 6599369355978958729, guid: 91106ea2ee39441e5aee8b259b04a171,
-        type: 3}
-      propertyPath: actionColor.r
-      value: 0.63529414
-      objectReference: {fileID: 0}
-    - target: {fileID: 6599369355978958729, guid: 91106ea2ee39441e5aee8b259b04a171,
-        type: 3}
-      propertyPath: actionColor.g
-      value: 0.9960785
-      objectReference: {fileID: 0}
-    - target: {fileID: 6599369355978958729, guid: 91106ea2ee39441e5aee8b259b04a171,
-        type: 3}
-      propertyPath: actionColor.b
-      value: 0.31764707
-      objectReference: {fileID: 0}
-    - target: {fileID: 6599369355978958729, guid: 91106ea2ee39441e5aee8b259b04a171,
-        type: 3}
-      propertyPath: activeMaterial
-      value: 
-      objectReference: {fileID: 2100000, guid: 099c13c6cb6ce4b84a361b96ceeba05b, type: 2}
     - target: {fileID: 5401526392563689386, guid: 91106ea2ee39441e5aee8b259b04a171,
         type: 3}
       propertyPath: m_Sprite

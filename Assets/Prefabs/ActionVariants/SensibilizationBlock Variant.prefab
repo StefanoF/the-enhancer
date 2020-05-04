@@ -90,7 +90,7 @@ PrefabInstance:
     - target: {fileID: 4647973111170744242, guid: 5485d390b8df447f58dd4e4d1c318617,
         type: 3}
       propertyPath: actionDescription
-      value: 'reduce wealth by recovering resources '
+      value: sensibilization_desc
       objectReference: {fileID: 0}
     - target: {fileID: 4647973111170744242, guid: 5485d390b8df447f58dd4e4d1c318617,
         type: 3}
@@ -112,16 +112,16 @@ PrefabInstance:
       propertyPath: activeMaterial
       value: 
       objectReference: {fileID: 2100000, guid: 73a0d3358c0574fb7b1b68be810f7174, type: 2}
-    - target: {fileID: 7051654887337880775, guid: 5485d390b8df447f58dd4e4d1c318617,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 73a0d3358c0574fb7b1b68be810f7174, type: 2}
     - target: {fileID: 5900650368495828881, guid: 5485d390b8df447f58dd4e4d1c318617,
         type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: abdf056837b9041af9028e76afac3c51,
         type: 3}
+    - target: {fileID: 7051654887337880775, guid: 5485d390b8df447f58dd4e4d1c318617,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 73a0d3358c0574fb7b1b68be810f7174, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5485d390b8df447f58dd4e4d1c318617, type: 3}

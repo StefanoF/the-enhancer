@@ -45,6 +45,8 @@ public class SharedData : ScriptableObject {
 
     public bool inPlane;
 
+    public string currentLang;
+
     public void ResetStats() {
         inPlane = false;
         culture = 0; 
