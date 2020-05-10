@@ -3848,6 +3848,9 @@ MonoBehaviour:
   needToInvest: {fileID: 11400000, guid: 514b8883747c54de892fe80483b27cc7, type: 2}
   needCorrectInvest: {fileID: 11400000, guid: 07eed03c4fbc04998ba0abb6cff58122, type: 2}
   changeLastAction: {fileID: 11400000, guid: 3303ac7bec727441a9d7a07b539c5eba, type: 2}
+  allBenefitPlaced: {fileID: 11400000, guid: 1e99cb085fc5a43b48fca70f6b74a06e, type: 2}
+  allBenefitNotPlaced: {fileID: 11400000, guid: 76249c3c43c354988ac74b952ed60d56,
+    type: 2}
 --- !u!114 &554197293
 MonoBehaviour:
   m_ObjectHideFlags: 0

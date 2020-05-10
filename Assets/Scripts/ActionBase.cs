@@ -75,6 +75,7 @@ public class ActionBase : MonoBehaviour
     public AudioSource mmm;
     public AudioSource mmMM;
     public AudioSource mM;
+    private Flash flashScript;
 
     void Awake() {
         meshRenderer = gameObject.GetComponent<MeshRenderer>();
@@ -86,6 +87,7 @@ public class ActionBase : MonoBehaviour
         actionTitlePanel = GameObject.Find("/UI/ActionTitle/Panel").GetComponent<Image>();
         actionTitleText = GameObject.Find("/UI/ActionTitle/Text").GetComponent<Text>();
         actionSubTitleText = GameObject.Find("/UI/ActionTitle/SubText").GetComponent<Text>();
+        flashScript = gameObject.GetComponent<Flash>();
         ToogleTitle(false);
     }
 
@@ -272,6 +274,7 @@ public class ActionBase : MonoBehaviour
         resources.SetActive(true);
         localInvestCounter = gameData.investCounter;
         actionCounter.ActivateBenefits();
+        CheckAllBenefitsUsed();
     }
 
     public void DeActivate() {
@@ -361,6 +364,26 @@ public class ActionBase : MonoBehaviour
         else {
             actionActive = false;
             meshRenderer.material = passiveMaterial;
+        }
+    }
+
+    public void CheckAllBenefitsUsed() {
+        if (inProgress && gameData.actionInProgress) {
+            if (actionType == SharedData.ActionType.Invest && localInvestCounter == nBenefit) {
+                ActionEvents.Instance.allBenefitPlaced.Raise();
+            }
+            else if (gameData.productCounter == nBenefit) {
+                ActionEvents.Instance.allBenefitPlaced.Raise();
+            }
+            else {
+                ActionEvents.Instance.allBenefitNotPlaced.Raise();
+            }
+        }
+    }
+
+    public void StartToFlash() {
+        if (inProgress && gameData.actionInProgress) {
+            flashScript.StartFlash();
         }
     }
 }

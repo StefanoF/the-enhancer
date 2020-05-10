@@ -5,9 +5,6 @@ using UnityEngine;
 
 public class ActionCounter : MonoBehaviour
 {
-    // array di oggetti alla quale mettere il benefitObj
-    // ordinati come SharedData.ResourceType
-    // Culture, Connections, Sustainability, Humanity, Wealth, Stars
     public GameObject[] resourceObjs;
     public GameObject benefitObj;
     public Vector3 spacing;
@@ -143,6 +140,16 @@ public class ActionCounter : MonoBehaviour
             if (benefitObjs[i].activeSelf) {
                 benefitObjs[i].SetActive(false);
                 return;
+            }
+        }
+    }
+
+    public void BlinkRemained() {
+        if (actionBase.gameData.actionInProgress) {
+            for(int i = 0; i < actionBase.nBenefit; i++) {
+                if(benefitObjs[i].activeSelf) {
+                    benefitObjs[i].GetComponent<Flash>().StartFlash();
+                }
             }
         }
     }

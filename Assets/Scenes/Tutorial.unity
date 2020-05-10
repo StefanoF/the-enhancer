@@ -3616,6 +3616,9 @@ MonoBehaviour:
   needToInvest: {fileID: 11400000, guid: 514b8883747c54de892fe80483b27cc7, type: 2}
   needCorrectInvest: {fileID: 11400000, guid: 07eed03c4fbc04998ba0abb6cff58122, type: 2}
   changeLastAction: {fileID: 11400000, guid: 3303ac7bec727441a9d7a07b539c5eba, type: 2}
+  allBenefitPlaced: {fileID: 11400000, guid: 1e99cb085fc5a43b48fca70f6b74a06e, type: 2}
+  allBenefitNotPlaced: {fileID: 11400000, guid: 76249c3c43c354988ac74b952ed60d56,
+    type: 2}
 --- !u!114 &554197293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14810,7 +14813,7 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2993132482638914257, guid: 5485d390b8df447f58dd4e4d1c318617,
+    - target: {fileID: 8467337971433505114, guid: 5485d390b8df447f58dd4e4d1c318617,
         type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -14820,7 +14823,7 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8467337971433505114, guid: 5485d390b8df447f58dd4e4d1c318617,
+    - target: {fileID: 2993132482638914257, guid: 5485d390b8df447f58dd4e4d1c318617,
         type: 3}
       propertyPath: m_Enabled
       value: 0
