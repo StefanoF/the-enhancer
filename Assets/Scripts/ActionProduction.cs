@@ -24,13 +24,15 @@ public class ActionProduction : MonoBehaviour
     }
 
     void OnMouseDown() {
-        if (actionBase.gameData.wealth >= actionBase.gameData.wealthGoal) {
-            return;
+        if (!actionBase.gameData.pause) {
+            if (actionBase.gameData.wealth >= actionBase.gameData.wealthGoal) {
+                return;
+            }
+            if (!actionBase.actionActive) {
+                actionBase.StartBlinking();
+            }
+            LeftMouseClick();
         }
-        if (!actionBase.actionActive) {
-            actionBase.StartBlinking();
-        }
-        LeftMouseClick();
     }
 
     void LeftMouseClick() {

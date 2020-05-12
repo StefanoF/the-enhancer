@@ -236,11 +236,13 @@ public class ActionBase : MonoBehaviour
     }
 
     void OnMouseEnter() {
-        if (!gameData.actionInProgress) {
-            ShowCostsAndNeeds();
-            if (actionActive) {
-                resourcesScript.DisableColliders();
-                resources.SetActive(true);
+        if (!gameData.pause) {
+            if (!gameData.actionInProgress) {
+                ShowCostsAndNeeds();
+                if (actionActive) {
+                    resourcesScript.DisableColliders();
+                    resources.SetActive(true);
+                }
             }
         }
     }

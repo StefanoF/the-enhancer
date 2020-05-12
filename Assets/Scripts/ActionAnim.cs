@@ -24,7 +24,7 @@ public class ActionAnim : MonoBehaviour
     }
 
     void OnMouseOver() {
-        if (!gameData.actionInProgress && actionBase.actionActive) {
+        if (!gameData.actionInProgress && actionBase.actionActive && !actionBase.gameData.pause) {
             timeMovement += Time.deltaTime;
             transform.position = transform.position + moveVector * (moveRange * Mathf.Sin(timeMovement * moveSpeed));
         }

@@ -44,13 +44,15 @@ public class ResourceSel : MonoBehaviour
     }
 
     void OnMouseOver() {
-        if (Input.GetMouseButtonDown(0)) {
-            // left mouse button click
-            LeftMouseClick();
-        }
-        else if (Input.GetMouseButtonDown(1)) {
-            // right mouse button click
-            RightMouseClick();
+        if (!actionBase.gameData.pause) {
+            if (Input.GetMouseButtonDown(0)) {
+                // left mouse button click
+                LeftMouseClick();
+            }
+            else if (Input.GetMouseButtonDown(1)) {
+                // right mouse button click
+                RightMouseClick();
+            }
         }
     }
 

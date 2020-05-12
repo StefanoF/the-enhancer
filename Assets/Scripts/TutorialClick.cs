@@ -1,8 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.SceneManagement;
 
 public class TutorialClick : MonoBehaviour, IPointerDownHandler
 {
@@ -21,9 +18,5 @@ public class TutorialClick : MonoBehaviour, IPointerDownHandler
         if (unpauseOnClick) {
             Time.timeScale = 1.0f;
         }
-    }
-
-    public void ReturnToMenu() {
-        SceneManager.LoadScene(0);
     }
 }

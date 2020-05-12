@@ -47,7 +47,10 @@ public class SharedData : ScriptableObject {
 
     public string currentLang;
 
+    public bool pause;
+
     public void ResetStats() {
+        pause = false;
         inPlane = false;
         culture = 0; 
         connections = 0; 

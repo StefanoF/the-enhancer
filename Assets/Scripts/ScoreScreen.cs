@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ScoreScreen : MonoBehaviour
@@ -67,13 +66,5 @@ public class ScoreScreen : MonoBehaviour
         yield return new WaitForSeconds(2);
         tryAgainButton.SetActive(true);
         returnToMenuButton.SetActive(true);
-    }
-
-    public void RestartLevel() {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
-
-    public void ReturnToMenu() {
-        SceneManager.LoadScene(0);
     }
 }
