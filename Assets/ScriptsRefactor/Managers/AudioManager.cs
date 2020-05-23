@@ -1,15 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace TheEnhancer {
-    [CreateAssetMenu(fileName = "AudioData", menuName = "AudioData", order = 1)]
-    public class AudioManager : ScriptableObject {
-        public AudioSource background;
+    public class AudioManager : SingletonAbstract<AudioManager> {
+        public AudioSource menuBackground;
+        public AudioSource gameBackground;
+        public AudioSource tutorialBackground;
         public AudioSource victory;
+        public AudioSource actionStarted;
+        public AudioSource actionCanceled;
+        public AudioSource actionCompleted;
+
+        protected override void Awake()
+        {
+            base.Awake();
+            print("AudioManager ready!");
+        }
+
         public void Victory() {
-        background.Pause();
-        victory.Play();
+            gameBackground.Pause();
+            victory.Play();
         }
     }
 }

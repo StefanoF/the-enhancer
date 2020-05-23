@@ -1,26 +1,32 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace TheEnhancer {
-    [CreateAssetMenu(fileName = "UiData", menuName = "UiData", order = 1)]
-    public class UiManager : ScriptableObject {
-        public GameObject endGame;
+    public class UiManager : SingletonAbstract<UiManager> {
+        // public GameObject endGame;
+        public UiData data;
+
+        protected override void Awake()
+        {
+            base.Awake();
+            print("UiManager ready!");
+        }
+
         public void EndGame() {
-            endGame.SetActive(true);
+            print("UiManager Endgame()");
+            // endGame.SetActive(true);
         }
 
         public void ChangeColor(Image actualImage) {
-            actualImage.color = GameManager.Instance.gameData.lastActionColor;
+            actualImage.color = data.lastActionColor;
         }
 
         public void ChangeActionLvl(Text actualText) {
-            actualText.text = GameManager.Instance.gameData.lastActionLvl;
+            actualText.text = data.lastActionLvl;
         }
 
         public void ChangeActionIcon(Image actualImage) {
-            actualImage.sprite = GameManager.Instance.gameData.lastActionIcon;
+            actualImage.sprite = data.lastActionIcon;
             actualImage.color = new Color(255, 255, 255, 255);
         }
     }

@@ -1,28 +1,22 @@
 ﻿using UnityEngine;
 
 namespace TheEnhancer {
-    public class GameManager : MonoBehaviour {
-        private static GameManager _instance;
-        public static GameManager Instance { get { return _instance; } }
-        private void Awake()
+    public class GameManager : SingletonAbstract<GameManager> {
+        public GameData data;
+        public AudioManager am;
+        public UiManager um;
+
+        protected override void Awake()
         {
-            if (_instance != null && _instance != this)
-            {
-                Destroy(this.gameObject);
-            } else {
-                _instance = this;
-            }
+            base.Awake();
+            print("Gamemanager ready!");
         }
 
-        public SharedData gameData;
-        public AudioManager audioData;
-        public UiManager uiData;
-
         public void EndGame() {
-            if (gameData.wealth >= gameData.wealthGoal) {
-                audioData.Victory();
-                gameData.CalculateScore();
-                uiData.EndGame();
+            if (data.wealth >= data.wealthGoal) {
+                data.CalculateScore();
+                am.Victory();
+                um.EndGame();
             }
         }
     }

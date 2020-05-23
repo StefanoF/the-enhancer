@@ -9,7 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 107a4e3039298449c90fa43b132f7fda, type: 3}
-  m_Name: UiData
+  m_Script: {fileID: 11500000, guid: 81145fc4d758d41a08971dc14f1819a2, type: 3}
+  m_Name: UiDataAsset
   m_EditorClassIdentifier: 
-  endGame: {fileID: 0}
+  lastActionLvl: 
+  lastActionIcon: {fileID: 0}
+  lastActionColor: {r: 0, g: 0, b: 0, a: 0}
