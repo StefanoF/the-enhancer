@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 namespace TheEnhancer {
-    [CreateAssetMenu (fileName = "GameData", menuName = "GameData", order = 1)]
+    [CreateAssetMenu (fileName = "GameData", menuName = "ManagersData/GameData", order = 1)]
     public class GameData : ScriptableObject {
         public enum ActionType {
             None,

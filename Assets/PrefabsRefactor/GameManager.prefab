@@ -156,7 +156,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7304493128989216563}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7591980986683217790
 MonoBehaviour:
@@ -298,6 +298,70 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &2940911814397010230
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3200670151231361922}
+  - component: {fileID: 1486727811662774517}
+  m_Layer: 0
+  m_Name: EventManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3200670151231361922
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2940911814397010230}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7304493128989216563}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1486727811662774517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2940911814397010230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26c62b95d209c4ff391111239cd1584b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionCanceled: {fileID: 11400000, guid: ddd58633510834cfb84c7116c34145b5, type: 2}
+  changeLastAction: {fileID: 11400000, guid: 3d21ff37dbbbd41c185c68bc919abab2, type: 2}
+  clickOnBottomPlane: {fileID: 11400000, guid: a2cfa020d694b40428d15e16dc84554f, type: 2}
+  investComplete: {fileID: 11400000, guid: 2076a6d9cb91d4e1ca59a4ba0184f790, type: 2}
+  investStarted: {fileID: 11400000, guid: 981307e7c54ce42d79a918a71591c579, type: 2}
+  productionComplete: {fileID: 11400000, guid: 291115713cc6d4df7ad40dd66de4ba4b, type: 2}
+  productionStarted: {fileID: 11400000, guid: 5ae9dc55a8498492998d556791fefb3a, type: 2}
+  deInvest: {fileID: 11400000, guid: e3616c86d96a34493858dac1f76820a3, type: 2}
+  deProduct: {fileID: 11400000, guid: e7668178c73454564b3d6894ee4591db, type: 2}
+  invest: {fileID: 11400000, guid: aaac791c579014a23b2d4058c49b167b, type: 2}
+  product: {fileID: 11400000, guid: 5afca326edf484d4db583e8f354f2077, type: 2}
+  changeLanguage: {fileID: 11400000, guid: 999905f5568f5422e87a9abab7774b83, type: 2}
+  allBenefitPlaced: {fileID: 11400000, guid: fb8fb8ef6b12b409ca44995920913439, type: 2}
+  allBenefitNotPlaced: {fileID: 11400000, guid: baf8cc85cd1914b35bbf40cb68958a0b,
+    type: 2}
+  needCorrectInvest: {fileID: 11400000, guid: 5442c4070d8a84a47b7db03949a828a4, type: 2}
+  needToInvest: {fileID: 11400000, guid: 002beee58608147e2bed7c9331f9309f, type: 2}
+  notEnoughResources: {fileID: 11400000, guid: 9c2e7151fb2014c9fb65fa8e85657f36, type: 2}
+  oneActionAtTime: {fileID: 11400000, guid: da10ddd464f4445309067d83e59909de, type: 2}
+  sameActionTwice: {fileID: 11400000, guid: a560f0e3c4b5449429bab6d8d3215e24, type: 2}
+  useAllBenefits: {fileID: 11400000, guid: 5416cae6e5f124e6db9128185295a6da, type: 2}
 --- !u!1 &5928612068805091448
 GameObject:
   m_ObjectHideFlags: 0
@@ -708,6 +772,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1096220108810168052}
+  - {fileID: 3200670151231361922}
   - {fileID: 8981480686518496449}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -727,6 +792,7 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: 0ea07ab642b724dc3943749d9996217c, type: 2}
   am: {fileID: 283235889818008653}
   um: {fileID: 7591980986683217790}
+  em: {fileID: 1486727811662774517}
 --- !u!1 &7394555248310919314
 GameObject:
   m_ObjectHideFlags: 0

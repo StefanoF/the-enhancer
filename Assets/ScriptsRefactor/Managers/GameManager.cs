@@ -5,6 +5,7 @@ namespace TheEnhancer {
         public GameData data;
         public AudioManager am;
         public UiManager um;
+        public EventManager em;
 
         protected override void Awake()
         {
