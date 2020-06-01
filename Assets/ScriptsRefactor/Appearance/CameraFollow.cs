@@ -6,6 +6,7 @@ namespace TheEnhancer {
     public class CameraFollow : MonoBehaviour {
         public float speed;
         public Vector3 offset;
+        public GameData gameData;
         private Vector3 target;
         private Vector3 startPosition;
 
@@ -24,8 +25,9 @@ namespace TheEnhancer {
             }
         }
 
-        public void SetTarget(Vector3 pos) {
-            target = pos + offset;
+        public void SetTarget() {
+            print("target setted");
+            target = gameData.currentActionPos + offset;
         }
 
         public void ResetTarget() {

@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b71466e00afa9480bb7f2f892ee234ca, type: 3}
   m_Name: GameData
   m_EditorClassIdentifier: 
+  currentActionPos: {x: -8, y: 0.08068496, z: 0}
   lastActionName: 
   culture: 0
   connections: 0
   sustainability: 0
   humanity: 0
   wealth: 0
-  wealthGoal: 0
+  wealthGoal: 15
   investments: 
   investCounter: 0
   productions: 

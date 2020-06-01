@@ -7,6 +7,7 @@ using UnityEngine.UI;
 namespace TheEnhancer {
     [CreateAssetMenu (fileName = "GameData", menuName = "ManagersData/GameData", order = 1)]
     public class GameData : ScriptableObject {
+        public Vector3 currentActionPos;
         public enum ActionType {
             Conciliation,
             Goods,

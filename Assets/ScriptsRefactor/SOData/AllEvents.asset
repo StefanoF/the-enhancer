@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionCanceled: {fileID: 0}
   changeLastAction: {fileID: 0}
-  clickOnBottomPlane: {fileID: 0}
+  clickOnBottomPlane: {fileID: 11400000, guid: a2cfa020d694b40428d15e16dc84554f, type: 2}
   investComplete: {fileID: 0}
-  investStarted: {fileID: 0}
+  investStarted: {fileID: 11400000, guid: 981307e7c54ce42d79a918a71591c579, type: 2}
   productionComplete: {fileID: 0}
   productionStarted: {fileID: 0}
   deInvest: {fileID: 0}

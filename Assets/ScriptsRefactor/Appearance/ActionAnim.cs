@@ -9,11 +9,6 @@ namespace TheEnhancer {
         private float timeMovement;
         private Vector3 startPosition;
         private Vector3 moveVector;
-        private ActionBase actionBase;
-
-        void Awake() {
-            actionBase = gameObject.GetComponent<ActionBase>();
-        }
 
         // Start is called before the first frame update
         void Start()
