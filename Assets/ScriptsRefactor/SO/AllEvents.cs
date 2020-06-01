@@ -1,13 +1,8 @@
 using UnityEngine;
 
 namespace TheEnhancer {
-    public class EventManager : SingletonAbstract<EventManager> {
-        protected override void Awake()
-        {
-            base.Awake();
-            print("EventManager ready!");
-        }
-
+    [CreateAssetMenu (fileName = "AllEvents", menuName = "ManagersData/AllEvents", order = 1)]
+    public class AllEvents : ScriptableObject {
         [Header("Actions")]
         public GameEvent actionCanceled;
         public GameEvent changeLastAction;
@@ -19,16 +14,16 @@ namespace TheEnhancer {
 
         [Header("Resources")]
         public GameEvent deInvest;
-        public GameEvent deProduct;
+        public GameEvent deProduce;
         public GameEvent invest;
-        public GameEvent product;
+        public GameEvent produce;
 
         [Header("Utils")]
         public GameEvent changeLanguage;
 
         [Header("Validators")]
-        public GameEvent allBenefitPlaced;
         public GameEvent allBenefitNotPlaced;
+        public GameEvent allBenefitPlaced;
         public GameEvent needCorrectInvest;
         public GameEvent needToInvest;
         public GameEvent notEnoughResources;

@@ -8,19 +8,18 @@ namespace TheEnhancer {
     [CreateAssetMenu (fileName = "GameData", menuName = "ManagersData/GameData", order = 1)]
     public class GameData : ScriptableObject {
         public enum ActionType {
-            None,
+            Conciliation,
             Goods,
             Invest,
             Sensibilization,
-            Conciliation,
-            Star
+            Bonus
         }
 
         public enum ResourceType {
-            Culture,
             Connections,
-            Sustainability,
+            Culture,
             Humanity,
+            Sustainability,
             Wealth,
             Stars
         }

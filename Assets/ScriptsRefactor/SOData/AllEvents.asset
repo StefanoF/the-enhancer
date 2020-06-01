@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3640d0c27662e4caca8a6af2259ca9c3, type: 3}
+  m_Name: AllEvents
+  m_EditorClassIdentifier: 
+  actionCanceled: {fileID: 0}
+  changeLastAction: {fileID: 0}
+  clickOnBottomPlane: {fileID: 0}
+  investComplete: {fileID: 0}
+  investStarted: {fileID: 0}
+  productionComplete: {fileID: 0}
+  productionStarted: {fileID: 0}
+  deInvest: {fileID: 0}
+  deProduce: {fileID: 0}
+  invest: {fileID: 0}
+  produce: {fileID: 0}
+  changeLanguage: {fileID: 0}
+  allBenefitNotPlaced: {fileID: 0}
+  allBenefitPlaced: {fileID: 0}
+  needCorrectInvest: {fileID: 0}
+  needToInvest: {fileID: 0}
+  notEnoughResources: {fileID: 0}
+  oneActionAtTime: {fileID: 0}
+  sameActionTwice: {fileID: 0}
+  useAllBenefits: {fileID: 0}

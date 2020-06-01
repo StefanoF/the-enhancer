@@ -1,7 +1,7 @@
 using UnityEngine;
 
 namespace TheEnhancer {
-    public class AudioManager : SingletonAbstract<AudioManager> {
+    public class AudioManager : MonoBehaviour {
         public AudioSource menuBackground;
         public AudioSource gameBackground;
         public AudioSource tutorialBackground;
@@ -10,9 +10,7 @@ namespace TheEnhancer {
         public AudioSource actionCanceled;
         public AudioSource actionCompleted;
 
-        protected override void Awake()
-        {
-            base.Awake();
+        void Awake() {
             print("AudioManager ready!");
         }
 
